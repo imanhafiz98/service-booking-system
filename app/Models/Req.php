@@ -9,9 +9,28 @@ class Req extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'price',
+        'notes',
+        'status',
+        'client_id',
+        'service_id',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
     }
 
     public function location()
@@ -24,9 +43,5 @@ class Req extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // 1 service can has many requests
-    public function reqs()
-    {
-        return $this->hasMany(Req::class);
-    }
+    
 }
