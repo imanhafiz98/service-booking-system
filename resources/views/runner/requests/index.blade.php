@@ -95,7 +95,7 @@ Dashboard :: Service Booking System
                                     </form>
 
                                     @elseif($req->status == 'Accepted')
-                                        
+                                    <button class="btn btn-primary btn-sm" type="button">Done</button>
 
                                      @elseif($req->status == 'Cancelled')
                                        
