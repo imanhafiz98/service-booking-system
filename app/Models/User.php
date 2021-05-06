@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'role'
     ];
 
     /**
@@ -40,4 +42,39 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isClient()
+    {
+        return $this->role == 'client';
+    }
+
+    public function isRunner()
+    {
+        return $this->role == 'runner';
+    }
+
+
+    // 1 user (client) can create many services
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
+    // 1 user (client) can has one wallet
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class);
+    }
+
+    // 1 user (runner) can has one wallet
+    public function bank()
+    {
+        return $this->hasOne(Bank::class);
+    }
+
+    // 1 user (client) can has many requests
+    public function reqs()
+    {
+        return $this->hasMany(Req::class);
+    }
 }
