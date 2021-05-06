@@ -28,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/client/index-service', 'Client\ServiceController@index')->name('client.services.index');
 Route::get('/client/create-service', 'Client\ServiceController@create')->name('client.services.create');
 Route::post('/client/store-service', 'Client\ServiceController@store')->name('client.services.store');
+Route::post('/client/update-service/{service}', 'Client\ServiceController@update')->name('client.services.update');
 Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('client.dashboard'); //dashboard
 
 //client/RequestController
@@ -47,5 +48,6 @@ Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('run
 //runner/RequestController
 Route::get('/runner/index-request', 'Runner\RequestController@index')->name('runner.requests.index');
 Route::post('/runner/store-request', 'Runner\RequestController@store')->name('runner.requests.store');
+Route::post('/client/update-request/{req}', 'Runner\RequestController@update')->name('runner.requests.update');
 
 

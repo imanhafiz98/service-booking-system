@@ -95,11 +95,20 @@ Dashboard :: Service Booking System
                                         
                                      <a class="btn btn-primary btn-sm" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
                                       
+                                     <form method="post" action="{{ route('client.services.update', $service->id) }}">
+                                         @csrf
+                                            <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
+                                     </form>
+
+
+                                    @elseif($service->status == 'Ongoing')  
+
+                                
     
-                                   @elseif($service->status == 'Cancelled')
+                                    @elseif($service->status == 'Cancelled')
                                        
 
-                                   @elseif($service->status == 'Completed')
+                                    @elseif($service->status == 'Completed')
                                         
 
                                     @endif

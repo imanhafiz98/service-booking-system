@@ -61,5 +61,19 @@ class ServiceController extends Controller
         return view('client.services.index')->with('services', $services);
     }
 
+    public function update(Request $request, Service $service)
+    {
+      
+        $data = request()->only(['status']);
+
+        $service->status = "Cancelled";
+   
+        $service->update($data);
+
+        Req::where('id',$service->id)->update(['status' => "Cancelled"]);
+        
+        return redirect(route('client.dashboard'));
+    }
+
     
 }

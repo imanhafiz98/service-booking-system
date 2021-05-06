@@ -17,7 +17,12 @@ class RequestController extends Controller
     {
         //dd($data->all());
 
-        return view('client.requests.index')->with('reqs', Req::where('service_id', $service->id)->get());
+        $status = $request->status ?? null;
+
+
+        return view('client.requests.index')->with('reqs', Req::where('service_id', $service->id)
+            ->where('status', "Requested")
+            ->get());
 
     }
 

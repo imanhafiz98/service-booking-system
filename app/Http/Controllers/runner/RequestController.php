@@ -49,4 +49,19 @@ class RequestController extends Controller
         return redirect(route('runner.requests.index'));
 
     }
+
+    public function update(Request $request, Req $req)
+    {
+      
+        $data = request()->only(['status']);
+
+        $req->status = "Cancelled";
+   
+        $req->update($data);
+
+    
+        Service::where('id',$req->service_id)->update(['status' => "Pending"]);
+        
+        return redirect(route('runner.dashboard'));
+    }
 }

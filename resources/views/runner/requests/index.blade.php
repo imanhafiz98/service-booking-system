@@ -89,7 +89,10 @@ Dashboard :: Service Booking System
                                 <td>
 
                                     @if($req->status == 'Requested')     
-                                          
+                                    <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
+                                         @csrf
+                                            <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
+                                    </form>
 
                                     @elseif($req->status == 'Accepted')
                                         
