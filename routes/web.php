@@ -42,10 +42,10 @@ Route::post('/client/index-request/{req}', 'Client\RequestController@update')->n
 //runner/ServiceController
 Route::get('/runner/index-service', 'Runner\ServiceController@index')->name('runner.services.index');
 Route::get('/runner/index-request/{service}', 'Runner\ServiceController@show')->name('runner.services.show');
-Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dahboard
+Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dashboard
 
 //runner/RequestController
 Route::get('/runner/index-request', 'Runner\RequestController@index')->name('runner.requests.index');
-Route::post('/runner/index-request', 'Runner\RequestController@store')->name('runner.requests.store');
+Route::post('/runner/store-request', 'Runner\RequestController@store')->name('runner.requests.store');
 
 

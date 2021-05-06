@@ -17,7 +17,6 @@ class Req extends Model
     protected $fillable = [
         'price',
         'notes',
-        'status',
         'client_id',
         'service_id',
         'user_id'

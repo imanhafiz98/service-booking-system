@@ -16,7 +16,7 @@ class CreateReqsTable extends Migration
         Schema::create('reqs', function (Blueprint $table) {
             $table->id();
             $table->string('price');
-            $table->string('notes');
+            $table->text('notes');
             $table->enum('status', ['Requested', 'Accepted', 'Cancelled', 'Completed'])->default('Requested');
 
             /*

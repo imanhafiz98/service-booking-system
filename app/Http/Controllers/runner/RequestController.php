@@ -28,7 +28,7 @@ class RequestController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        //dd($request->all());
 
         $request->validate([
             'price' => 'required',
@@ -39,7 +39,7 @@ class RequestController extends Controller
 
             auth()->user()->reqs()->create([
              'price' => $request->price,
-             'note' => $request->notes,
+             'notes' => $request->notes,
              'status' => $request->status,
              'client_id' => $request->client_id,
              'service_id' => $request->service_id,

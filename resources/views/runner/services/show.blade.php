@@ -86,16 +86,16 @@ Dashboard :: Service Booking System
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlTextarea1">Notes</label>
-                                                    <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="4" type="text"></textarea>
+                                                    <input class="form-control" name="notes" id="exampleFormControlInput1"  type="text"/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Service Id</label>
-                                                    <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text" value="{{ $service->id }}" disabled/>
+                                                    <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text" value="{{ $service->id }}" readonly/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Client Id</label>
-                                                    <input class="form-control" name="client_id" id="exampleFormControlInput1" type="text" value="{{ $service->user->id }}" disabled/>
+                                                    <input class="form-control" name="client_id" id="exampleFormControlInput1" type="text" value="{{ $service->user->id }}" readonly/>
                                                 </div>
 
                                                 <button class="btn btn-primary" type="submit">Submit</button>
