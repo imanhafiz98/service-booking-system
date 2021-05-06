@@ -61,7 +61,7 @@
                                     
                                 </nav>
                             </div>
-                            <div class="sidenav-menu-heading">Service Management</div>
+                            <div class="sidenav-menu-heading">Service</div>
                             <!-- Sidenav Accordion (Layout)-->
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="nav-link-icon"><i data-feather="layout"></i></div>
@@ -104,18 +104,23 @@
                                     <a class="nav-link" href="{{ route('client.services.index', ['status'=>'Pending']) }}">Choose Runner</a>
                                 </nav>
                             </div> 
-                            <!-- Sidenav Heading (Addons)-->
+
+
                             <div class="sidenav-menu-heading">E-Wallet</div>
-                            <!-- Sidenav Link (Charts)-->
-                            <a class="nav-link" href="tables.html">
-                                <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
-                                View Balance
+                            <!-- Sidenav Accordion (Layout)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseWallet" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i data-feather="layout"></i></div>
+                                E-Wallet
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <!-- Sidenav Link (Tables)-->
-                            <a class="nav-link" href="tables.html">
-                                <div class="nav-link-icon"><i data-feather="filter"></i></div>
-                                Add Balance
-                            </a>
+                            <div class="collapse" id="collapseWallet" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                                    <a class="nav-link" href="tables.html">View Wallet</a>
+                                    <a class="nav-link" href="tables.html">Add Wallet</a>
+                                </nav>
+                            </div>
+
                         </div>
                     </div>
                     <!-- Sidenav Footer-->
