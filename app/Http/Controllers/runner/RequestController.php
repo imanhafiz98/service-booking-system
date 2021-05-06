@@ -25,4 +25,28 @@ class RequestController extends Controller
         
         return view('runner.requests.index')->with('reqs', $reqs);
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+
+        $request->validate([
+            'price' => 'required',
+            'notes' => 'required',
+             'client_id' => 'required',
+             'service_id' => 'required',
+            ]);
+
+            auth()->user()->reqs()->create([
+             'price' => $request->price,
+             'note' => $request->notes,
+             'status' => $request->status,
+             'client_id' => $request->client_id,
+             'service_id' => $request->service_id,
+             
+         ]);
+
+        return redirect(route('runner.requests.index'));
+
+    }
 }

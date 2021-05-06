@@ -1,4 +1,4 @@
-@extends('runner.main')
+@extends('client.main')
 
 @section('title')
 Dashboard :: Service Booking System
@@ -19,7 +19,7 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Requests
+                                List of Runners
                             </h1>
                             <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
                         </div>
@@ -30,14 +30,14 @@ Dashboard :: Service Booking System
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
-                <div class="card-header">All Requests</div>
+                <div class="card-header">All Services</div>
                 <div class="card-body">
                     <div class="datatable">
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>Request ID</th>
-                                    <th>Price (RM)</th>
+                                    <th>Price</th>
                                     <th>Notes</th>
                                     <th>Status</th>
                                     <th>Client ID</th>
@@ -50,7 +50,7 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Request ID</th>
-                                    <th>Price (RM)</th>
+                                    <th>Price</th>
                                     <th>Notes</th>
                                     <th>Status</th>
                                     <th>Client ID</th>
@@ -63,48 +63,23 @@ Dashboard :: Service Booking System
                             <tbody>
 
                             @foreach($reqs as $req)
-                            @if (auth()->user()->id == $req->user_id)
+                            
                             <tr>
                                 <td>{{ $req->id }}</td>
                                 <td>{{ $req->price }}</td>
                                 <td>{{ $req->notes }}</td>
-                                <td>
-                                     @if($req->status == 'Requested')
-                                        <div class="badge badge-warning badge-pill">Requested</div>
-
-                                      @elseif($req->status == 'Accepted')
-                                        <div class="badge badge-primary badge-pill">Accepted</div>
-
-                                      @elseif($req->status == 'Cancelled')
-                                        <div class="badge badge-danger badge-pill">Cancelled</div>
-
-                                      @elseif($req->status == 'Completed')
-                                        <div class="badge badge-success badge-pill">Completed</div>
-
-                                  @endif
-                                </td>
+                                <td><div class="badge badge-warning badge-pill">{{ $req->status }}</div></td>
                                 <td>{{ $req->client_id }}</td>
                                 <td>{{ $req->service_id }}</td>
                                 <td>{{ $req->user_id }}</td>
                                 <td>
-
-                                    @if($req->status == 'Requested')     
-                                          
-
-                                    @elseif($req->status == 'Accepted')
-                                        
-
-                                     @elseif($req->status == 'Cancelled')
-                                       
-
-                                    @elseif($req->status == 'Completed')
-                                        
-
-                                    @endif
+                                    <form method="post" action="{{ route('client.requests.update', $req) }}">
+                                    @csrf
+                                        <button class="btn btn-primary btn-sm" type="submit">Choose</button>
+                                    </form>      
                                 </td>
-                                
                             </tr>
-                            @endif
+                            
                              @endforeach
                             
                             </tbody>

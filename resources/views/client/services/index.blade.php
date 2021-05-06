@@ -93,7 +93,9 @@ Dashboard :: Service Booking System
                                 
                                    @if($service->status == 'Pending')
                                         
-
+                                     <a class="btn btn-primary btn-sm" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
+                                      
+    
                                    @elseif($service->status == 'Cancelled')
                                        
 

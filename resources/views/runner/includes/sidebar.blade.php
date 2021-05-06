@@ -69,7 +69,7 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                        <a class="nav-link" href="{{ route('runner.services.index') }}">View Services</a>  
+                        <a class="nav-link" href="{{ route('runner.services.index') }}">View Available Services</a>  
 
                     </nav>
                 </div>
@@ -84,6 +84,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+
+                    <a class="nav-link" href="{{ route('runner.services.index', ['status'=>'Pending']) }}">Submit Request</a>
 
                         <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
                             View Request

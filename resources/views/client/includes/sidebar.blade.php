@@ -93,17 +93,17 @@
                                 </nav>
                             </div>
                             <!-- Sidenav Accordion (Components)-->
-                            <!--
+                            
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
                                 <div class="nav-link-icon"><i data-feather="package"></i></div>
-                                Runner
+                                Request
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseComponents" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="tables.html">Choose Runner</a>
+                                    <a class="nav-link" href="{{ route('client.services.index', ['status'=>'Pending']) }}">Choose Runner</a>
                                 </nav>
-                            </div> -->
+                            </div> 
                             <!-- Sidenav Heading (Addons)-->
                             <div class="sidenav-menu-heading">E-Wallet</div>
                             <!-- Sidenav Link (Charts)-->
