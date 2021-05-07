@@ -37,6 +37,13 @@ class ServiceController extends Controller
         return view('runner.services.show')->with('service', $service);
         //dd($service->all());
     }
+
+    public function showTest(Service $service)
+    {
+        //dd($service->all());
+        return view('runner.services.show-test')->with('service', $service);
+        //dd($service->all());
+    }
     
     
 }

@@ -46,8 +46,8 @@ Dashboard :: Service Booking System
                                     <a class="nav-item nav-link" id="wizard2-tab" href="#wizard2" data-toggle="tab" role="tab" aria-controls="wizard2" aria-selected="true">
                                         <div class="wizard-step-icon">2</div>
                                         <div class="wizard-step-text">
-                                            <div class="wizard-step-text-name">Address Details</div>
-                                            <div class="wizard-step-text-details">Address information</div>
+                                            <div class="wizard-step-text-name">Location Details</div>
+                                            <div class="wizard-step-text-details">Location information</div>
                                         </div>
                                     </a>
                                     <!-- Wizard navigation item 3-->
@@ -95,32 +95,15 @@ Dashboard :: Service Booking System
                                                         @endforeach
                                                     </select>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputUsername">Pape</label>
-                                                        <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" />
-                                                    </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap" />
+                                                            <label class="small mb-1" for="inputBillingName">Date</label>
+                                                            <input class="form-control"  name = "date" id="exampleFormControlInput1" type="date"/>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputLocation">Location</label>
-                                                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                                        <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" />
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6 mb-md-0">
-                                                            <label class="small mb-1" for="inputPhone">Phone number</label>
-                                                            <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567" />
-                                                        </div>
-                                                        <div class="form-group col-md-6 mb-0">
-                                                            <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                                            <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988" />
+                                                            <label class="small mb-1" for="inputBillingCCNumber">Time</label>
+                                                            <input class="form-control"  name = "time" id="exampleFormControlInput1" type="time"/>
                                                         </div>
                                                     </div>
                                                     <hr class="my-4" />
@@ -141,26 +124,26 @@ Dashboard :: Service Booking System
                                                 <form>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">Name on card</label>
-                                                            <input class="form-control" id="inputBillingName" type="text" placeholder="Enter the name as it appears on your card" value="Valerie Luna" />
+                                                            <label class="small mb-1" for="inputBillingName">State</label>
+                                                            <select class="form-control" name= "location_id" id="exampleFormControlSelect1">
+                                                            
+                                                                @foreach($locations as $location)
+
+                                                                <option value="{{ $location->id }}">{{ $location->region }}</option>
+
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingCCNumber">Card number</label>
-                                                            <input class="form-control" id="inputBillingCCNumber" type="text" placeholder="Enter your credit card number" value="4444 3333 2222 1111" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-4 mb-4 mb-md-0">
-                                                            <label class="small mb-1" for="inputOrgName">Card expiry month</label>
-                                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter expiry month" value="06" />
-                                                        </div>
-                                                        <div class="form-group col-md-4 mb-4 mb-md-0">
-                                                            <label class="small mb-1" for="inputLocation">Card expiry year</label>
-                                                            <input class="form-control" id="inputLocation" type="text" placeholder="Enter expiry year" value="2024" />
-                                                        </div>
-                                                        <div class="form-group col-md-4 mb-0">
-                                                            <label class="small mb-1" for="inputLocation">CVV Number</label>
-                                                            <input class="form-control" id="inputLocation" type="password" placeholder="Enter CVV number" value="111" />
+                                                            <label class="small mb-1" for="inputBillingCCNumber">City</label>
+                                                            <select class="form-control" name= "location_id" id="exampleFormControlSelect1">
+                                                            
+                                                                @foreach($locations as $location)
+
+                                                                <option value="{{ $location->id }}">{{ $location->region }}</option>
+
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <hr class="my-4" />

@@ -78,7 +78,7 @@ class ServiceController extends Controller
 
     public function createTest()
     {
-        return view('client.services.create-test')
+        return view('client.services.create-test-2')
             ->with('locations', Location::all())
             ->with('categories', Category::all()); 
     }
