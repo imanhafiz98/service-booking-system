@@ -121,7 +121,27 @@
                                 </nav>
                             </div>
 
-                        </div>
+                            
+
+
+                            <div class="sidenav-menu-heading">Invoice</div>
+                            <!-- Sidenav Accordion (Layout)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i data-feather="layout"></i></div>
+                                Invoice
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseInvoice" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                                    <a class="nav-link" href="tables.html">View Invoice</a>
+                                    
+                                </nav>
+                            </div>
+
+                            </div>
+                            
+
                     </div>
                     <!-- Sidenav Footer-->
                     <div class="sidenav-footer">

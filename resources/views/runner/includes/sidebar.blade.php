@@ -60,14 +60,14 @@
                     </nav>
                 </div>
                 <!-- Sidenav Heading (UI Toolkit)-->
-                <div class="sidenav-menu-heading">Service Management</div>
+                <div class="sidenav-menu-heading">Service</div>
                 <!-- Sidenav Accordion (Layout)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseService" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="nav-link-icon"><i data-feather="layout"></i></div>
                     Service
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
+                <div class="collapse" id="collapseService" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                         <a class="nav-link" href="{{ route('runner.services.index') }}">View Available Services</a>  
 
@@ -75,14 +75,14 @@
                 </div>
 
                  <!-- Sidenav Heading (UI Toolkit)-->
-                 <div class="sidenav-menu-heading">Request Management</div>
+                 <div class="sidenav-menu-heading">Request</div>
                 <!-- Sidenav Accordion (Layout)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseRequest" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="nav-link-icon"><i data-feather="layout"></i></div>
                     Request
                     <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
+                <div class="collapse" id="collapseRequest" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
 
                     <a class="nav-link" href="{{ route('runner.services.index', ['status'=>'Pending']) }}">Submit Request</a>
@@ -104,13 +104,28 @@
                     </nav>
                 </div>
 
-                <!-- Sidenav Heading (Addons)-->
+                <!-- Sidenav Heading (Addons)
                 <div class="sidenav-menu-heading">History</div>
-                <!-- Sidenav Link (Charts)-->
+                <!-- Sidenav Link (Charts)
                 <a class="nav-link" href="dashboard-2.html">
                     <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
                     List of History
-                </a>
+                </a> -->
+
+                <div class="sidenav-menu-heading">Invoice</div>
+                            <!-- Sidenav Accordion (Layout)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i data-feather="layout"></i></div>
+                                Invoice
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseInvoice" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                                    <a class="nav-link" href="tables.html">View Invoice</a>
+                                    
+                                </nav>
+                            </div>
             </div>
         </div>
         <!-- Sidenav Footer-->
