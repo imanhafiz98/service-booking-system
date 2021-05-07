@@ -135,6 +135,7 @@
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
                                     <a class="nav-link" href="tables.html">View Invoice</a>
+                                    <a class="nav-link" href="{{ route('client.invoices.show') }}">Show Invoice</a>
                                     
                                 </nav>
                             </div>

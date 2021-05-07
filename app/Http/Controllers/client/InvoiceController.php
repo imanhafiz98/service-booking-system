@@ -12,8 +12,8 @@ use App\Models\Req;
 
 class InvoiceController extends Controller
 {
-    public function index()
+    public function show()
     {
-        return view('client.invoices.index');
+        return view('client.invoices.show');
     }
 }

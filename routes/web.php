@@ -37,6 +37,8 @@ Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('cli
 Route::get('/client/index-request/{service}', 'Client\RequestController@index')->name('client.requests.index');
 Route::post('/client/index-request/{req}', 'Client\RequestController@update')->name('client.requests.update');
 
+//client/InvoiceController
+Route::get('/client/show-invoice', 'Client\InvoiceController@show')->name('client.invoices.show');
 
 
 //RUNNER

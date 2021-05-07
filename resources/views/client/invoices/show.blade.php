@@ -41,8 +41,8 @@ Dashboard :: Service Booking System
                                             <tr class="small text-uppercase text-muted">
                                                 <th scope="col">Description</th>
                                                 <th class="text-right" scope="col">Hours</th>
-                                                <th class="text-right" scope="col">Rate</th>
-                                                <th class="text-right" scope="col">Amount</th>
+                                                <th class="text-right" scope="col">Date</th>
+                                                <th class="text-right" scope="col">Time</th>
                                             </tr>
                                         </thead>
                                         <tbody>
