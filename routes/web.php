@@ -24,10 +24,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //CLIENT
+
 //client/ServiceController
 Route::get('/client/index-service', 'Client\ServiceController@index')->name('client.services.index');
 Route::get('/client/create-service', 'Client\ServiceController@create')->name('client.services.create'); 
-Route::get('/client/create-test-service', 'Client\ServiceController@createTest')->name('client.services.create-test'); //new form for create service
+Route::get('/client/create-test-service', 'Client\ServiceController@createTest')->name('client.services.create-test'); //new create form for create service
 Route::post('/client/store-service', 'Client\ServiceController@store')->name('client.services.store');
 Route::post('/client/update-service/{service}', 'Client\ServiceController@update')->name('client.services.update');
 Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('client.dashboard'); //dashboard
@@ -38,13 +39,12 @@ Route::post('/client/index-request/{req}', 'Client\RequestController@update')->n
 
 
 
-
-
 //RUNNER
+
 //runner/ServiceController
 Route::get('/runner/index-service', 'Runner\ServiceController@index')->name('runner.services.index');
 Route::get('/runner/show-service/{service}', 'Runner\ServiceController@show')->name('runner.services.show');
-Route::get('/runner/show-test-service/{service}', 'Runner\ServiceController@showTest')->name('runner.services.show-test'); //new show for submit request
+Route::get('/runner/show-test-service/{service}', 'Runner\ServiceController@showTest')->name('runner.services.show-test'); //new show form for submit request
 Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dashboard
 
 //runner/RequestController
