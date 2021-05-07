@@ -21,8 +21,21 @@ class ServiceController extends Controller
     {
         return view('client.services.create')
             ->with('locations', Location::all())
-            ->with('categories', Category::all());
+            ->with('categories', Category::all()); 
+    }
+
+    public function index(Request $request)
+    {
+        $status = $request->status ?? null;
+
+        $services = Service::where(function ($query) use ($status){
+            if($status){
+                $query->where('status', $status);
+                return $query;
+            }
+        })->get();
         
+        return view('client.services.index')->with('services', $services);
     }
 
     public function store(Request $request)
@@ -47,19 +60,6 @@ class ServiceController extends Controller
         return redirect(route('client.dashboard'));
     }
 
-    public function index(Request $request)
-    {
-        $status = $request->status ?? null;
-
-        $services = Service::where(function ($query) use ($status){
-            if($status){
-                $query->where('status', $status);
-                return $query;
-            }
-        })->get();
-        
-        return view('client.services.index')->with('services', $services);
-    }
 
     public function update(Request $request, Service $service)
     {
@@ -73,6 +73,14 @@ class ServiceController extends Controller
         Req::where('id',$service->id)->update(['status' => "Cancelled"]);
         
         return redirect(route('client.dashboard'));
+    }
+
+
+    public function createTest()
+    {
+        return view('client.services.create-test')
+            ->with('locations', Location::all())
+            ->with('categories', Category::all()); 
     }
 
     

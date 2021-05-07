@@ -106,7 +106,7 @@
 
                 <!-- Sidenav Heading (Addons)
                 <div class="sidenav-menu-heading">History</div>
-                <!-- Sidenav Link (Charts)
+                 Sidenav Link (Charts)
                 <a class="nav-link" href="dashboard-2.html">
                     <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
                     List of History

@@ -22,6 +22,8 @@ class RequestController extends Controller
                 return $query;
             }
         })->get();
+
+
         
         return view('runner.requests.index')->with('reqs', $reqs);
     }
@@ -52,16 +54,30 @@ class RequestController extends Controller
 
     public function update(Request $request, Req $req)
     {
-      
+        
         $data = request()->only(['status']);
 
-        $req->status = "Cancelled";
+        if($req->status == "Requested")
+        {
+            $req->status = "Cancelled";
    
-        $req->update($data);
+            $req->update($data);
 
-    
-        Service::where('id',$req->service_id)->update(['status' => "Pending"]);
-        
+            Service::where('id',$req->service_id)->update(['status' => "Pending"]);
+
+        }
+
+
+        if($req->status == "Accepted")
+        {
+            $req->status = "Completed";
+   
+            $req->update($data);
+
+            Service::where('id',$req->service_id)->update(['status' => "Completed"]);
+         
+        }
+
         return redirect(route('runner.dashboard'));
     }
 }
