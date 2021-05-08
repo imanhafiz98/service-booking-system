@@ -83,6 +83,8 @@ Dashboard :: Service Booking System
                                                         
                                                     </div>
 
+                                                    
+
                                                     <h5 class="card-title">Client Details</h5>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">

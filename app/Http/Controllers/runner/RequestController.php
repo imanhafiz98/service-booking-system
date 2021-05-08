@@ -28,6 +28,12 @@ class RequestController extends Controller
         return view('runner.requests.index')->with('reqs', $reqs);
     }
 
+    public function show(Req $req)
+    {
+        
+        return view('runner.requests.show')->with('req', $req);
+    }
+
     public function store(Request $request)
     {
         //dd($request->all());
