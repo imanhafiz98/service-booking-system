@@ -10,6 +10,6 @@ class PasswordController extends Controller
 {
     public function show(User $user)
     {
-        return view('client.passwords.show')->with('user', $user);
+        return view('runner.passwords.show')->with('user', $user);
     }
 }

@@ -30,8 +30,8 @@ Dashboard :: Service Booking System
                     <div class="container mt-4">
                         <!-- Account page navigation-->
                         <nav class="nav nav-borders">
-                            <a class="nav-link" href="{{ route('client.profiles.show', auth()->user()->id) }}">Profile</a>
-                            <a class="nav-link active ml-0" href="{{ route('client.passwords.show', auth()->user()->id) }}">Password</a>
+                            <a class="nav-link" href="{{ route('runner.profiles.show', auth()->user()->id) }}">Profile</a>
+                            <a class="nav-link active ml-0" href="{{ route('runner.passwords.show', auth()->user()->id) }}">Password</a>
                             
                         </nav>
                         <hr class="mt-0 mb-4" />

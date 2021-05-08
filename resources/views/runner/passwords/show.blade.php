@@ -6,12 +6,9 @@ Dashboard :: Service Booking System
 
 @section('content')
 
-
 <html lang="en">
-
-<body>
-
-<main>
+        <body>
+                 <main>
                     <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
                         <div class="container-fluid">
                             <div class="page-header-content">
@@ -68,9 +65,7 @@ Dashboard :: Service Booking System
                         </div>
                     </div>
                 </main>
-       
-</body>
-
+        </body>
 </html>
 
 
