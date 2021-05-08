@@ -55,25 +55,26 @@ Dashboard :: Service Booking System
                                 <div class="card mb-4">
                                     <div class="card-header">Profile Details</div>
                                     <div class="card-body">
-                                        <form>
+                                    <form action="{{ route('client.profiles.update', Auth::user()->id) }}" method="POST">
+                                    @csrf
                                             <!-- Form Group (username)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputUsername">Name</label>
-                                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ $user->name }}" readonly/>
+                                                <input class="form-control" name="name" type="text" value="{{ $user->name }}"/>
                                             </div>
                                             <!-- Form Group (email address)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{ $user->email }}" readonly/>
+                                                <input class="form-control"name="email" type="email" value="{{ $user->email }}" />
                                             </div>
                                             <!-- Form Group (phone)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Phone Number</label>
-                                                <input class="form-control" id="inputPhone" type="text" placeholder="Enter your phone number" value="{{ $user->phone }}" readonly/>
+                                                <input class="form-control" name="phone" type="text" value="{{ $user->phone }}"/>
                                             </div>
 
                                             <!-- Navigate to edit page-->
-                                            <a class="nav-link" href="{{ route('client.profiles.edit', $user->id) }}">Edit</a>
+                                            <button class="btn btn-primary" type="submit">Save Changes</button>
                                         </form>
                                     </div>
                                 </div>

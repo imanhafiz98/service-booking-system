@@ -68,7 +68,7 @@ Dashboard :: Service Booking System
                                             </div>
                                             <!-- Form Group (phone)-->
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                                                <label class="small mb-1" for="inputEmailAddress">Phone Number</label>
                                                 <input class="form-control" id="inputPhone" type="text" placeholder="Enter your phone number" value="{{ $user->phone }}" readonly/>
                                             </div>
 
