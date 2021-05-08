@@ -37,6 +37,9 @@ Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('cli
 Route::get('/client/index-request/{service}', 'Client\RequestController@index')->name('client.requests.index');
 Route::post('/client/index-request/{req}', 'Client\RequestController@update')->name('client.requests.update');
 
+//client/ProfileController
+Route::get('/client/show-profile/{user}', 'Client\ProfileController@show')->name('client.profiles.show');
+
 //client/InvoiceController
 Route::get('/client/show-invoice', 'Client\InvoiceController@show')->name('client.invoices.show');
 
@@ -56,5 +59,8 @@ Route::post('/runner/create-request', 'Runner\RequestController@store')->name('r
 Route::post('/runner/update-request/{req}', 'Runner\RequestController@update')->name('runner.requests.update');
 
 Route::get('/runner/show-request/{req}', 'Runner\RequestController@show')->name('runner.requests.show');
+
+//runner/ProfileController
+Route::get('/runner/show-profile/{user}', 'Client\PasswordController@show')->name('client.passwords.show');
 
 
