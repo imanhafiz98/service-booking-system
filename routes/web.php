@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-
+Route::middleware(['auth', 'can:client-views'])->group(function(){
 //CLIENT
 
 //client/ServiceController
@@ -46,7 +46,11 @@ Route::get('/client/show-password/{user}', 'Client\PasswordController@show')->na
 //client/InvoiceController
 Route::get('/client/show-invoice', 'Client\InvoiceController@show')->name('client.invoices.show');
 
+});
 
+
+
+Route::middleware(['auth', 'can:runner-views'])->group(function(){
 //RUNNER
 
 //runner/ServiceController
@@ -69,4 +73,4 @@ Route::get('/runner/show-profile/{user}', 'Runner\ProfileController@show')->name
 //runner/PasswordController
 Route::get('/runner/show-password/{user}', 'Runner\PasswordController@show')->name('runner.passwords.show');
 
-
+});
