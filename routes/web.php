@@ -40,6 +40,9 @@ Route::post('/client/index-request/{req}', 'Client\RequestController@update')->n
 //client/ProfileController
 Route::get('/client/show-profile/{user}', 'Client\ProfileController@show')->name('client.profiles.show');
 
+//client/ProfileController
+Route::get('/client/show-password/{user}', 'Client\PasswordController@show')->name('client.passwords.show');
+
 //client/InvoiceController
 Route::get('/client/show-invoice', 'Client\InvoiceController@show')->name('client.invoices.show');
 
@@ -61,6 +64,9 @@ Route::post('/runner/update-request/{req}', 'Runner\RequestController@update')->
 Route::get('/runner/show-request/{req}', 'Runner\RequestController@show')->name('runner.requests.show');
 
 //runner/ProfileController
-Route::get('/runner/show-profile/{user}', 'Client\PasswordController@show')->name('client.passwords.show');
+Route::get('/runner/show-profile/{user}', 'Runner\ProfileController@show')->name('runner.profiles.show');
+
+//runner/PasswordController
+Route::get('/runner/show-password/{user}', 'Runner\PasswordController@show')->name('runner.passwords.show');
 
 

@@ -51,9 +51,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAccount" data-parent="#accordionSidenavPagesMenu">
                             <nav class="sidenav-menu-nested nav">
-                                <a class="nav-link" href="dashboard-2.html">Profile</a>
-                                <a class="nav-link" href="dashboard-2.html">Billing</a>
-                                <a class="nav-link" href="dashboard-2.html">Security</a>
+                                <a class="nav-link" href="{{ route('runner.profiles.show', auth()->user()->id) }}">Profile</a>
+                                <a class="nav-link" href="{{ route('runner.passwords.show', auth()->user()->id) }}.html">Password</a>
                             </nav>
                         </div>
                         
