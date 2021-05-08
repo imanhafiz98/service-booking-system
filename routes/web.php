@@ -51,7 +51,7 @@ Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('run
 
 //runner/RequestController
 Route::get('/runner/index-request', 'Runner\RequestController@index')->name('runner.requests.index');
-Route::post('/runner/store-request', 'Runner\RequestController@store')->name('runner.requests.store');
+Route::post('/runner/create-request', 'Runner\RequestController@store')->name('runner.requests.store');
 
 Route::post('/runner/update-request/{req}', 'Runner\RequestController@update')->name('runner.requests.update');
 

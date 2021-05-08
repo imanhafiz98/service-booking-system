@@ -94,7 +94,7 @@ Dashboard :: Service Booking System
                                             <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
                                     </form>
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show') }}">More Details</a>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
 
                                     @elseif($req->status == 'Accepted')
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
@@ -102,17 +102,17 @@ Dashboard :: Service Booking System
                                          <button class="btn btn-primary btn-sm" type="submit">Done</button>
                                     </form>
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show') }}">More Details</a>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
 
                                      @elseif($req->status == 'Cancelled')
 
-                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show') }}">More Details</a>
+                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                        
 
                                     @elseif($req->status == 'Completed')
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.services.show', $req->id) }}">More Details</a>
                                         
 
                                     @endif

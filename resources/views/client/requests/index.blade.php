@@ -75,8 +75,9 @@ Dashboard :: Service Booking System
                                 <td>
                                     <form method="post" action="{{ route('client.requests.update', $req) }}">
                                     @csrf
-                                        <button class="btn btn-primary btn-sm" type="submit">Choose</button>
-                                    </form>      
+                                        <button class="btn btn-primary btn-sm" type="submit">Accept</button>
+                                    </form>
+                                    <button class="btn btn-danger btn-sm" type="submit">Reject</button>      
                                 </td>
                             </tr>
                             

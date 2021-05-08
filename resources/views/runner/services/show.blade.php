@@ -122,7 +122,7 @@ Dashboard :: Service Booking System
                                                     <hr class="my-4" />
                                                     <div class="d-flex justify-content-between">
                                                         
-                                                        <button class="btn btn-primary" type="submit" >Create</button>
+                                                        <button class="btn btn-primary" type="submit" >Submit</button>
                                                     </div>
                                                 </form>
                                             </div>
