@@ -37,12 +37,12 @@ Dashboard :: Service Booking System
                             <thead>
                                 <tr>
                                     <th>Request ID</th>
+                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Price</th>
                                     <th>Notes</th>
-                                    <th>Status</th>
-                                    <th>Client ID</th>
-                                    <th>Service ID</th>
-                                    <th>User ID</th>
+                                    <th>Runner ID</th>
+                                    <th>Runner Name</th>
                                     <th>Action</th>
      
                                 </tr>
@@ -50,12 +50,12 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Request ID</th>
+                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Price</th>
                                     <th>Notes</th>
-                                    <th>Status</th>
-                                    <th>Client ID</th>
-                                    <th>Service ID</th>
-                                    <th>User ID</th>
+                                    <th>Runner ID</th>
+                                    <th>Runner Name</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -66,17 +66,18 @@ Dashboard :: Service Booking System
                             
                             <tr>
                                 <td>{{ $req->id }}</td>
+                                <td>{{ $req->service_id }}</td>
+                                <td>{{ $req->service->name }}</td>
                                 <td>{{ $req->price }}</td>
                                 <td>{{ $req->notes }}</td>
-                                <td><div class="badge badge-warning badge-pill">{{ $req->status }}</div></td>
-                                <td>{{ $req->client_id }}</td>
-                                <td>{{ $req->service_id }}</td>
                                 <td>{{ $req->user_id }}</td>
+                                <td>{{ $req->user->name }}</td>
                                 <td>
                                     <form method="post" action="{{ route('client.requests.update', $req) }}">
                                     @csrf
                                         <button class="btn btn-primary btn-sm" type="submit">Accept</button>
                                     </form>
+                                    
                                     <button class="btn btn-danger btn-sm" type="submit">Reject</button>      
                                 </td>
                             </tr>
