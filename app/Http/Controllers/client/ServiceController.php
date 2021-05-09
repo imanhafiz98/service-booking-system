@@ -23,7 +23,9 @@ class ServiceController extends Controller
     {
         return view('client.services.create')
             ->with('locations', Location::all())
-            ->with('categories', Category::all()); 
+            ->with('categories', Category::all())
+            ->with('cities', City::all())
+            ->with('states', State::all());   
     }
 
     public function index(Request $request)
@@ -56,7 +58,9 @@ class ServiceController extends Controller
             'time' => $request->time,
             'status' => $request->status,
             'category_id' => $request->category_id,
-            'location_id' => $request->location_id
+            'location_id' => $request->location_id,
+            'city_id' => $request->city_id
+
         ]);
 
         return redirect(route('client.dashboard'));

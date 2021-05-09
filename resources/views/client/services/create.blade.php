@@ -72,7 +72,7 @@ Dashboard :: Service Booking System
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">State</label>
+                                                            <label class="small mb-1" for="inputBillingName">Region</label>
                                                             <select class="form-control" name= "location_id" id="exampleFormControlSelect1">
                                                             
                                                                 @foreach($locations as $location)
@@ -82,9 +82,30 @@ Dashboard :: Service Booking System
                                                                 @endforeach
                                                             </select>
                                                         </div>
+                            
+                                                    </div>
+                                                    <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingCCNumber">City</label>
-                                                            <input class="form-control"   id="exampleFormControlInput1" type="text"/>
+                                                            <label class="small mb-1" for="inputBillingName">City</label>
+                                                            <select class="form-control" name= "city_id" id="exampleFormControlSelect1">
+                                                            
+                                                                @foreach($cities as $city)
+
+                                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
+
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label class="small mb-1" for="inputBillingCCNumber">State</label>
+                                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                            
+                                                                @foreach($cities as $city)
+
+                                                                <option value="{{ $city->state->id }}">{{ $city->state->name }}</option>
+
+                                                                @endforeach
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <hr class="my-4" />
