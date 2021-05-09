@@ -55,8 +55,8 @@ Dashboard :: Service Booking System
                                 <div class="card mb-4">
                                     <div class="card-header">Profile Details</div>
                                     <div class="card-body">
-                                    <form action="{{ route('client.profiles.update', Auth::user()->id) }}" method="POST">
-                                    @csrf
+                                    <form action="{{ route('client.profiles.update', Auth::user()->id) }}" method="post">
+                                        @csrf
                                             <!-- Form Group (username)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputUsername">Name</label>

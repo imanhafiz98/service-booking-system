@@ -37,7 +37,7 @@ Dashboard :: Service Booking System
                                     <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                                         <div class="row justify-content-center">
                                             <div class="col-xxl-6 col-xl-8">
-                                                <h3 class="text-primary">Submit Service</h3>
+                                                <h3 class="text-primary">Submit Request</h3>
                                                 <h5 class="card-title"></h5>
                                                 <form method="POST" action="{{ route('runner.requests.store') }}">
                                                 @csrf

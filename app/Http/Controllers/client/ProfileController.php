@@ -4,6 +4,7 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class ProfileController extends Controller
@@ -24,6 +25,7 @@ class ProfileController extends Controller
         $this->validate(request(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'string', 'max:255'],
         ]);
 
         $data = request()->only(['name', 'email', 'phone']);

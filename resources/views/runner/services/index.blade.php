@@ -42,9 +42,7 @@ Dashboard :: Service Booking System
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Location</th>
-                                    <th>Status</th>
-                                    <th>Cient Details</th>
-                                    <th>Client Id</th>
+                                    <th>Status</th>                 
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,8 +56,6 @@ Dashboard :: Service Booking System
                                     <th>Time</th>
                                     <th>Location</th>
                                     <th>Status</th>
-                                    <th>Cient Details</th>
-                                    <th>Client Id</th>
                                     <th>Action</th>                                   
                                 </tr>
                             </tfoot>
@@ -78,11 +74,6 @@ Dashboard :: Service Booking System
                                 <td>
                                     <div class="badge badge-warning badge-pill"> {{ $service->status }}</div>        
                                 </td>
-                                <td>
-                                       
-                                        
-                                </td>
-                                <td>{{ $service->user->id }}</td>
                                 <td>
 
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.services.show', $service->id) }}">Request</a>

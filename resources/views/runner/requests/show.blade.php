@@ -173,6 +173,10 @@ Dashboard :: Service Booking System
                                                         <label class="small mb-1" for="inputUsername">Notes to Client</label>
                                                         <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" value="{{ $req->notes }}" readonly/>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputUsername">Status</label>
+                                                        <input class="form-control" name="status" id="exampleFormControlInput1" type="text" value="{{ $req->status }}" readonly/>
+                                                    </div>
                                                     <hr class="my-4" />
                                                     <div class="d-flex justify-content-between">
                                                         <button class="btn btn-light" type="button">Previous</button>
