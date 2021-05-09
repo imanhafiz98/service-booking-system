@@ -21,7 +21,8 @@ class Service extends Model
         'date',
         'time',
         'location_id',
-        'user_id'
+        'user_id',
+        'city_id'
     ];
 
     public function user()
@@ -33,6 +34,12 @@ class Service extends Model
     {
         return $this->belongsTo(Location::class);
     }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
 
     public function category()
     {

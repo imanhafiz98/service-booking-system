@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Location;
 use App\Models\Category;
 use App\Models\Req;
+use App\Models\State;
+use App\Models\City;
 
 class ServiceController extends Controller
 {

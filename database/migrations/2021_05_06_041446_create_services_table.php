@@ -32,6 +32,9 @@ class CreateServicesTable extends Migration
             $table->unsignedBigInteger('location_id');
             $table->foreign('location_id')->references('id')->on('locations');
 
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities');
+
             $table->timestamps();
         });
     }
