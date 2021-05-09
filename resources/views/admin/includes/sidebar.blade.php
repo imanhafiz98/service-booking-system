@@ -51,7 +51,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseState" data-parent="#accordionSidenavPagesMenu">
                                         <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="tables.html">List of State</a>
+                                            <a class="nav-link" href="{{ route('admin.states.index') }}">List of State</a>
                                             <a class="nav-link" href="{{ route('admin.states.create') }}">Add State</a>
                                         </nav>
                                     </div>
@@ -67,8 +67,8 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseCity" data-parent="#accordionSidenavPagesMenu">
                                         <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="tables.html">List of Cities</a>
-                                            <a class="nav-link" href="tables.html">Add City</a>
+                                            <a class="nav-link" href="{{ route('admin.cities.index') }}">List of Cities</a>
+                                            <a class="nav-link" href="{{ route('admin.cities.create') }}">Add City</a>
                                         </nav>
                                     </div>
                                     

@@ -23,22 +23,30 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //ADMIN
-Route::get('/admin/dashboard', 'Admin\StateController@index')->name('admin.dashboard'); //dashboard
+
+Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
+
 
 //StateController
+Route::get('/admin/state/index', 'Admin\StateController@index')->name('admin.states.index');
 Route::get('/admin/state/create', 'Admin\StateController@create')->name('admin.states.create');
 Route::post('/admin/state/store', 'Admin\StateController@store')->name('admin.states.store');
 
 
+//CityController
+Route::get('/admin/city/index', 'Admin\CityController@index')->name('admin.cities.index');
+Route::get('/admin/city/create', 'Admin\CityController@create')->name('admin.cities.create');
+Route::post('/admin/city/store', 'Admin\CityController@store')->name('admin.cities.store');
 
 
 
 
+
+
+//_______________________________________________CLIENT________________________________________//
 
 Route::middleware(['auth', 'can:client-views'])->group(function(){
 
-
-//CLIENT
 
 //ServiceController
 Route::get('/client/service/index', 'Client\ServiceController@index')->name('client.services.index');
@@ -67,9 +75,11 @@ Route::get('/client/invoice/show', 'Client\InvoiceController@show')->name('clien
 
 
 
+
+//_______________________________________________RUNNERS________________________________________//
+
 Route::middleware(['auth', 'can:runner-views'])->group(function(){
 
-//RUNNER
 
 //ServiceController
 Route::get('/runner/service/index', 'Runner\ServiceController@index')->name('runner.services.index');
