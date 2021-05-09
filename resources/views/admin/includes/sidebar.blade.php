@@ -34,6 +34,41 @@
                                     <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                                 </nav>
                             </div>
+
+                            <!-- Sidenav Heading (App Views)-->
+                            <div class="sidenav-menu-heading">User Management</div>
+                            <!-- Sidenav Accordion (Pages)-->
+                            
+                            <!-- Sidenav Accordion (Flows)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="repeat"></i></div>
+                                User
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('admin.users.index') }}">List of Users</a>
+                                    <a class="nav-link" href="wizard.html">Add User</a>
+                                </nav>
+                            </div>
+
+                            <!-- Sidenav Heading (UI Toolkit)-->
+                            <div class="sidenav-menu-heading">Service Management</div>
+                            <!-- Sidenav Accordion (Layout)-->
+            
+                            <!-- Sidenav Accordion (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i data-feather="tool"></i></div>
+                                Service
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('admin.services.index') }}">List of Services</a>
+                                </nav>
+                            </div>
+
+
                             <!-- Sidenav Heading (App Views)-->
                             <div class="sidenav-menu-heading">Location Management</div>
                             <!-- Sidenav Accordion (Pages)-->
@@ -74,84 +109,24 @@
                                     
                                 </nav>
                             </div>
-                            <div class="sidenav-menu-heading">Service</div>
+                            <div class="sidenav-menu-heading">Category Management</div>
                             <!-- Sidenav Accordion (Layout)-->
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="nav-link-icon"><i data-feather="layout"></i></div>
-                                Service
+                                Category
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                    <a class="nav-link" href="tables.html">
-                                        Create Service
-                                    </a>
-                                    
-                                    <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
-                                        View Service
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="collapseLayoutContainers" data-parent="#accordionSidenavLayout">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="tables.html">Pending</a>
-                                            <a class="nav-link" href="tables.html">Ongoing</a>
-                                            <a class="nav-link" href="tables.html">Cancelled</a>
-                                            <a class="nav-link" href="tables.html">Completed</a>
-                                            <a class="nav-link" href="tables.html">All</a>
-                                        </nav>
-                                    </div>
+                                    <a class="nav-link" href="{{ route('admin.categories.index') }}"> List of Services</a>
 
-                                </nav>
-                            </div>
-                            <!-- Sidenav Accordion (Components)-->
-                            
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
-                                <div class="nav-link-icon"><i data-feather="package"></i></div>
-                                Request
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseComponents" data-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav">
-                                    <a class="nav-link" href="tables.html">Choose Runner</a>
-                                </nav>
-                            </div> 
-
-
-                            <div class="sidenav-menu-heading">E-Wallet</div>
-                            <!-- Sidenav Accordion (Layout)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseWallet" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="nav-link-icon"><i data-feather="layout"></i></div>
-                                E-Wallet
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseWallet" data-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                    <a class="nav-link" href="tables.html">View Wallet</a>
-                                    <a class="nav-link" href="tables.html">Add Wallet</a>
-                                </nav>
-                            </div>
-
-                            
-
-
-                            <div class="sidenav-menu-heading">Invoice</div>
-                            <!-- Sidenav Accordion (Layout)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="nav-link-icon"><i data-feather="layout"></i></div>
-                                Invoice
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseInvoice" data-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                    <a class="nav-link" href="tables.html">View Invoice</a>
-                                    <a class="nav-link" href="tables.html">Show Invoice</a>
+                                    <a class="nav-link" href="{{ route('admin.categories.create') }}">Add Category </a>
                                     
                                 </nav>
                             </div>
+                            
 
                             </div>
                             

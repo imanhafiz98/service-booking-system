@@ -26,6 +26,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
 
+//UserController
+Route::get('/admin/user/index', 'Admin\UserController@index')->name('admin.users.index');
+
+//ServiceController
+Route::get('/admin/service/index', 'Admin\ServiceController@index')->name('admin.services.index');
 
 //StateController
 Route::get('/admin/state/index', 'Admin\StateController@index')->name('admin.states.index');
@@ -38,6 +43,10 @@ Route::get('/admin/city/index', 'Admin\CityController@index')->name('admin.citie
 Route::get('/admin/city/create', 'Admin\CityController@create')->name('admin.cities.create');
 Route::post('/admin/city/store', 'Admin\CityController@store')->name('admin.cities.store');
 
+//CategoryController
+Route::get('/admin/category/index', 'Admin\CategoryController@index')->name('admin.categories.index');
+Route::get('/admin/category/create', 'Admin\CategoryController@create')->name('admin.categories.create');
+Route::post('/admin/category/store', 'Admin\CategoryController@store')->name('admin.categories.store');
 
 
 
