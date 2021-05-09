@@ -15,12 +15,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="nav-fixed">
-        @include('client.includes.navbar')
+        @include('admin.includes.navbar')
         <div id="layoutSidenav">
-            @include('client.includes.sidebar')
+            @include('admin.includes.sidebar')
             <div id="layoutSidenav_content">
                 @yield('content')
-                @include('client.includes.footer')
+                @include('admin.includes.footer')
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

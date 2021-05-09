@@ -22,7 +22,18 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+//ADMIN
+Route::get('/admin/dashboard', 'Admin\StateController@index')->name('admin.dashboard'); //dashboard
+
+
+
+
+
+
+
+
 Route::middleware(['auth', 'can:client-views'])->group(function(){
+
 
 //CLIENT
 
