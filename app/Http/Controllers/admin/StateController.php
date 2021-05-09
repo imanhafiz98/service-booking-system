@@ -14,4 +14,25 @@ class StateController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function create()
+    {
+        return view('admin.states.create');
+    }
+
+    public function store(Request $request)
+    {
+        //dd($request->all());
+
+        $request->validate([
+            'name' => 'required',
+            ]);
+
+        State::create([
+            'name' => $request -> name
+    
+            ]);
+
+        return redirect(route('admin.dashboard'));
+    }
 }

@@ -25,6 +25,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //ADMIN
 Route::get('/admin/dashboard', 'Admin\StateController@index')->name('admin.dashboard'); //dashboard
 
+//StateController
+Route::get('/admin/state/create', 'Admin\StateController@create')->name('admin.states.create');
+Route::post('/admin/state/store', 'Admin\StateController@store')->name('admin.states.store');
 
 
 
