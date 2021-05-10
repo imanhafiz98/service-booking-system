@@ -48,6 +48,12 @@ class LoginController extends Controller
         //     return $this->redirectTo;
         // }
 
+        if(Auth::user()->isAdmin())
+        {
+            $this->redirectTo = route('admin.dashboard');
+            return $this->redirectTo;
+        }
+
         // check if user's role is an client
         if(Auth::user()->isClient())
         {

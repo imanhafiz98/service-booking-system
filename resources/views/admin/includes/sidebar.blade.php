@@ -86,7 +86,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseState" data-parent="#accordionSidenavPagesMenu">
                                         <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="{{ route('admin.states.index') }}">List of State</a>
+                                            <a class="nav-link" href="{{ route('admin.states.index') }}">List of States</a>
                                             <a class="nav-link" href="{{ route('admin.states.create') }}">Add State</a>
                                         </nav>
                                     </div>

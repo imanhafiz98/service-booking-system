@@ -71,9 +71,7 @@
                             <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                    <a class="nav-link" href="{{ route('client.services.create') }}">
-                                        Create Service
-                                    </a>
+                                    <a class="nav-link" href="{{ route('client.services.create') }}">Create Service</a>
                                     
                                     <!-- Nested Sidenav Accordion (Layout -> Container Options)-->
                                     <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
