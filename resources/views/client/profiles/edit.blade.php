@@ -55,7 +55,7 @@ Dashboard :: Service Booking System
                                 <div class="card mb-4">
                                     <div class="card-header">Profile Details</div>
                                     <div class="card-body">
-                                    <form action="{{ route('client.profiles.update', Auth::user()->id) }}" method="post">
+                                    <form action="{{ route('client.profiles.update', Auth::user()->id) }}" method="POST">
                                         @csrf
                                             <!-- Form Group (username)-->
                                             <div class="form-group">
@@ -75,8 +75,8 @@ Dashboard :: Service Booking System
 
                                             <!-- Navigate to edit page-->
                                             <button class="btn btn-primary" type="submit">Save Changes</button>
-                                        </form>
-                                    </div>
+                                    </form>
+                                </div>
                                 </div>
                             </div>
                         </div>

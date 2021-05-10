@@ -42,5 +42,9 @@ class Req extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function invoice(){
+        return $this->hasOne(Invoice::class);
+    }
+
     
 }

@@ -26,7 +26,6 @@ class RequestController extends Controller
         return view('client.requests.index')->with('reqs', Req::where('service_id', $service->id)
             ->where('status', "Requested")
             ->get());
-
     }
 
 

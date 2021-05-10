@@ -64,7 +64,7 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Role</label>
-                                                    <input class="form-control"  name = "role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}" />
+                                                    <input class="form-control"  name = "role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}"/>
                                                 </div>
                                             
                                                 <button class="btn btn-primary" type="submit">Update</button>

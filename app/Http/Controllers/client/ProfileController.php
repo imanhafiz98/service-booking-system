@@ -25,16 +25,10 @@ class ProfileController extends Controller
         $this->validate(request(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'string', 'max:255'],
         ]);
 
-        $data = request()->only(['name', 'email', 'phone']);
 
-        $user->name = $data['name'];
-        $user->email = $data['email'];
-        $user->phone = $data['phone'];
-
-        $user->update($data);
+        $user = $user->update($request->all());
 
         return redirect(route('client.profiles.show'));
     }

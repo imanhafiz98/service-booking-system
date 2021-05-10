@@ -83,7 +83,8 @@ Route::post('/client/profile/{user}/update', 'Client\ProfileController@update')-
 Route::get('/client/password/{user}/show', 'Client\PasswordController@show')->name('client.passwords.show');
 
 //InvoiceController
-Route::get('/client/invoice/show', 'Client\InvoiceController@show')->name('client.invoices.show');
+Route::get('/client/invoice/index', 'Client\InvoiceController@index')->name('client.invoices.index');
+Route::get('/client/invoice/{req}/show', 'Client\InvoiceController@show')->name('client.invoices.show');
 
 });
 
