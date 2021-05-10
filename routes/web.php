@@ -30,6 +30,9 @@ Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.d
 
 //UserController
 Route::get('/admin/user/index', 'Admin\UserController@index')->name('admin.users.index');
+Route::get('/admin/user/{user}/show', 'Admin\UserController@show')->name('admin.users.show');
+Route::get('/admin/user/{user}/edit', 'Admin\UserController@edit')->name('admin.users.edit');
+Route::post('/admin/user/{user}/update', 'Admin\UserController@update')->name('admin.users.update');
 
 //ServiceController
 Route::get('/admin/service/index', 'Admin\ServiceController@index')->name('admin.services.index');
