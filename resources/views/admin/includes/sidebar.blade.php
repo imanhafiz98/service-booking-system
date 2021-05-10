@@ -119,7 +119,7 @@
                             <div class="collapse" id="collapseLayouts" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                                    <a class="nav-link" href="{{ route('admin.categories.index') }}"> List of Services</a>
+                                    <a class="nav-link" href="{{ route('admin.categories.index') }}"> List of Categories</a>
 
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
                                     <a class="nav-link" href="{{ route('admin.categories.create') }}">Add Category </a>
@@ -136,7 +136,7 @@
                     <div class="sidenav-footer">
                         <div class="sidenav-footer-content">
                             <div class="sidenav-footer-subtitle">Logged in as:</div>
-                            <div class="sidenav-footer-title">nanti tambah auth</div>
+                            <div class="sidenav-footer-title">{{ Auth::user()->name }}</div>
                         </div>
                     </div>
                 </nav>

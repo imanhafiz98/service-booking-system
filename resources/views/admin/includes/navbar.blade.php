@@ -3,7 +3,7 @@
             <!-- * * Tip * * You can use text or an image for your navbar brand.-->
             <!-- * * * * * * When using an image, we recommend the SVG format.-->
             <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-            <a class="navbar-brand" href="index.html">Welcome Client</a>
+            <a class="navbar-brand" href="index.html">Welcome {{ Auth::user()->name }}</a>
             <!-- Sidenav Toggle Button-->
             <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle"><i data-feather="menu"></i></button>
             <!-- Navbar Search Input-->
@@ -160,8 +160,8 @@
                         <h6 class="dropdown-header d-flex align-items-center">
                             <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
                             <div class="dropdown-user-details">
-                                <div class="dropdown-user-details-name">nnti letak auth</div>
-                                <div class="dropdown-user-details-email">nnti letak auth</div>
+                                <div class="dropdown-user-details-name">{{ Auth::user()->name }}</div>
+                                <div class="dropdown-user-details-email">{{ Auth::user()->email }}</div>
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>

@@ -22,7 +22,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//ADMIN
+//_______________________________________________ADMIN________________________________________//
+
+Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
 Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
 
@@ -48,7 +50,7 @@ Route::get('/admin/category/index', 'Admin\CategoryController@index')->name('adm
 Route::get('/admin/category/create', 'Admin\CategoryController@create')->name('admin.categories.create');
 Route::post('/admin/category/store', 'Admin\CategoryController@store')->name('admin.categories.store');
 
-
+});
 
 
 
