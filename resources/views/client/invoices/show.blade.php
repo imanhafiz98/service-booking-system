@@ -43,7 +43,7 @@ Dashboard :: Service Booking System
                                                 <th class="text-left" scope="col">Name of Service</th>
                                                 <th class="text-left" scope="col">Category</th>
                                                 <th scope="col">Description</th>
-                                                <th class="text-right" scope="col">Price (RM)</th>
+                                                <th class="text-right" scope="col">Price</th>
                                                 <th class="text-right" scope="col">Date</th>
                                                 <th class="text-right" scope="col">Time</th>
                                             </tr>
@@ -59,25 +59,25 @@ Dashboard :: Service Booking System
                                                     <!-- <div class="small text-muted d-none d-md-block">A professional UI toolkit for designing admin dashboards and web applications</div> -->
                                                 </td>
 
-                                                <td class="text-left font-weight-bold">{{ $req->price }}</td>
+                                                <td class="text-left font-weight-bold">RM{{ $req->price }}</td>
                                                 <td class="text-right font-weight-bold">{{ $req->service->date }}</td>
                                                 <td class="text-right font-weight-bold">{{ $req->service->time }}</td>
                                             </tr>
                                             
-                                            <!-- Invoice subtotal-->
+                                            <!-- Invoice subtotal
                                             <tr>
                                                 <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Subtotal:</div></td>
                                                 <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700">RM{{ $req->price }}</div></td>
                                             </tr>
-                                            <!-- Invoice tax column-->
+                                             Invoice tax column
                                             <tr>
                                                 <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Tax (7%):</div></td>
                                                 <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700">$134.75</div></td>
-                                            </tr>
+                                            </tr> -->
                                             <!-- Invoice total-->
                                             <tr>
                                                 <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Total Amount Due:</div></td>
-                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700 text-green">$2059.75</div></td>
+                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700 text-green">RM{{ $req->price }}</div></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -88,16 +88,16 @@ Dashboard :: Service Booking System
                                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                                         <!-- Invoice - sent to info-->
                                         <div class="small text-muted text-uppercase font-weight-700 mb-2">To</div>
-                                        <div class="h6 mb-1">Company Name</div>
-                                        <div class="small">1234 Company Dr.</div>
-                                        <div class="small">Yorktown, MA 39201</div>
+                                        <div class="h6 mb-1">{{ Auth::user()->name }}</div>
+                                        <div class="small">{{ Auth::user()->email }}</div>
+                                        <div class="small">{{ Auth::user()->phone }}</div>
                                     </div>
                                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                                         <!-- Invoice - sent from info-->
                                         <div class="small text-muted text-uppercase font-weight-700 mb-2">From</div>
-                                        <div class="h6 mb-0">Start Bootstrap</div>
-                                        <div class="small">5678 Company Rd.</div>
-                                        <div class="small">Yorktown, MA 39201</div>
+                                        <div class="h6 mb-0">{{ $req->user->name }}</div>
+                                        <div class="small">{{ $req->user->email }}</div>
+                                        <div class="small">{{ $req->user->phone }}</div>
                                     </div>
                                     <div class="col-lg-6">
                                         <!-- Invoice - additional notes-->
