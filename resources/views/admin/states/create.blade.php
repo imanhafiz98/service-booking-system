@@ -44,7 +44,7 @@ Dashboard :: Service Booking System
                                            
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Name of State</label>
-                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" />
+                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" required/>
                                                 </div>
                                             
                                                 <button class="btn btn-primary" type="submit">Add</button>

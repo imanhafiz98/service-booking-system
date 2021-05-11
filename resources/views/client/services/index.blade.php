@@ -45,7 +45,7 @@ Dashboard :: Service Booking System
                                     <th>Location</th>
                                     <th>Status</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tfoot>
@@ -59,23 +59,23 @@ Dashboard :: Service Booking System
                                     <th>Location</th>
                                     <th>Status</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($services as $service)
-                            @if (auth()->user()->id == $service->user->id)
-                            <tr>
-                                <td>{{ $service->id }}</td>
-                                <td>{{ $service->name }}</td>
-                                <td>{{ $service->category->name }}</td>
-                                <td>{{ $service->description }}</td>
-                                <td>{{ $service->date }}</td>
-                                <td>{{ $service->time }}</td>
-                                <td>{{ $service->location->region }}</td>
-                                <td>
-                                   @if($service->status == 'Pending')
+                                @foreach($services as $service)
+                                @if (auth()->user()->id == $service->user->id)
+                                <tr>
+                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $service->name }}</td>
+                                    <td>{{ $service->category->name }}</td>
+                                    <td>{{ $service->description }}</td>
+                                    <td>{{ $service->date }}</td>
+                                    <td>{{ $service->time }}</td>
+                                    <td>{{ $service->location->region }}</td>
+                                    <td>
+                                        @if($service->status == 'Pending')
                                         <div class="badge badge-warning badge-pill">Pending</div>
 
                                         @elseif($service->status == 'Ongoing')
@@ -87,38 +87,53 @@ Dashboard :: Service Booking System
                                         @elseif($service->status == 'Completed')
                                         <div class="badge badge-success badge-pill">Completed</div>
 
-                                    @endif
-                                </td>
-                                <td>
-                                
-                                   @if($service->status == 'Pending')
-                                        
-                                     <a class="btn btn-primary btn-sm" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
-                                      
-                                     <form method="post" action="{{ route('client.services.update', $service->id) }}">
-                                         @csrf
-                                            <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
-                                     </form>
+                                        @endif
+                                    </td>
+                                    <td>
+
+                                        @if($service->status == 'Pending')
+
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
+
+                                        <form method="post" action="{{ route('client.services.update', $service->id) }}">
+                                            @csrf
+                                            <!-- <button class="btn btn-danger btn-sm" type="submit">Cancel</button> -->
+                                            <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Cancel</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Cancel Service</h5>
+                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">Your request service will be cancel.</div>
+                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
 
 
-                                    @elseif($service->status == 'Ongoing')  
+                                        @elseif($service->status == 'Ongoing')
 
-                                
-    
-                                    @elseif($service->status == 'Cancelled')
-                                       
 
-                                    @elseif($service->status == 'Completed')
-                                        
 
-                                    @endif
-                                   
-                                </td>
-                                
-                            </tr>
-                            @endif
-                             @endforeach
-                            
+                                        @elseif($service->status == 'Cancelled')
+
+
+                                        @elseif($service->status == 'Completed')
+
+
+                                        @endif
+
+                                    </td>
+
+                                </tr>
+                                @endif
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

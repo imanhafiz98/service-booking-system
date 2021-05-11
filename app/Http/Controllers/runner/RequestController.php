@@ -86,6 +86,6 @@ class RequestController extends Controller
          
         }
 
-        return redirect(route('runner.dashboard'));
+        return redirect(route('runner.requests.index'));
     }
 }

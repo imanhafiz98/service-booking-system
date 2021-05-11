@@ -111,11 +111,11 @@ Dashboard :: Service Booking System
                                                     <h5 class="card-title">Please Enter The Details Below</h5>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Price (RM)</label>
-                                                        <input class="form-control" name="price" id="exampleFormControlInput1" type="text" />
+                                                        <input class="form-control" name="price" id="exampleFormControlInput1" type="text" required/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Notes to Client</label>
-                                                        <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" />
+                                                        <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" required/>
                                                     </div>
         
                                                     

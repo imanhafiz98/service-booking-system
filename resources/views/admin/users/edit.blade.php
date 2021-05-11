@@ -44,27 +44,27 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">ID</label>
-                                                    <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $user->id }}" />
+                                                    <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $user->id }}" readonly/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Name</label>
-                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" value="{{ $user->name }}" />
+                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" value="{{ $user->name }}" required/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Email</label>
-                                                    <input class="form-control"  name = "email" id="exampleFormControlInput1" type="email" value="{{ $user->email }}" />
+                                                    <input class="form-control"  name = "email" id="exampleFormControlInput1" type="email" value="{{ $user->email }}" required/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Phone</label>
-                                                    <input class="form-control"  name = "phone" id="exampleFormControlInput1" type="text" value="{{ $user->phone }}" />
+                                                    <input class="form-control"  name = "phone" id="exampleFormControlInput1" type="text" value="{{ $user->phone }}" required/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Role</label>
-                                                    <input class="form-control"  name = "role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}"/>
+                                                    <input class="form-control"  name = "role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}" required readonly/>
                                                 </div>
                                             
                                                 <button class="btn btn-primary" type="submit">Update</button>

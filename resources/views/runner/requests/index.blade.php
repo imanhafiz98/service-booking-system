@@ -94,7 +94,23 @@ Dashboard :: Service Booking System
                                     @if($req->status == 'Requested')
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
                                          @csrf
-                                            <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
+                                            <!-- <button class="btn btn-danger btn-sm" type="submit">Cancel</button> -->
+
+                                            <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Cancel</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Cancel Request Service</h5>
+                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">Your request service will be cancelled.</div>
+                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </form>
 
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
@@ -103,7 +119,23 @@ Dashboard :: Service Booking System
                                     @elseif($req->status == 'Accepted')
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
                                          @csrf
-                                         <button class="btn btn-primary btn-sm" type="submit">Done</button>
+                                         <!-- <button class="btn btn-primary btn-sm" type="submit">Done</button> -->
+
+                                         <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Done</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Done Service</h5>
+                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">Your service has been done.</div>
+                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </form>
 
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>

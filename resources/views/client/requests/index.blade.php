@@ -75,7 +75,22 @@ Dashboard :: Service Booking System
                                 <td>
                                     <form method="post" action="{{ route('client.requests.update', $req) }}">
                                     @csrf
-                                        <button class="btn btn-primary btn-sm" type="submit">Accept</button>
+                                        <!-- <button class="btn btn-primary btn-sm" type="submit">Accept</button> -->
+                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Accept</button>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Accept Runner</h5>
+                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">Once you accept the runner, you cannot cancel service or change runner.</div>
+                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </form>
                                     
                                     <button class="btn btn-danger btn-sm" type="submit">Reject</button>      

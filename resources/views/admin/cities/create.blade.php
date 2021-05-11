@@ -44,8 +44,8 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="state">Choose a State</label>
-                                                    <select name="state_id" id="state" class="form-control">
-                                                        <option value="">--Select City--</option>
+                                                    <select name="state_id" id="state" class="form-control" required>
+                                                        <option value="">--Select State--</option>
                                                             @foreach ($states as $state)
                                                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
                                                             @endforeach
@@ -54,7 +54,7 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Name of City</label>
-                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" />
+                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" required/>
                                                 </div>
                                             
                                                 <button class="btn btn-primary" type="submit">Add</button>
