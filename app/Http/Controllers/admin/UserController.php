@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -34,6 +35,34 @@ class UserController extends Controller
         $user->role = $data['role'];
 
         $user->update($data);
+
+        return redirect(route('admin.users.index'));
+    }
+
+    public function create()
+    {
+        return view('admin.users.create');
+    }
+
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required']
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'role' => $request->role
+        ]);
+
 
         return redirect(route('admin.users.index'));
     }

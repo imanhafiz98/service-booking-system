@@ -48,7 +48,7 @@
                             <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('admin.users.index') }}">List of Users</a>
-                                    <a class="nav-link" href="wizard.html">Add User</a>
+                                    <a class="nav-link" href="{{ route('admin.users.create') }}">Add User</a>
                                 </nav>
                             </div>
 

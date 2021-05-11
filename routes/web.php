@@ -26,10 +26,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
+
 Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
 
 //UserController
 Route::get('/admin/user/index', 'Admin\UserController@index')->name('admin.users.index');
+Route::get('/admin/user/create', 'Admin\UserController@create')->name('admin.users.create'); 
+Route::post('/admin/user/store', 'Admin\UserController@store')->name('admin.users.store'); 
 Route::get('/admin/user/{user}/show', 'Admin\UserController@show')->name('admin.users.show');
 Route::get('/admin/user/{user}/edit', 'Admin\UserController@edit')->name('admin.users.edit');
 Route::post('/admin/user/{user}/update', 'Admin\UserController@update')->name('admin.users.update');
@@ -45,7 +48,6 @@ Route::get('/admin/request/{req}/show', 'Admin\RequestController@show')->name('a
 Route::get('/admin/state/index', 'Admin\StateController@index')->name('admin.states.index');
 Route::get('/admin/state/create', 'Admin\StateController@create')->name('admin.states.create');
 Route::post('/admin/state/store', 'Admin\StateController@store')->name('admin.states.store');
-
 
 //CityController
 Route::get('/admin/city/index', 'Admin\CityController@index')->name('admin.cities.index');
@@ -108,11 +110,9 @@ Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('run
 
 //RequestController
 Route::get('/runner/request/index', 'Runner\RequestController@index')->name('runner.requests.index');
-Route::post('/runner/request/create', 'Runner\RequestController@store')->name('runner.requests.store');
-
-Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->name('runner.requests.update');
-
 Route::get('/runner/request/{req}/show', 'Runner\RequestController@show')->name('runner.requests.show');
+Route::post('/runner/request/create', 'Runner\RequestController@store')->name('runner.requests.store');
+Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->name('runner.requests.update');
 
 //ProfileController
 Route::get('/runner/profile/{user}/show', 'Runner\ProfileController@show')->name('runner.profiles.show');
