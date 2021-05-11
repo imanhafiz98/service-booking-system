@@ -25,8 +25,6 @@ class RequestController extends Controller
             }
         })->get();
 
-
-        
         return view('runner.requests.index')->with('reqs', $reqs);
     }
 

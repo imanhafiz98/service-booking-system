@@ -57,14 +57,29 @@
                             <!-- Sidenav Accordion (Layout)-->
             
                             <!-- Sidenav Accordion (Utilities)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseServices" aria-expanded="false" aria-controls="collapseUtilities">
                                 <div class="nav-link-icon"><i data-feather="tool"></i></div>
                                 Service
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseUtilities" data-parent="#accordionSidenav">
+                            <div class="collapse" id="collapseServices" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('admin.services.index') }}">List of Services</a>
+                                </nav>
+                            </div>
+
+                            <div class="sidenav-menu-heading">Request Management</div>
+                            <!-- Sidenav Accordion (Layout)-->
+            
+                            <!-- Sidenav Accordion (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseRequests" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i data-feather="tool"></i></div>
+                                Request
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseRequests" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('admin.requests.index') }}">List of Requests</a>
                                 </nav>
                             </div>
 
