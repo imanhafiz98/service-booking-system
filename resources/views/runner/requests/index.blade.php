@@ -37,12 +37,13 @@ Dashboard :: Service Booking System
                             <thead>
                                 <tr>
                                     <th>Request ID</th>
+                                    <th>Name of Service</th>
                                     <th>Price (RM)</th>
                                     <th>Notes</th>
                                     <th>Status</th>
-                                    <th>Client ID</th>
+                                    <!-- <th>Client ID</th>
                                     <th>Service ID</th>
-                                    <th>User ID</th>
+                                    <th>User ID</th> -->
                                     <th>Action</th>
      
                                 </tr>
@@ -50,12 +51,13 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Request ID</th>
+                                    <th>Name of Service</th>
                                     <th>Price (RM)</th>
                                     <th>Notes</th>
                                     <th>Status</th>
-                                    <th>Client ID</th>
+                                    <!-- <th>Client ID</th>
                                     <th>Service ID</th>
-                                    <th>User ID</th>
+                                    <th>User ID</th> -->
                                     <th>Action</th>
 
                                 </tr>
@@ -66,6 +68,7 @@ Dashboard :: Service Booking System
                             @if (auth()->user()->id == $req->user_id)
                             <tr>
                                 <td>{{ $req->id }}</td>
+                                <td>{{ $req->service->name }}</td>
                                 <td>{{ $req->price }}</td>
                                 <td>{{ $req->notes }}</td>
                                 <td>
@@ -83,18 +86,19 @@ Dashboard :: Service Booking System
 
                                   @endif
                                 </td>
-                                <td>{{ $req->client_id }}</td>
+                                <!-- <td>{{ $req->client_id }}</td>
                                 <td>{{ $req->service_id }}</td>
-                                <td>{{ $req->user_id }}</td>
+                                <td>{{ $req->user_id }}</td> -->
                                 <td>
 
-                                    @if($req->status == 'Requested')     
+                                    @if($req->status == 'Requested')
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
                                          @csrf
                                             <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
                                     </form>
 
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    
 
                                     @elseif($req->status == 'Accepted')
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
@@ -112,7 +116,7 @@ Dashboard :: Service Booking System
 
                                     @elseif($req->status == 'Completed')
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.services.show', $req->id) }}">More Details</a>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                         
 
                                     @endif

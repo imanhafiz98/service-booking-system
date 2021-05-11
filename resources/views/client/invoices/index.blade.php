@@ -19,7 +19,7 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Services
+                                Generate Invoice
                             </h1>
                             <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
                         </div>

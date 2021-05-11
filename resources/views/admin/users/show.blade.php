@@ -68,7 +68,7 @@ Dashboard :: Service Booking System
                                             
                                                 <div class="form-group">
                                                      <a href="{{ route('admin.users.edit', $user->id) }}" type="submit" class="btn btn-primary">Edit</a>
-                                                    <a href="" class="btn btn-primary">Back</a>
+                                                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary">Back</a>
                                                 </div>
 
                                              </form>

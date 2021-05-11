@@ -65,7 +65,7 @@ Dashboard :: Service Booking System
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->role }}</td>
                                 <td>
-                                <a class="btn btn-primary btn-sm" href="{{ route('admin.users.show', $user->id) }}">Show</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('admin.users.show', $user->id) }}">View</a>
                                 </td>
                             </tr>
                             
