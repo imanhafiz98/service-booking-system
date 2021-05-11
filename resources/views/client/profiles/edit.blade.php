@@ -59,18 +59,26 @@ Dashboard :: Service Booking System
                                         @csrf
                                             <!-- Form Group (username)-->
                                             <div class="form-group">
+                                                <label class="small mb-1" for="inputUsername">ID</label>
+                                                <input class="form-control" name="id" type="text" value="{{ $user->id }}" required/>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="small mb-1" for="inputUsername">Name</label>
-                                                <input class="form-control" name="name" type="text" value="{{ $user->name }}"/>
+                                                <input class="form-control" name="name" type="text" value="{{ $user->name }}" required/>
                                             </div>
                                             <!-- Form Group (email address)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                                <input class="form-control"name="email" type="email" value="{{ $user->email }}" />
+                                                <input class="form-control"name="email" type="email" value="{{ $user->email }}" required/>
                                             </div>
                                             <!-- Form Group (phone)-->
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputEmailAddress">Phone Number</label>
-                                                <input class="form-control" name="phone" type="text" value="{{ $user->phone }}"/>
+                                                <input class="form-control" name="phone" type="text" value="{{ $user->phone }}" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputUsername">Role</label>
+                                                <input class="form-control" name="role" type="text" value="{{ $user->role }}" required/>
                                             </div>
 
                                             <!-- Navigate to edit page-->
