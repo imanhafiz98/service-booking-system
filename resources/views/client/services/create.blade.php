@@ -73,20 +73,6 @@ Dashboard :: Service Booking System
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">Region</label>
-                                                            <select class="form-control" name= "location_id" id="exampleFormControlSelect1" required>
-                                                            <option value="">--Select Region--</option>
-                                                                @foreach($locations as $location)
-
-                                                                <option value="{{ $location->id }}">{{ $location->region }}</option>
-
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                            
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">City</label>
                                                             <select class="form-control" name= "city_id" id="exampleFormControlSelect1" required>
                                                             <option value="">--Select City--</option>

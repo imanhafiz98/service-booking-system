@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\User;
-use App\Models\Location;
 use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
@@ -22,7 +21,6 @@ class ServiceController extends Controller
     public function create()
     {
         return view('client.services.create')
-            ->with('locations', Location::all())
             ->with('categories', Category::all())
             ->with('cities', City::all())
             ->with('states', State::all());   
@@ -58,7 +56,6 @@ class ServiceController extends Controller
             'time' => $request->time,
             'status' => $request->status,
             'category_id' => $request->category_id,
-            'location_id' => $request->location_id,
             'city_id' => $request->city_id
 
         ]);
@@ -85,7 +82,6 @@ class ServiceController extends Controller
     public function createTest()
     {
         return view('client.services.create-test-2')
-            ->with('locations', Location::all())
             ->with('categories', Category::all()); 
     }
 

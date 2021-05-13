@@ -107,13 +107,6 @@ Dashboard :: Service Booking System
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">State</label>
-                                                            <input class="form-control" name="region" id="exampleFormControlInput1" type="text" value="{{ $req->service->location->region }}" readonly />
-                                                            </select>
-                                                        </div>
-                                                    </div>
                                                     <hr class="my-4" />
                                                     <div class="d-flex justify-content-between">
                                                         <button class="btn btn-light" type="button">Previous</button>

@@ -41,8 +41,7 @@ Dashboard :: Service Booking System
                                     <th>Category</th>
                                     <th>Description</th>
                                     <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Location</th>
+                                    <th>Time</th> 
                                     <th>Status</th>
                                     <th>Action</th>
 
@@ -56,7 +55,6 @@ Dashboard :: Service Booking System
                                     <th>Description</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Location</th>
                                     <th>Status</th>
                                     <th>Action</th>
 
@@ -73,7 +71,6 @@ Dashboard :: Service Booking System
                                     <td>{{ $service->description }}</td>
                                     <td>{{ $service->date }}</td>
                                     <td>{{ $service->time }}</td>
-                                    <td>{{ $service->location->region }}</td>
                                     <td>
                                         @if($service->status == 'Pending')
                                         <div class="badge badge-warning badge-pill">Pending</div>

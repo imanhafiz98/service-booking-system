@@ -20,7 +20,6 @@ class Service extends Model
         'description',
         'date',
         'time',
-        'location_id',
         'user_id',
         'city_id'
     ];
@@ -30,10 +29,6 @@ class Service extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function location()
-    {
-        return $this->belongsTo(Location::class);
-    }
 
     public function city()
     {
