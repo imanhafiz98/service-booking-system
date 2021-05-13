@@ -40,6 +40,8 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Category</th>
                                     <th>Description</th>
+                                    <th>State</th>
+                                    <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th> 
                                     <th>Status</th>
@@ -53,6 +55,8 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Category</th>
                                     <th>Description</th>
+                                    <th>State</th>
+                                    <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
@@ -69,6 +73,8 @@ Dashboard :: Service Booking System
                                     <td>{{ $service->name }}</td>
                                     <td>{{ $service->category->name }}</td>
                                     <td>{{ $service->description }}</td>
+                                    <td>{{ $service->city->state->name }}</td>
+                                    <td>{{ $service->city->name }}</td>
                                     <td>{{ $service->date }}</td>
                                     <td>{{ $service->time }}</td>
                                     <td>

@@ -39,9 +39,10 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Category</th>
                                     <th>Description</th>
+                                    <th>State</th>
+                                    <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Location</th>
                                     <th>Status</th>                 
                                     <th>Action</th>
                                 </tr>
@@ -52,9 +53,10 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Category</th>
                                     <th>Description</th>
+                                    <th>State</th>
+                                    <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Location</th>
                                     <th>Status</th>
                                     <th>Action</th>                                   
                                 </tr>
@@ -68,9 +70,10 @@ Dashboard :: Service Booking System
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->category->name }}</td>
                                 <td>{{ $service->description }}</td>
+                                <td>{{ $service->city->state->name }}</td>
+                                <td>{{ $service->city->name }}</td>
                                 <td>{{ $service->date }}</td>
                                 <td>{{ $service->time }}</td>
-                                <td>{{ $service->location->region }}</td>
                                 <td>
                                     <div class="badge badge-warning badge-pill"> {{ $service->status }}</div>        
                                 </td>

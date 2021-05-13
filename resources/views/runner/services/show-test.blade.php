@@ -74,15 +74,6 @@ Dashboard :: Service Booking System
                                                         </div>
                                                     </div>
 
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">State</label>
-                                                            <input class="form-control" name="region" id="exampleFormControlInput1" type="text" value="{{ $service->location->region }}" disabled />
-                                                            </select>
-                                                        </div>
-                                                        
-                                                    </div>
-
                                                     <h5 class="card-title">Client Details</h5>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">

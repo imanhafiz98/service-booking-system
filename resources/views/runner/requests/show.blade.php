@@ -97,6 +97,18 @@ Dashboard :: Service Booking System
 
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
+                                                            <label class="small mb-1" for="inputBillingName">State</label>
+                                                            <input class="form-control" name="state" id="exampleFormControlInput1" type="text" value="{{ $req->service->city->state->name }}" disabled />
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label class="small mb-1" for="inputBillingCCNumber">City</label>
+                                                            <input class="form-control" name="city" id="exampleFormControlInput1" type="text" value="{{ $req->service->city->name }}" disabled />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">Date</label>
                                                             <input class="form-control" name="date" id="exampleFormControlInput1" type="date"  value="{{ $req->service->date }}"readonly />
                                                             </select>
