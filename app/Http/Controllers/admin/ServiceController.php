@@ -18,6 +18,42 @@ class ServiceController extends Controller
         return view('admin.services.index')->with('services', Service::all());
     }
 
+    public function create()
+    {
+        return view('admin.services.create')
+            ->with('users', User::all())
+            ->with('categories', Category::all())
+            ->with('cities', City::all())
+            ->with('states', State::all());   
+    }
+
+    public function store(Request $request)
+    {
+         //dd($request->all());
+            $this->validate(request(), [
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:255'],
+            'date' => ['required'],
+            'time' => ['required'],
+            'user_id' => ['required'],
+            'category_id' => ['required'],
+            'city_id' => ['required'],
+        ]);
+
+        $service = Service::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'date' => $request->date,
+            'time' => $request->time,
+            'status' => $request->status,
+            'user_id' => $request->user_id,
+            'category_id' => $request->category_id,
+            'city_id' => $request->city_id
+        ]);
+
+        return redirect(route('admin.services.index'));
+    }
+
     public function show(Service $service)
     {
         return view('admin.services.show')->with('service', $service);

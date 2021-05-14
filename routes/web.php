@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//_______________________________________________ADMIN________________________________________//
+//_________________________________________________________ADMIN_________________________________________________________//
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
@@ -39,9 +39,11 @@ Route::post('/admin/user/{user}/update', 'Admin\UserController@update')->name('a
 
 //ServiceController
 Route::get('/admin/service/index', 'Admin\ServiceController@index')->name('admin.services.index');
+Route::get('/admin/service/create', 'Admin\ServiceController@create')->name('admin.services.create');
+Route::post('/admin/service/store', 'Admin\ServiceController@store')->name('admin.services.store');
 Route::get('/admin/service/{service}/show', 'Admin\ServiceController@show')->name('admin.services.show');
 Route::get('/admin/service/{service}/edit', 'Admin\ServiceController@edit')->name('admin.services.edit');
-Route::post('/admin/service/{service}/update', 'Admin\ServiceController@update')->name('admin.services.update'); 
+Route::post('/admin/service/{service}/update', 'Admin\ServiceController@update')->name('admin.services.update');
 
 
 //RequestController
@@ -69,7 +71,7 @@ Route::post('/admin/category/store', 'Admin\CategoryController@store')->name('ad
 
 
 
-//_______________________________________________CLIENT________________________________________//
+//_________________________________________________________CLIENT_________________________________________________________//
 
 Route::middleware(['auth', 'can:client-views'])->group(function(){
 
@@ -103,7 +105,7 @@ Route::get('/client/invoice/{req}/show', 'Client\InvoiceController@show')->name(
 
 
 
-//_______________________________________________RUNNERS________________________________________//
+//_________________________________________________________RUNNER_________________________________________________________//
 
 Route::middleware(['auth', 'can:runner-views'])->group(function(){
 
