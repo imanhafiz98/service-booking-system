@@ -60,7 +60,7 @@ class ServiceController extends Controller
 
         ]);
 
-        return redirect(route('client.dashboard'));
+        return redirect(route('client.services.index'));
     }
 
 

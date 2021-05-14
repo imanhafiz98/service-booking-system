@@ -84,8 +84,6 @@
                 <div class="collapse" id="collapseRequest" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
 
-                    <a class="nav-link" href="{{ route('runner.services.index', ['status'=>'Pending']) }}">Submit Request</a>
-
                         <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayoutContainers" aria-expanded="false" aria-controls="collapseLayoutContainers">
                             View Request
                             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
