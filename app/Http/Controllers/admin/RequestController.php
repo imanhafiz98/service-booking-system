@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Service;
-use App\Models\Location;
 use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
@@ -33,4 +32,30 @@ class RequestController extends Controller
     {
         return view('admin.requests.show')->with('req', $req);
     }
+
+    public function edit(Req $req)
+    {
+        return view('admin.requests.edit')
+            ->with('req', $req);
+
+    }
+
+    public function update(Request $request, Req $req)
+    {
+        //dd($request->all());
+        $data = request()->only(['price', 'notes', 'status', 'client_id', 'service_id', 'user_id']);
+
+        $req->price = $data['price'];
+        $req->notes = $data['notes'];
+        $req->status = $data['status'];
+        $req->client_id = $data['client_id'];
+        $req->service_id = $data['service_id'];
+        $req->user_id = $data['user_id'];
+        
+        $req->update($data);
+
+        return redirect(route('admin.requests.index'));
+    }
+
+    
 }

@@ -19,7 +19,7 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="edit-3"></i></div>
-                                Show Service
+                                Edit Service
                             </h1>
                             <div class="page-header-subtitle">Dynamic form components to give your users informative and intuitive inputs</div>
                         </div>
@@ -44,7 +44,7 @@ Dashboard :: Service Booking System
 
 
                                             <div class="form-group">
-                                                <label for="exampleFormControlInput1">ID</label>
+                                                <label for="exampleFormControlInput1">Service ID</label>
                                                 <input class="form-control" name="id" id="exampleFormControlInput1" type="text" value="{{ $service->id }}" readonly />
                                             </div>
 

@@ -20,7 +20,7 @@ Dashboard :: Service Booking System
                             <div class="col-auto mt-4">
                                 <h1 class="page-header-title">
                                     <div class="page-header-icon"><i data-feather="edit-3"></i></div>
-                                    Show Request
+                                    Edit Request
                                 </h1>
                                 <div class="page-header-subtitle">Dynamic form components to give your users informative and intuitive inputs</div>
                             </div>
@@ -40,26 +40,33 @@ Dashboard :: Service Booking System
                                     <!-- Component Preview-->
                                     <div class="sbp-preview">
                                         <div class="sbp-preview-content">
-                                            <form>
+                                            <form action="{{ route('admin.requests.update', $req) }}" method="post">
+                                            @csrf
 
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlInput1">ID</label>
+                                                    <label for="exampleFormControlInput1">Request ID</label>
                                                     <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $req->id }}" readonly/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Price</label>
-                                                    <input class="form-control"  name = "price" id="exampleFormControlInput1" type="text" value="{{ $req->price }}" readonly/>
+                                                    <input class="form-control"  name = "price" id="exampleFormControlInput1" type="text" value="{{ $req->price }}" required/>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Notes</label>
-                                                    <input class="form-control"  name = "notes" id="exampleFormControlInput1" type="text" value="{{ $req->notes }}" readonly/>
+                                                    <input class="form-control"  name = "notes" id="exampleFormControlInput1" type="text" value="{{ $req->notes }}" required/>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Status</label>
-                                                    <input class="form-control"  name = "description" id="exampleFormControlInput1" type="text" value="{{ $req->status }}" readonly/>
+                                                    <label class="small mb-1" for="inputBillingName">Status</label>
+                                                        <select class="form-control" name="status" id="exampleFormControlSelect1" required>
+                                                            <option value="{{ $req->status }}">{{ $req->status }}</option>
+                                                            <option value="Requested">Requested</option>
+                                                            <option value="Accepted">Accepted</option>
+                                                            <option value="Cancelled">Cancelled</option>
+                                                            <option value="Completed">Completed</option>
+                                                        </select>
                                                 </div>
 
                                                 <div class="form-group">
@@ -78,8 +85,7 @@ Dashboard :: Service Booking System
                                                 </div>
 
                                                 <div class="form-group">
-                                                     <a href="{{ route('admin.requests.edit', $req->id) }}" type="submit" class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.requests.index') }}" class="btn btn-primary">Back</a>
+                                                    <button class="btn btn-primary" type="submit">Update</button>
                                                 </div>
 
                                              </form>

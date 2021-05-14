@@ -47,6 +47,8 @@ Route::post('/admin/service/{service}/update', 'Admin\ServiceController@update')
 //RequestController
 Route::get('/admin/request/index', 'Admin\RequestController@index')->name('admin.requests.index');
 Route::get('/admin/request/{req}/show', 'Admin\RequestController@show')->name('admin.requests.show');
+Route::get('/admin/request/{req}/edit', 'Admin\RequestController@edit')->name('admin.requests.edit');
+Route::post('/admin/request/{req}/update', 'Admin\RequestController@update')->name('admin.requests.update'); 
 
 //StateController
 Route::get('/admin/state/index', 'Admin\StateController@index')->name('admin.states.index');
