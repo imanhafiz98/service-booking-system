@@ -98,7 +98,9 @@ Dashboard :: Service Booking System
                                                     <option value="">--Select Client--</option>
                                                     @foreach($users as $user)
 
-                                                    <option value="{{ $user->id }}">ID.{{ $user->name }} | Name.{{ $user->name }}</option>
+                                                    @if($user->role == "client")
+                                                        <option value="{{ $user->id }}">ID.{{ $user->id }} | Name.{{ $user->name }}</option>
+                                                    @endif
 
                                                     @endforeach
                                                 </select>
