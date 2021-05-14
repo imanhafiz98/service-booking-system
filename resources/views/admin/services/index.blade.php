@@ -85,7 +85,7 @@ Dashboard :: Service Booking System
                                     @endif
                                 </td>
                                 <td>
-                                    
+                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.services.show', $service->id) }}">View</a>
                                 </td>
                             </tr>
                             

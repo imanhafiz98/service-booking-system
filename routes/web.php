@@ -39,6 +39,10 @@ Route::post('/admin/user/{user}/update', 'Admin\UserController@update')->name('a
 
 //ServiceController
 Route::get('/admin/service/index', 'Admin\ServiceController@index')->name('admin.services.index');
+Route::get('/admin/service/{service}/show', 'Admin\ServiceController@show')->name('admin.services.show');
+Route::get('/admin/service/{service}/edit', 'Admin\ServiceController@edit')->name('admin.services.edit');
+Route::post('/admin/service/{service}/update', 'Admin\ServiceController@update')->name('admin.services.update'); 
+
 
 //RequestController
 Route::get('/admin/request/index', 'Admin\RequestController@index')->name('admin.requests.index');
