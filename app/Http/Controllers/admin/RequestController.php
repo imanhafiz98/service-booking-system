@@ -33,6 +33,38 @@ class RequestController extends Controller
         return view('admin.requests.show')->with('req', $req);
     }
 
+    public function create()
+    {
+        return view('admin.requests.create')
+            ->with('users', User::all())
+            ->with('services', Service::all())
+            ->with('reqs', Req::all());
+
+    }
+
+    public function store(Request $request)
+    {
+         //dd($request->all());
+            $this->validate(request(), [
+            'price' => ['required', 'string', 'max:255'],
+            'notes' => ['required', 'string', 'max:255'],
+            'client_id' => ['required'],
+            'service_id' => ['required'],
+            'user_id' => ['required']
+        ]);
+
+        $req = Req::create([
+            'price' => $request->price,
+            'notes' => $request->notes,
+            'status' => $request->status,
+            'client_id' => $request->client_id,
+            'service_id' => $request->service_id,
+            'user_id' => $request->user_id
+        ]);
+
+        return redirect(route('admin.requests.index'));
+    }
+
     public function edit(Req $req)
     {
         return view('admin.requests.edit')

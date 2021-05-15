@@ -42,12 +42,6 @@ Dashboard :: Service Booking System
                                         <form action="{{ route('admin.services.store') }}" method="POST">
                                             @csrf
 
-
-                                            <div class="form-group">
-                                                <label for="exampleFormControlInput1">Service ID</label>
-                                                <input class="form-control" name="id" id="exampleFormControlInput1" type="text" value="" required />
-                                            </div>
-
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1">Name</label>
                                                 <input class="form-control" name="name" id="exampleFormControlInput1" type="text" value="" required />

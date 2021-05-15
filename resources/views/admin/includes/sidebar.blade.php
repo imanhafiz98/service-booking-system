@@ -81,6 +81,7 @@
                             <div class="collapse" id="collapseRequests" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('admin.requests.index') }}">List of Requests</a>
+                                    <a class="nav-link" href="{{ route('admin.requests.create') }}">Add Request</a>
                                 </nav>
                             </div>
 
