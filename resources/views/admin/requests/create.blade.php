@@ -20,7 +20,7 @@ Dashboard :: Service Booking System
                             <div class="col-auto mt-4">
                                 <h1 class="page-header-title">
                                     <div class="page-header-icon"><i data-feather="edit-3"></i></div>
-                                    Show Request
+                                    Add Request
                                 </h1>
                                 <div class="page-header-subtitle">Dynamic form components to give your users informative and intuitive inputs</div>
                             </div>

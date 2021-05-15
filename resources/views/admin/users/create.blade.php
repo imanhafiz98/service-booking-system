@@ -58,7 +58,7 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                     <label class="small mb-1" for="role">Role</label>
-                                                        <select name="role" id="role" class="form-control">
+                                                        <select name="role" id="role" class="form-control" required>
                                                             <option value="">-- Select Role --</option>
                                                             <option value="admin">Admin</option>
                                                             <option value="admin">Client</option>
