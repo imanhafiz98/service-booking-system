@@ -32,9 +32,8 @@ class Req extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function location()
-    {
-        return $this->belongsTo(Location::class);
+    public function addresses(){
+        return $this->hasMany(Address::class);
     }
 
     public function category()
@@ -45,6 +44,8 @@ class Req extends Model
     public function invoice(){
         return $this->hasOne(Invoice::class);
     }
+
+
 
     
 }

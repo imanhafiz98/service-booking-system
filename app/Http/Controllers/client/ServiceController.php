@@ -79,10 +79,10 @@ class ServiceController extends Controller
     }
 
 
-    public function createTest()
+    public function createAddress()
     {
-        return view('client.services.create-test-2')
-            ->with('categories', Category::all()); 
+        return view('client.services.create-address')
+            ->with('cities', City::all()); 
     }
 
     

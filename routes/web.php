@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+
 //_________________________________________________________ADMIN_________________________________________________________//
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
@@ -80,11 +81,13 @@ Route::middleware(['auth', 'can:client-views'])->group(function(){
 
 //ServiceController
 Route::get('/client/service/index', 'Client\ServiceController@index')->name('client.services.index');
-Route::get('/client/service/create', 'Client\ServiceController@create')->name('client.services.create'); 
-Route::get('/client/create-test-service', 'Client\ServiceController@createTest')->name('client.services.create-test'); //new create form for create service
+Route::get('/client/service/create', 'Client\ServiceController@create')->name('client.services.create');  
 Route::post('/client/service/store', 'Client\ServiceController@store')->name('client.services.store');
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
 Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('client.dashboard'); //dashboard
+
+//AddressController
+Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
 
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
