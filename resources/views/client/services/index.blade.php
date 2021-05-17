@@ -79,8 +79,8 @@ Dashboard :: Service Booking System
                                     <td>{{ $service->description }}</td>
                                     <td>{{ $service->city->state->name }}</td>
                                     <td>{{ $service->city->name }}</td>
-                                    <td> <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.create') }}" type="submit">View</a> </td>
-                                    <td> <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.create') }}" type="submit">View</a> </td>
+                                    <td> <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.pickup.create', $service->id) }}" type="submit">View</a> </td>
+                                    <td> <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.deliver.create', $service->id) }}" type="submit">View</a> </td>
                                     <td>{{ $service->date }}</td>
                                     <td>{{ $service->time }}</td>
                                     <td>

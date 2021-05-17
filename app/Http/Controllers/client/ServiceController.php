@@ -77,13 +77,5 @@ class ServiceController extends Controller
         
         return redirect(route('client.dashboard'));
     }
-
-
-    public function createAddress()
-    {
-        return view('client.services.create-address')
-            ->with('cities', City::all()); 
-    }
-
     
 }

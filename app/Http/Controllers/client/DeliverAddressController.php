@@ -12,16 +12,22 @@ use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
 
-class AddressController extends Controller
+class DeliverAddressController extends Controller
 {
-    //
-
-    public function create()
+    public function create(Service $service)
     {
-        return view('client.addresses.create')
+        return view('client.addresses.deliver.create')
+            ->with('service', $service)
             ->with('addresses', Address::all())
             ->with('cities', City::all())
             ->with('states', State::all());   
+    }
+
+    public function show(Service $service)
+    {
+        return view('client.addresses.deliver.show')
+            ->with('service', $service)
+            ->with('addresses', Address::all());
     }
 
     public function store(Request $request)
@@ -33,16 +39,16 @@ class AddressController extends Controller
             'postcode' => ['required', 'min:5', 'max:5'],
             'type' => ['required'],
             'city_id' => ['required'],
-            'req_id' => ['required']
+            'service_id' => ['required']
         ]);
 
-        auth()->user()->services()->create([
+        $address = Address::create([
             'line_1' => $request->line_1,
             'line_2' => $request->line_2,
             'postcode' => $request->postcode,
             'type' => $request->type,
             'city_id' => $request->city_id,
-            'req_id' => $request->req_id
+            'service_id' => $request->service_id
 
         ]);
 

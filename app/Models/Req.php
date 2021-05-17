@@ -32,10 +32,6 @@ class Req extends Model
         return $this->belongsTo(Service::class);
     }
 
-    public function addresses(){
-        return $this->hasMany(Address::class);
-    }
-
     public function category()
     {
         return $this->belongsTo(Category::class);

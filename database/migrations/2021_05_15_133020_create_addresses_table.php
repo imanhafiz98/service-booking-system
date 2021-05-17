@@ -24,8 +24,8 @@ class CreateAddressesTable extends Migration
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
 
-            $table->unsignedBigInteger('req_id');
-            $table->foreign('req_id')->references('id')->on('reqs');
+            $table->unsignedBigInteger('service_id');
+            $table->foreign('service_id')->references('id')->on('services');
 
             $table->timestamps();
         });

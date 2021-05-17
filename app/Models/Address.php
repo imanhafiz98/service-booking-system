@@ -20,11 +20,17 @@ class Address extends Model
         'postcode',
         'type',
         'city_id',
-        'req_id'
+        'service_id'
     ];
 
-    public function address()
+    public function service()
     {
-        return $this->belongsTo(Address::class);
+        return $this->belongsTo(Service::class);
     }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
 }

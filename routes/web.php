@@ -86,8 +86,15 @@ Route::post('/client/service/store', 'Client\ServiceController@store')->name('cl
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
 Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('client.dashboard'); //dashboard
 
-//AddressController
-Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
+//PickUpAddressController
+Route::get('/client/pickup/address/{service}/create', 'Client\PickUpAddressController@create')->name('client.addresses.pickup.create');
+Route::post('/client/pickup/address/store', 'Client\PickUpAddressController@store')->name('client.addresses.pickup.store');
+Route::get('/client/pickup/address/{service}/show', 'Client\PickUpAddressController@show')->name('client.addresses.pickup.show');
+
+//DeliverAddressController
+Route::get('/client/deliver/address/{service}/create', 'Client\DeliverAddressController@create')->name('client.addresses.deliver.create');
+Route::post('/client/deliver/address/store', 'Client\DeliverAddressController@store')->name('client.addresses.deliver.store');
+Route::get('/client/deliver/address/{service}/show', 'Client\DeliverAddressController@show')->name('client.addresses.deliver.show');
 
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');

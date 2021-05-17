@@ -19,7 +19,7 @@ Dashboard :: Service Booking System
                                     <div class="col-auto mt-4">
                                         <h1 class="page-header-title">
                                             <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
-                                            Create Service - Add Deliver Address
+                                            Create Service - Add Pick Up Address
                                         </h1>
                                         <div class="page-header-subtitle">Wizard examples for step-by-step form submission content to use as part of an application</div>
                                     </div>
@@ -37,26 +37,29 @@ Dashboard :: Service Booking System
                                     <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                                         <div class="row justify-content-center">
                                             <div class="col-xxl-6 col-xl-8">
-                                                <h3 class="text-primary">Create Service - Add Deliver Address</h3>
+                                                <h3 class="text-primary">Create Service - Add Pick Up Address</h3>
                                                 <h5 class="card-title">Enter address details</h5>
-                                                <form method="POST" action="{{ route('client.services.store') }}">
+                                                <form method="POST" action="{{ route('client.addresses.pickup.store') }}">
                                                 @csrf
 
                                                 <div class="form-group">
+                                                        <!-- <label class="small mb-1" for="inputUsername">Service ID</label> -->
+                                                        <input class="form-control" name="service_id" id="inputUsername" type="text" value="{{ $service->id }}" hidden/>
+                                                    </div>
+
+                                                <div class="form-group">
                                                 <label class="small mb-1" for="inputBillingName">Type of Address *</label>
-                                                    <select class="form-control" name="type" id="exampleFormControlSelect1" value="" required>
-                                                        <option value="">--Select Type--</option>
+                                                    <select class="form-control" name="type" id="exampleFormControlSelect1" value="" readonly>
                                                         <option value="Pick Up">Pick Up</option>
-                                                        <option value="Deliver">Deliver</option>
                                                     </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 1 *</label>
-                                                        <input class="form-control" name="name" id="inputUsername" type="text" required/>
+                                                        <input class="form-control" name="line_1" id="inputUsername" type="text" required/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 2 (Optional)</label>
-                                                        <input class="form-control" name="name" id="inputUsername" type="text"/>
+                                                        <input class="form-control" name="line_2" id="inputUsername" type="text"/>
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
@@ -87,7 +90,7 @@ Dashboard :: Service Booking System
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputUsername">Postcode *</label>
-                                                            <input class="form-control" name="name" id="inputUsername" type="text" required/>
+                                                            <input class="form-control" name="postcode" id="inputUsername" type="text" required/>
                                                         </div>     
                                                     </div>
                                             
