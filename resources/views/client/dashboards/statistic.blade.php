@@ -35,10 +35,10 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 1-->
                                 <div class="card h-100 border-left-lg border-left-primary">
                                     <div class="card-body">
-                                        <div class="small text-muted">Current monthly bill</div>
-                                        <div class="h3">$20.00</div>
-                                        <a class="text-arrow-icon small" href="#!">
-                                            Switch to yearly billing
+                                        <div class="small text-muted">Total all created services</div>
+                                        <div class="h3">{{ $totalAllServices }}</div>
+                                        <a class="text-arrow-icon small" href="{{ route('client.services.index') }}">
+                                            View all
                                             <i data-feather="arrow-right"></i>
                                         </a>
                                     </div>
@@ -48,10 +48,10 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 2-->
                                 <div class="card h-100 border-left-lg border-left-secondary">
                                     <div class="card-body">
-                                        <div class="small text-muted">Next payment due</div>
-                                        <div class="h3">July 15</div>
-                                        <a class="text-arrow-icon small text-secondary" href="#!">
-                                            View payment history
+                                        <div class="small text-muted">Total pending services</div>
+                                        <div class="h3">{{ $totalPendingServices }}</div>
+                                        <a class="text-arrow-icon small text-secondary" href="{{ route('client.services.index', ['status'=>'Pending']) }}">
+                                            View all
                                             <i data-feather="arrow-right"></i>
                                         </a>
                                     </div>
@@ -61,10 +61,10 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 3-->
                                 <div class="card h-100 border-left-lg border-left-success">
                                     <div class="card-body">
-                                        <div class="small text-muted">Current plan</div>
-                                        <div class="h3 d-flex align-items-center">Freelancer</div>
-                                        <a class="text-arrow-icon small text-success" href="#!">
-                                            Upgrade plan
+                                        <div class="small text-muted">Total ongoing services</div>
+                                        <div class="h3 d-flex align-items-center">{{ $totalOngoingServices }}</div>
+                                        <a class="text-arrow-icon small text-success" href="{{ route('client.services.index', ['status'=>'Ongoing']) }}">
+                                            View all
                                             <i data-feather="arrow-right"></i>
                                         </a>
                                     </div>
@@ -126,7 +126,7 @@ Dashboard :: Service Booking System
                         </div>
                         <!-- Billing history card-->
                         <div class="card mb-4">
-                            <div class="card-header">Service Completed</div>
+                            <div class="card-header">List of Completed Services</div>
                             <div class="card-body p-0">
                                 <!-- Billing history table-->
                                 <div class="table-responsive table-billing-history">

@@ -43,8 +43,8 @@ Dashboard :: Service Booking System
                                         <div class="card-body p-5">
                                             <p class="lead">Create any services that you wanted.</p>
                                             <div class="mb-5">
-                                                <div class="display-3 text-dark">$9</div>
-                                                per month
+                                                <div class="display-3 text-dark">RM1</div>
+                                                from
                                             </div>
                                             <ul class="list-unstyled">
                                                 <li class="d-flex align-items-center justify-content-center mb-3">
@@ -53,7 +53,7 @@ Dashboard :: Service Booking System
                                                 </li>
                                                 <li class="d-flex align-items-center justify-content-center mb-3">
                                                     <i class="text-primary mr-2" data-feather="check-circle"></i>
-                                                    Create service for free
+                                                    Create services for free
                                                 </li>
                                                 <li class="d-flex align-items-center justify-content-center mb-3">
                                                     <i class="text-primary mr-2" data-feather="check-circle"></i>
