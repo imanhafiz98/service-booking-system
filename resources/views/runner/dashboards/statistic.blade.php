@@ -35,9 +35,9 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 1-->
                                 <div class="card h-100 border-left-lg border-left-primary">
                                     <div class="card-body">
-                                        <div class="small text-muted">Total all request services</div>
-                                        <div class="h3">{{ $totalCompletedReqs }}</div>
-                                        <a class="text-arrow-icon small" href="{{ route('client.services.index') }}">
+                                        <div class="small text-muted">Total current requested requests</div>
+                                        <div class="h3">{{ $totalRequestedReqs }}</div>
+                                        <a class="text-arrow-icon small" href="{{ route('runner.requests.index', ['status'=>'Requested']) }}">
                                             View all
                                             <i data-feather="arrow-right"></i>
                                         </a>
@@ -48,9 +48,9 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 2-->
                                 <div class="card h-100 border-left-lg border-left-secondary">
                                     <div class="card-body">
-                                        <div class="small text-muted">Total pending services</div>
-                                        <div class="h3">{{ $totalRequestedReqs }}</div>
-                                        <a class="text-arrow-icon small text-secondary" href="{{ route('client.services.index', ['status'=>'Pending']) }}">
+                                        <div class="small text-muted">Total current accepted requests</div>
+                                        <div class="h3">{{ $totalAcceptedReqs }}</div>
+                                        <a class="text-arrow-icon small text-secondary" href="{{ route('runner.requests.index', ['status'=>'Accepted']) }}">
                                             View all
                                             <i data-feather="arrow-right"></i>
                                         </a>
@@ -61,9 +61,9 @@ Dashboard :: Service Booking System
                                 <!-- Billing card 3-->
                                 <div class="card h-100 border-left-lg border-left-success">
                                     <div class="card-body">
-                                        <div class="small text-muted">Total ongoing services</div>
-                                        <div class="h3 d-flex align-items-center">{{ $totalAcceptedReqs }}</div>
-                                        <a class="text-arrow-icon small text-success" href="{{ route('client.services.index', ['status'=>'Ongoing']) }}">
+                                        <div class="small text-muted">Total current completed requests</div>
+                                        <div class="h3 d-flex align-items-center">{{ $totalCompletedReqs }}</div>
+                                        <a class="text-arrow-icon small text-success" href="{{ route('runner.requests.index', ['status'=>'Completed']) }}">
                                             View all
                                             <i data-feather="arrow-right"></i>
                                         </a>

@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -21,14 +22,18 @@ class DashboardController extends Controller
 
     public function statistic()
     {
+        //dd(Auth::user()->id);
         $totalAllServices = \DB::table('Services')
-                                    ->where('status', '=', 'Completed')->count();
+                                    ->where('status', '=', 'Completed')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
         $totalPendingServices = \DB::table('Services')
-                                    ->where('status', '=', 'Pending')->count();
+                                    ->where('status', '=', 'Pending')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
         $totalOngoingServices = \DB::table('Services')
-                                    ->where('status', '=', 'Ongoing')->count();
+                                    ->where('status', '=', 'Ongoing')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
 
         //dd($countTotalAllServices);

@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -22,13 +23,16 @@ class DashboardController extends Controller
     public function statistic()
     {
         $totalCompletedReqs = \DB::table('Reqs')
-                                    ->where('status', '=', 'Completed')->count();
+                                    ->where('status', '=', 'Completed')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
         $totalRequestedReqs = \DB::table('Reqs')
-                                    ->where('status', '=', 'Requested')->count();
+                                    ->where('status', '=', 'Requested')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
         $totalAcceptedReqs = \DB::table('Reqs')
-                                    ->where('status', '=', 'Accepted')->count();
+                                    ->where('status', '=', 'Accepted')
+                                    ->where('user_id', '=', Auth::user()->id)->count();
 
 
         //dd($countTotalAllServices);

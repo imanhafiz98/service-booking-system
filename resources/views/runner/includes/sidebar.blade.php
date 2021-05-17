@@ -31,7 +31,6 @@
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
                         <a class="nav-link" href="{{ route('runner.dashboards.index') }}">Default</a>
                         <a class="nav-link" href="{{ route('runner.dashboards.statistic') }}">Statistic</a>
-                        <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                     </nav>
                 </div>
                 <!-- Sidenav Heading (App Views)-->
