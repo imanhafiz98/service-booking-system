@@ -55,9 +55,9 @@ class LoginController extends Controller
         }
 
         // check if user's role is an runner
-        elseif(Auth::user()->isRunner())
+        if(Auth::user()->isRunner())
         {
-            $this->redirectTo = route('runner.dashboard');
+            $this->redirectTo = route('runner.dashboards.index');
             return $this->redirectTo;
         }
 

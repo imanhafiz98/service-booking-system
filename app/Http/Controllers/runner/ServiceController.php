@@ -14,10 +14,6 @@ use App\Models\City;
 
 class ServiceController extends Controller
 {
-    public function dashboard()
-    {
-        return view('runner.dashboard');
-    }
 
     public function index(Request $request)
     {

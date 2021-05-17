@@ -124,6 +124,9 @@ Route::get('/client/invoice/{req}/show', 'Client\InvoiceController@show')->name(
 
 Route::middleware(['auth', 'can:runner-views'])->group(function(){
 
+//DashboardController
+Route::get('/runner/dashboard/index', 'Runner\DashboardController@index')->name('runner.dashboards.index'); 
+Route::get('/runner/dashboard/statistic', 'Runner\DashboardController@statistic')->name('runner.dashboards.statistic'); 
 
 //ServiceController
 Route::get('/runner/service/index', 'Runner\ServiceController@index')->name('runner.services.index');
