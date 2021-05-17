@@ -39,6 +39,6 @@ class RequestController extends Controller
 
         Service::where('id',$req->service_id)->update(['status' => "Ongoing"]);
         
-        return redirect(route('client.dashboard'));
+        return redirect(route('client.dashboards.index'));
     }
 }

@@ -50,7 +50,7 @@ class LoginController extends Controller
         // check if user's role is an client
         if(Auth::user()->isClient())
         {
-            $this->redirectTo = route('client.dashboard');
+            $this->redirectTo = route('client.dashboards.index');
             return $this->redirectTo;
         }
 

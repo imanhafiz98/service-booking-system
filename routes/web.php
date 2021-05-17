@@ -79,12 +79,15 @@ Route::post('/admin/category/store', 'Admin\CategoryController@store')->name('ad
 Route::middleware(['auth', 'can:client-views'])->group(function(){
 
 
+//DashboardController
+Route::get('/client/dashboard/index', 'Client\DashboardController@index')->name('client.dashboards.index'); 
+Route::get('/client/dashboard/statistic', 'Client\DashboardController@statistic')->name('client.dashboards.statistic'); 
+
 //ServiceController
 Route::get('/client/service/index', 'Client\ServiceController@index')->name('client.services.index');
 Route::get('/client/service/create', 'Client\ServiceController@create')->name('client.services.create');  
 Route::post('/client/service/store', 'Client\ServiceController@store')->name('client.services.store');
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
-Route::get('/client/dashboard', 'Client\ServiceController@dashboard')->name('client.dashboard'); //dashboard
 
 //PickUpAddressController
 Route::get('/client/pickup/address/{service}/create', 'Client\PickUpAddressController@create')->name('client.addresses.pickup.create');
@@ -127,6 +130,12 @@ Route::get('/runner/service/index', 'Runner\ServiceController@index')->name('run
 Route::get('/runner/service/{service}/show', 'Runner\ServiceController@show')->name('runner.services.show');
 Route::get('/runner/show-test-service/{service}', 'Runner\ServiceController@showTest')->name('runner.services.show-test'); //new show form for submit request
 Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dashboard
+
+//PickUpAddressController
+Route::get('/runner/pickup/address/{service}/show', 'Runner\PickUpAddressController@show')->name('runner.addresses.pickup.show');
+
+//DeliverAddressController
+Route::get('/runner/deliver/address/{service}/show', 'Runner\DeliverAddressController@show')->name('runner.addresses.deliver.show');
 
 //RequestController
 Route::get('/runner/request/index', 'Runner\RequestController@index')->name('runner.requests.index');

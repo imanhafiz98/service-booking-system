@@ -75,7 +75,7 @@ class ServiceController extends Controller
 
         Req::where('id',$service->id)->update(['status' => "Cancelled"]);
         
-        return redirect(route('client.dashboard'));
+        return redirect(route('client.dashboards.index'));
     }
     
 }

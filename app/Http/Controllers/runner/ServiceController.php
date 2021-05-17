@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\User;
-use App\Models\Location;
+use App\Models\Address;
 use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
@@ -30,7 +30,8 @@ class ServiceController extends Controller
             }
         })->get();
         
-        return view('runner.services.index')->with('services', $services);
+        return view('runner.services.index')
+            ->with('services', $services);
     }
 
     public function show(Service $service)
