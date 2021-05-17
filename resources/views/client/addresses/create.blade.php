@@ -44,14 +44,11 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                 <label class="small mb-1" for="inputBillingName">Type of Address *</label>
-                                                            <select class="form-control" name= "type" id="exampleFormControlSelect1" required>
-                                                            <option value="">--Select Type--</option>
-                                                                @foreach($addresses as $address)
-
-                                                                <option value="{{ $address->type }}">{{ $address->type }}</option>
-
-                                                                @endforeach
-                                                            </select>
+                                                    <select class="form-control" name="type" id="exampleFormControlSelect1" value="" required>
+                                                        <option value="">--Select Type--</option>
+                                                        <option value="Pick Up">Pick Up</option>
+                                                        <option value="Deliver">Deliver</option>
+                                                    </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 1 *</label>
@@ -79,9 +76,9 @@ Dashboard :: Service Booking System
                                                             <label class="small mb-1" for="inputBillingCCNumber">State *</label>
                                                             <select class="form-control" id="exampleFormControlSelect1" required>
                                                             <option value="">--Select State--</option>
-                                                                @foreach($cities as $city)
+                                                                @foreach($states as $state)
 
-                                                                <option value="{{ $city->state->id }}">{{ $city->state->name }}</option>
+                                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
 
                                                                 @endforeach
                                                             </select>

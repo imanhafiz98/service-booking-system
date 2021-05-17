@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Service;
+use App\Models\Address;
 use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;

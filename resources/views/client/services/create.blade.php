@@ -87,9 +87,9 @@ Dashboard :: Service Booking System
                                                             <label class="small mb-1" for="inputBillingCCNumber">State</label>
                                                             <select class="form-control" id="exampleFormControlSelect1">
                                                             
-                                                                @foreach($cities as $city)
+                                                                @foreach($states as $state)
 
-                                                                <option value="{{ $city->state->id }}">{{ $city->state->name }}</option>
+                                                                <option value="{{ $city->state->id }}">{{ $state->name }}</option>
 
                                                                 @endforeach
                                                             </select>

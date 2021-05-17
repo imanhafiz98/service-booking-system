@@ -30,7 +30,6 @@ class RequestController extends Controller
 
     public function show(Req $req)
     {
-        
         return view('runner.requests.show')->with('req', $req);
     }
 
