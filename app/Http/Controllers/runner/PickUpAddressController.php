@@ -14,13 +14,10 @@ use App\Models\City;
 
 class PickUpAddressController extends Controller
 {
-    public function show(Address $address)
+    public function show(Service $service)
     {
-        // return view('runner.addresses.pickup.show')
-        //     ->with('address', $address);
-
-        return view('runner.addresses.pickup.show')->with('addresses', Address::where('service', $service->id)
-            ->where('type', "Pick Up")
-            ->get());
+        //dd($service->id);
+        return view('runner.addresses.pickup.show')
+            ->with('service', $service);
     }
 }

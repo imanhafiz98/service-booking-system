@@ -56,31 +56,31 @@ Dashboard :: Service Booking System
                                                 <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">Address ID</label>
-                                                            <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text"  value="{{ $addresses->id }}" readonly />
+                                                            <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text"  value="{{ $service->addresses->id }}" readonly />
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingCCNumber">Address Line 1</label>
-                                                            <input class="form-control" name="line_1" id="exampleFormControlInput1" type="text"  value="{{ $address->line_1}}" readonly />
+                                                            <input class="form-control" name="line_1" id="exampleFormControlInput1" type="text"  value="{{ $service->addresses->line_1}}" readonly />
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 2</label>
-                                                        <input class="form-control" name="line_2" id="exampleFormControlInput1" type="text" value="{{ $address->line_2 }}" readonly />
+                                                        <input class="form-control" name="line_2" id="exampleFormControlInput1" type="text" value="{{ $service->addresses->line_2 }}" readonly />
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">City</label>
-                                                        <input class="form-control" name="city" id="exampleFormControlInput1" type="text"  value="{{ $address->city->name }}" readonly />
+                                                        <input class="form-control" name="city" id="exampleFormControlInput1" type="text"  value="{{ $service->addresses->city->name }}" readonly />
                                                     </div>
 
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">State</label>
-                                                            <input class="form-control" name="state" id="exampleFormControlInput1" type="text" value="{{ $address->city->state->name }}" disabled />
+                                                            <input class="form-control" name="state" id="exampleFormControlInput1" type="text" value="{{ $service->addresses->city->state->name }}" disabled />
                                                             </select>
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingCCNumber">Postcode</label>
-                                                            <input class="form-control" name="postcode" id="exampleFormControlInput1" type="text" value="{{ $address->postcode }}" disabled />
+                                                            <input class="form-control" name="postcode" id="exampleFormControlInput1" type="text" value="{{ $service->addresses->postcode }}" disabled />
                                                         </div>
                                                     </div>
 

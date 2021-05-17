@@ -25,6 +25,53 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //_________________________________________________________ADMIN_________________________________________________________//
 
+// Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'isAdmin'],function(){
+
+// Route::get('dashboard', 'Admin\StateController@dashboard')->name('dashboard'); //dashboard 
+
+// //UserController
+// Route::get('user/index', 'Admin\UserController@index')->name('users.index');
+// Route::get('user/create', 'Admin\UserController@create')->name('users.create'); 
+// Route::post('user/store', 'Admin\UserController@store')->name('users.store'); 
+// Route::get('user/{user}/show', 'Admin\UserController@show')->name('users.show');
+// Route::get('user/{user}/edit', 'Admin\UserController@edit')->name('users.edit');
+// Route::post('user/{user}/update', 'Admin\UserController@update')->name('users.update');
+
+// //ServiceController
+// Route::get('service/index', 'Admin\ServiceController@index')->name('services.index');
+// Route::get('service/create', 'Admin\ServiceController@create')->name('services.create');
+// Route::post('service/store', 'Admin\ServiceController@store')->name('services.store');
+// Route::get('service/{service}/show', 'Admin\ServiceController@show')->name('services.show');
+// Route::get('service/{service}/edit', 'Admin\ServiceController@edit')->name('services.edit');
+// Route::post('service/{service}/update', 'Admin\ServiceController@update')->name('services.update');
+
+
+// //RequestController
+// Route::get('request/index', 'Admin\RequestController@index')->name('requests.index');
+// Route::get('request/create', 'Admin\RequestController@create')->name('requests.create');
+// Route::post('request/store', 'Admin\RequestController@store')->name('requests.store');
+// Route::get('request/{req}/show', 'Admin\RequestController@show')->name('requests.show');
+// Route::get('request/{req}/edit', 'Admin\RequestController@edit')->name('requests.edit');
+// Route::post('request/{req}/update', 'Admin\RequestController@update')->name('requests.update'); 
+
+// //StateController
+// Route::get('state/index', 'Admin\StateController@index')->name('states.index');
+// Route::get('state/create', 'Admin\StateController@create')->name('states.create');
+// Route::post('state/store', 'Admin\StateController@store')->name('states.store');
+
+// //CityController
+// Route::get('city/index', 'Admin\CityController@index')->name('cities.index');
+// Route::get('city/create', 'Admin\CityController@create')->name('cities.create');
+// Route::post('city/store', 'Admin\CityController@store')->name('cities.store');
+
+// //CategoryController
+// Route::get('category/index', 'Admin\CategoryController@index')->name('categories.index');
+// Route::get('category/create', 'Admin\CategoryController@create')->name('categories.create');
+// Route::post('category/store', 'Admin\CategoryController@store')->name('categories.store');
+
+
+// });
+
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
 
