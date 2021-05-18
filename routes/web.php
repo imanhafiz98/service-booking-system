@@ -136,6 +136,9 @@ Route::get('/client/service/create', 'Client\ServiceController@create')->name('c
 Route::post('/client/service/store', 'Client\ServiceController@store')->name('client.services.store');
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
 
+//AddressController
+Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
+
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
 Route::post('/client/request/{req}/index', 'Client\RequestController@update')->name('client.requests.update');
@@ -149,8 +152,8 @@ Route::post('/client/profile/{user}/update', 'Client\ProfileController@update')-
 Route::get('/client/password/{user}/show', 'Client\PasswordController@show')->name('client.passwords.show');
 
 //InvoiceController
-Route::get('/client/invoice/index', 'Client\InvoiceController@index')->name('client.invoices.index');
 Route::get('/client/invoice/generate', 'Client\InvoiceController@generate')->name('client.invoices.generate');
+Route::get('/client/invoice/index', 'Client\InvoiceController@index')->name('client.invoices.index');
 Route::get('/client/invoice/{invoice}/show', 'Client\InvoiceController@show')->name('client.invoices.show');
 Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->name('client.invoices.store');
 
@@ -184,5 +187,9 @@ Route::get('/runner/profile/{user}/show', 'Runner\ProfileController@show')->name
 
 //PasswordController
 Route::get('/runner/password/{user}/show', 'Runner\PasswordController@show')->name('runner.passwords.show');
+
+//InvoiceController
+Route::get('/runner/invoice/index', 'Runner\InvoiceController@index')->name('runner.invoices.index');
+Route::get('/runner/invoice/generate', 'Runner\InvoiceController@generate')->name('runner.invoices.generate');
 
 });

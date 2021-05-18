@@ -33,14 +33,17 @@ class RequestController extends Controller
     {
         $data = request()->only(['status']);
 
-        $req->status = "Accepted";
+
+        Req::where('user_id', $req->user_id)->update(['status' => "Accepted"]);
+
+        // $req->status = "Accepted";
    
-        $req->update($data);
+        // $req->update($data);
 
         Service::where('id',$req->service_id)->update(['status' => "Ongoing"]);
 
-        Req::where('service_id',$req->service_id)
-                ->where('id', '!=', $req->id)->update(['status' => "Rejected"]);
+        // Req::where('service_id', $req->service_id)
+        //         ->where('user_id', '=', $req->user_id)->update(['status' => "Rejected"]);
         
         return redirect(route('client.services.index'));
     }

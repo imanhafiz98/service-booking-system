@@ -121,7 +121,7 @@ Dashboard :: Service Booking System
 
                                         @elseif($service->status == 'Ongoing')
 
-
+                                        <a class="btn btn-primary btn-sm" href="" type="submit">Remarks</a>
 
                                         @elseif($service->status == 'Cancelled')
 
