@@ -16,11 +16,9 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            //$table->enum('category', ['Food Delivery', 'Vehicle Transportation', 'Mart', 'Courier', 'Others']);
             $table->text('description');
             $table->string('date');
             $table->string('time');
-            //$table->enum('location', ['Johor', 'Kedah', 'Kelantan', 'Melaka', 'Negeri Sembilan', 'Pahang', 'Pulau Pinang', 'Perak', 'Perlis', 'Sabah', 'Sarawak', 'Selangor', 'Terengganu', 'W.P. Kuala Lumpur', 'W.P. Labuan', 'W.P. Putrajaya']);
             $table->enum('status', ['Pending', 'Ongoing', 'Cancelled', 'Completed'])->default('Pending');
 
             $table->unsignedBigInteger('user_id');

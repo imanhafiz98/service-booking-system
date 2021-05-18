@@ -15,7 +15,9 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-
+            $table->string('date_generate');
+            $table->string('time_generate');
+            
             $table->unsignedBigInteger('req_id');
             $table->foreign('req_id')->references('id')->on('reqs');
 

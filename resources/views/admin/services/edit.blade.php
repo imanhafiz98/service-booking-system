@@ -73,10 +73,12 @@ Dashboard :: Service Booking System
                                             <div class="form-group">
                                                 <label class="small mb-1" for="inputBillingName">City</label>
                                                 <select class="form-control" name="city_id" id="exampleFormControlSelect1" required>
+
                                                     <option value="{{ $service->city->id }}">{{ $service->city->name }}</option>
+
                                                     @foreach($cities as $city)
 
-                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                                        <option value="{{ $city->id }}">{{ $city->name }}</option>
 
                                                     @endforeach
                                                 </select>

@@ -15,6 +15,8 @@ class Invoice extends Model
      * @var array
      */
     protected $fillable = [
+        'date_generate',
+        'time_generate',
         'req_id'
         
     ];
