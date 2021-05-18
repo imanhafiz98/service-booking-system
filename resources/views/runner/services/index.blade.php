@@ -41,8 +41,6 @@ Dashboard :: Service Booking System
                                     <th>Description</th>
                                     <th>State</th>
                                     <th>City</th>
-                                    <th>Pick Up Address</th>
-                                    <th>Deliver Address</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>                 
@@ -57,8 +55,6 @@ Dashboard :: Service Booking System
                                     <th>Description</th>
                                     <th>State</th>
                                     <th>City</th>
-                                    <th>Pick Up Address</th>
-                                    <th>Deliver Address</th>
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Status</th>
@@ -76,8 +72,6 @@ Dashboard :: Service Booking System
                                 <td>{{ $service->description }}</td>
                                 <td>{{ $service->city->state->name }}</td>
                                 <td>{{ $service->city->name }}</td>
-                                <td><a class="btn btn-primary btn-sm" href="{{ route('runner.addresses.pickup.show', $service->id) }}">View</a></td>
-                                <td><a class="btn btn-primary btn-sm" href="{{ route('runner.addresses.deliver.show', $service->id) }}">View</a></td>
                                 <td>{{ $service->date }}</td>
                                 <td>{{ $service->time }}</td>
                                 <td>
