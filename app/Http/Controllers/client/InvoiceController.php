@@ -35,9 +35,9 @@ class InvoiceController extends Controller
         return view('client.invoices.generate')->with('reqs', $reqs);
     }
     
-    public function show(Req $req)
+    public function show(Invoice $invoice)
     {
-        return view('client.invoices.show')->with('req', $req);
+        return view('client.invoices.show')->with('invoice', $invoice);
     }
 
     public function store(Req $req)
@@ -54,7 +54,7 @@ class InvoiceController extends Controller
             
         ]);
 
-        return redirect(route('client.services.index'));
+        return redirect(route('client.invoices.index'));
     }
    
 }

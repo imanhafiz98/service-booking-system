@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
+use App\Models\Invoice;
 
 class ServiceController extends Controller
 {

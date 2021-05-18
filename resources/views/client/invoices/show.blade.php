@@ -19,17 +19,18 @@ Dashboard :: Service Booking System
                             <div class="card-header p-4 p-md-5 border-bottom-0 bg-gradient-primary-to-secondary text-white-50">
                                 <div class="row justify-content-between align-items-center">
                                     <div class="col-12 col-lg-auto mb-5 mb-lg-0 text-center text-lg-left">
-                                        <!-- Invoice branding-->
-                                        <img class="invoice-brand-img rounded-circle mb-4" src="assets/img/demo/demo-logo.svg" alt="" />
-                                        <div class="h2 text-white mb-0">{{ $req->service->name }}</div>
-                                        {{ $req->service->status }}
+                                        
+                                        <div class="h2 text-white mb-0">{{ $invoice->req->service->name }}</div>
+                                        {{ $invoice->req->service->status }}
                                     </div>
                                     <div class="col-12 col-lg-auto text-center text-lg-right">
                                         <!-- Invoice details-->
                                         <div class="h3 text-white">Invoice</div>
-                                        #29301
+                                        ID {{ $invoice->id }}
                                         <br />
-                                        January 1, 2020
+                                        Date Generated: {{ $invoice->date_generate }}
+                                        <br />
+                                        Time Generated: {{ $invoice->time_generate }}
                                     </div>
                                 </div>
                             </div>
@@ -51,33 +52,24 @@ Dashboard :: Service Booking System
                                         <tbody>
                                             <!-- Invoice item 1-->
                                             <tr class="border-bottom">
-                                                <td class="text-left font-weight-bold">{{ $req->service->id }}</td>
-                                                <td class="text-left font-weight-bold">{{ $req->service->name }}</td>
-                                                <td class="text-left font-weight-bold">{{ $req->service->category->name }}</td>
+                                                <td class="text-left font-weight-bold">{{ $invoice->req->service->id }}</td>
+                                                <td class="text-left font-weight-bold">{{ $invoice->req->service->name }}</td>
+                                                <td class="text-left font-weight-bold">{{ $invoice->req->service->category->name }}</td>
                                                 <td>
-                                                    <div class="font-weight-bold">{{ $req->service->description }}</div>
+                                                    <div class="font-weight-bold">{{ $invoice->req->service->description }}</div>
                                                     <!-- <div class="small text-muted d-none d-md-block">A professional UI toolkit for designing admin dashboards and web applications</div> -->
                                                 </td>
 
-                                                <td class="text-left font-weight-bold">RM{{ $req->price }}</td>
-                                                <td class="text-right font-weight-bold">{{ $req->service->date }}</td>
-                                                <td class="text-right font-weight-bold">{{ $req->service->time }}</td>
+                                                <td class="text-left font-weight-bold">RM{{ $invoice->req->price }}</td>
+                                                <td class="text-right font-weight-bold">{{ $invoice->req->service->date }}</td>
+                                                <td class="text-right font-weight-bold">{{ $invoice->req->service->time }}</td>
                                             </tr>
                                             
-                                            <!-- Invoice subtotal
-                                            <tr>
-                                                <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Subtotal:</div></td>
-                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700">RM{{ $req->price }}</div></td>
-                                            </tr>
-                                             Invoice tax column
-                                            <tr>
-                                                <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Tax (7%):</div></td>
-                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700">$134.75</div></td>
-                                            </tr> -->
+                        
                                             <!-- Invoice total-->
                                             <tr>
                                                 <td class="text-right pb-0" colspan="6"><div class="text-uppercase small font-weight-700 text-muted">Total Amount Due:</div></td>
-                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700 text-green">RM{{ $req->price }}</div></td>
+                                                <td class="text-right pb-0"><div class="h5 mb-0 font-weight-700 text-green">RM{{ $invoice->req->price }}</div></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -95,9 +87,9 @@ Dashboard :: Service Booking System
                                     <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
                                         <!-- Invoice - sent from info-->
                                         <div class="small text-muted text-uppercase font-weight-700 mb-2">From</div>
-                                        <div class="h6 mb-0">{{ $req->user->name }}</div>
-                                        <div class="small">{{ $req->user->email }}</div>
-                                        <div class="small">{{ $req->user->phone }}</div>
+                                        <div class="h6 mb-0">{{ $invoice->req->user->name }}</div>
+                                        <div class="small">{{ $invoice->req->user->email }}</div>
+                                        <div class="small">{{ $invoice->req->user->phone }}</div>
                                     </div>
                                     <div class="col-lg-6">
                                         <!-- Invoice - additional notes-->

@@ -161,7 +161,7 @@ Route::get('/client/password/{user}/show', 'Client\PasswordController@show')->na
 //InvoiceController
 Route::get('/client/invoice/index', 'Client\InvoiceController@index')->name('client.invoices.index');
 Route::get('/client/invoice/generate', 'Client\InvoiceController@generate')->name('client.invoices.generate');
-Route::get('/client/invoice/{req}/show', 'Client\InvoiceController@show')->name('client.invoices.show');
+Route::get('/client/invoice/{invoice}/show', 'Client\InvoiceController@show')->name('client.invoices.show');
 Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->name('client.invoices.store');
 
 });

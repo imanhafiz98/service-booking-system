@@ -24,7 +24,6 @@ class DashboardController extends Controller
     {
         //dd(Auth::user()->id);
         $totalAllServices = \DB::table('Services')
-                                    ->where('status', '=', 'Completed')
                                     ->where('user_id', '=', Auth::user()->id)->count();
 
         $totalPendingServices = \DB::table('Services')
