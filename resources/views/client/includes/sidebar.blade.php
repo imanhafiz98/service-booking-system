@@ -100,8 +100,8 @@
                             </div> 
 
 
-                            <div class="sidenav-menu-heading">E-Wallet</div>
-                            <!-- Sidenav Accordion (Layout)-->
+                            <!-- <div class="sidenav-menu-heading">E-Wallet</div>
+                             Sidenav Accordion (Layout)
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseWallet" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="nav-link-icon"><i data-feather="layout"></i></div>
                                 E-Wallet
@@ -109,11 +109,11 @@
                             </a>
                             <div class="collapse" id="collapseWallet" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
-                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                                     Nested Sidenav Accordion (Layout -> Navigation)
                                     <a class="nav-link" href="tables.html">View Wallet</a>
                                     <a class="nav-link" href="tables.html">Add Wallet</a>
                                 </nav>
-                            </div>
+                            </div> -->
 
                             <div class="sidenav-menu-heading">Invoice</div>
                             <!-- Sidenav Link (Charts)-->

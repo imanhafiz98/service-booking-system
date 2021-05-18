@@ -26,7 +26,7 @@ Dashboard :: Service Booking System
                                     <div class="col-12 col-lg-auto text-center text-lg-right">
                                         <!-- Invoice details-->
                                         <div class="h3 text-white">Invoice</div>
-                                        ID {{ $invoice->id }}
+                                        # {{ $invoice->id }}
                                         <br />
                                         Date Generated: {{ $invoice->date_generate }}
                                         <br />
