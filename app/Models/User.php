@@ -65,18 +65,6 @@ class User extends Authenticatable
         return $this->hasMany(Service::class);
     }
 
-    // 1 user (client) can has one wallet
-    public function wallet()
-    {
-        return $this->hasOne(Wallet::class);
-    }
-
-    // 1 user (runner) can has one wallet
-    public function bank()
-    {
-        return $this->hasOne(Bank::class);
-    }
-
     // 1 user (client) can has many requests
     public function reqs()
     {

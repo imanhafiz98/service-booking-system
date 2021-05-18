@@ -91,6 +91,7 @@
                             <nav class="sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('runner.requests.index', ['status'=>'Requested']) }}">Requested</a>
                                 <a class="nav-link" href="{{ route('runner.requests.index', ['status'=>'Accepted']) }}">Accepted</a>
+                                <a class="nav-link" href="{{ route('runner.requests.index', ['status'=>'Rejected']) }}">Rejected</a>
                                 <a class="nav-link" href="{{ route('runner.requests.index', ['status'=>'Cancelled']) }}">Cancelled</a>
                                 <a class="nav-link" href="{{ route('runner.requests.index', ['status'=>'Completed']) }}">Completed</a>
                                 <a class="nav-link" href="{{ route('runner.requests.index') }}">All</a>

@@ -72,6 +72,9 @@ Dashboard :: Service Booking System
                                       @elseif($req->status == 'Accepted')
                                         <div class="badge badge-primary badge-pill">Accepted</div>
 
+                                        @elseif($req->status == 'Rejected')
+                                        <div class="badge badge-danger badge-pill">Rejected</div>
+
                                       @elseif($req->status == 'Cancelled')
                                         <div class="badge badge-danger badge-pill">Cancelled</div>
 

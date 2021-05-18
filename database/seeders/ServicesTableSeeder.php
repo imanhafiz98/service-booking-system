@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Service;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Req;
 
 class ServicesTableSeeder extends Seeder
 {

@@ -92,8 +92,7 @@ Dashboard :: Service Booking System
                                                 </div>
                                             </div>
                                     </form>
-                                    
-                                    <button class="btn btn-danger btn-sm" type="submit">Reject</button>      
+                                  
                                 </td>
                             </tr>
                             

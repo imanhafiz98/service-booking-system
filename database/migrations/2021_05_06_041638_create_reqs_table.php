@@ -17,7 +17,7 @@ class CreateReqsTable extends Migration
             $table->id();
             $table->string('price');
             $table->text('notes');
-            $table->enum('status', ['Requested', 'Accepted', 'Cancelled', 'Completed'])->default('Requested');
+            $table->enum('status', ['Requested', 'Rejected', 'Accepted', 'Cancelled', 'Completed'])->default('Requested');
 
             /*
             $table->unsignedBigInteger('client_id');
