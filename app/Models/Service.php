@@ -29,10 +29,6 @@ class Service extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function addresses(){
-        return $this->hasMany(Address::class);
-    }
-
     public function city()
     {
         return $this->belongsTo(City::class);
