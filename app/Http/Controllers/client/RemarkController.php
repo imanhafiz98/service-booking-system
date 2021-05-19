@@ -15,6 +15,22 @@ use App\Models\Remark;
 
 class RemarkController extends Controller
 {
+    // public function index(Service $service)
+    // {
+    //     //return view('runner.remarks.index')->with('remarks', Remark::all());
+
+    //     return view('client.remarks.index')->with('remarks', Remark::where('req_id', $service->req->id)->get());
+    // }
+
+    public function index(Service $service)
+    {
+        $status = $request->status ?? null;
+
+        return view('client.remarks.index')->with('reqs', Req::where('service_id', $service->id)
+            ->with('remarks', Remark::where('req_id', $req->id))
+            ->get());
+    }
+
     public function create(Request $request, Service $service)
     {
         return view('client.remarks.create');

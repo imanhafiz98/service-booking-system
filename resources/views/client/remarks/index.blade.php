@@ -1,4 +1,4 @@
-@extends('runner.main')
+@extends('client.main')
 
 @section('title')
 Dashboard :: Service Booking System
@@ -75,6 +75,8 @@ Dashboard :: Service Booking System
                             </tbody>
                             
                         </table>
+
+                        <a class="btn btn-primary" href="{{ route('runner.remarks.create', $remarks->reqs->id) }}">Add Remark</a>
 
                     </div>
                 </div>

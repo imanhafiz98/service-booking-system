@@ -24,6 +24,11 @@ class RemarkController extends Controller
         return view('runner.remarks.index')->with('remarks', Remark::where('req_id', $req->id)->get());
     }
 
+    public function show(Req $req)
+    {
+        return view('runner.remarks.show')->with('req', $req);   
+    }
+
     public function create(Req $req)
     {
         return view('runner.remarks.create')->with('req', $req);   
