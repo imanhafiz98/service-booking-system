@@ -41,6 +41,11 @@ class Req extends Model
         return $this->hasOne(Invoice::class);
     }
 
+    public function remarks()
+    {
+        return $this->hasMany(Remark::class);
+    }
+
 
 
     

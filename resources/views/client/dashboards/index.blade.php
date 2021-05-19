@@ -43,7 +43,7 @@ Dashboard :: Service Booking System
                                         <div class="card-body p-5">
                                             <p class="lead">Create any services that you wanted.</p>
                                             <div class="mb-5">
-                                                <div class="display-3 text-dark">RM1</div>
+                                                <div class="display-3 text-dark">RM</div>
                                                 from
                                             </div>
                                             <ul class="list-unstyled">
