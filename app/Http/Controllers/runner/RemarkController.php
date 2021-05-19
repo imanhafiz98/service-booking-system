@@ -4,6 +4,8 @@ namespace App\Http\Controllers\runner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 use Carbon\Carbon;
 use Auth;
@@ -44,19 +46,24 @@ class RemarkController extends Controller
 
         $request->validate([
             'notes' => 'required',
-            'attachment' => 'required',
             'req_id' => 'required'
             ]);
 
             $remark = Remark::create([
              'notes' => $request->notes,
-             'attachment' => $request->attachment,
              'req_id' => $request->req_id, 
              'date_generate' => $todayDate,
              'time_generate' => $todayTime,
              'user_name' => Auth::user()->name,          
              
          ]);
+
+         if($request->hasFile('attachment'))
+         {
+             $filename = $remark->id.'-'. date("Y-m-d").'.'.$request->attachment->getClientOriginalExtension();
+             Storage::disk('public')->put($filename, File::get($request->attachment));
+             $remark->update(['attachment' => $filename]);
+         }
 
         return redirect(route('runner.requests.index'));
 

@@ -53,7 +53,7 @@ Dashboard :: Service Booking System
 
                                                     <div class="form-group">
                                                         <label class="small mb-1" >Attachment</label>
-                                                        <textarea class="form-control" name="attachment" id="exampleFormControlTextarea1" rows="10" required></textarea>
+                                                        <input type="file" class="form-control" name="attachment"/>
                                                     </div>
                                                     
                                                     <hr class="my-4" />

@@ -39,7 +39,7 @@ Dashboard :: Service Booking System
                                             <div class="col-xxl-6 col-xl-8">
                                                 <h3 class="text-primary">Add Remark</h3>
                                                 <h5 class="card-title">Enter remark details</h5>
-                                                <form method="POST" action="{{ route('client.remarks.store') }}">
+                                                <form action="{{ route('client.remarks.store') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
 
                                                 <div class="form-group">
@@ -53,7 +53,7 @@ Dashboard :: Service Booking System
 
                                                     <div class="form-group">
                                                         <label class="small mb-1" >Attachment</label>
-                                                        <textarea class="form-control" name="attachment" id="exampleFormControlTextarea1" rows="10" required></textarea>
+                                                        <input type="file" class="form-control" name="attachment"/>
                                                     </div>
                                                     
                                                     <hr class="my-4" />

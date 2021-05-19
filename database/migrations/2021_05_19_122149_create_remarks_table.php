@@ -16,7 +16,7 @@ class CreateRemarksTable extends Migration
         Schema::create('remarks', function (Blueprint $table) {
             $table->id();
             $table->string('notes');
-            $table->text('attachment');
+            $table->string('attachment')->nullable();
 
             $table->string('date_generate');
             $table->string('time_generate');

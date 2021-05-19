@@ -67,7 +67,13 @@ Dashboard :: Service Booking System
                                 <td>{{ $remark->user_name }}</td>
                                 <td>{{ $remark->req->service->name }}</td>
                                 <td>{{ $remark->notes }}</td>
-                                <td>{{ $remark->attachment }}</td>
+                                <td>
+                                    @if ( $remark->attachment != null)
+                                    <a href="{{ env('APP_URL')}}/storage/{{ $remark->attachment }}" target="_blank">Open Attachment</a>
+                                    @else
+                                        No Attachment
+                                    @endif
+                                </td>
                                 <td>{{ $remark->date_generate }}</td>
                                 <td>{{ $remark->time_generate }}</td>
                                 
