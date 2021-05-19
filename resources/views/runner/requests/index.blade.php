@@ -93,7 +93,7 @@ Dashboard :: Service Booking System
 
                                     </form>
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
 
                                     @elseif($req->status == 'Accepted')
@@ -118,18 +118,18 @@ Dashboard :: Service Booking System
                                             </div> -->
                                     </form>
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.remarks.show', $req->id) }}">Remarks</a>
+                                    <a class="btn btn-warning btn-sm" href="{{ route('runner.remarks.show', $req->id) }}">Remarks</a>
 
                                      @elseif($req->status == 'Cancelled')
 
-                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                     <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                        
 
                                     @elseif($req->status == 'Completed')
 
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                         
 
                                     @endif

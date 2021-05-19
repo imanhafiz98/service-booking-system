@@ -56,7 +56,7 @@ class RemarkController extends Controller
              
          ]);
 
-        return redirect(route('runner.dashboards.index'));
+        return redirect(route('runner.requests.index'));
 
     }
 }

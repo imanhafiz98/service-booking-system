@@ -145,6 +145,7 @@ Route::post('/client/request/{req}/index', 'Client\RequestController@update')->n
 
 //RemarkController
 Route::get('/client/remark/{req}/index', 'Client\RemarkController@index')->name('client.remarks.index');
+Route::get('/client/remark/{service}/show', 'Client\RemarkController@show')->name('client.remarks.show');
 Route::get('/client/remark/{service}/create', 'Client\RemarkController@create')->name('client.remarks.create');
 Route::post('/client/remark/store', 'Client\RemarkController@store')->name('client.remarks.store');
 

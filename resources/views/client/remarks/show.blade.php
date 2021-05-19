@@ -1,4 +1,4 @@
-@extends('runner.main')
+@extends('client.main')
 
 @section('title')
 Dashboard :: Service Booking System
@@ -45,21 +45,21 @@ Dashboard :: Service Booking System
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">Request ID</label>
-                                                            <input class="form-control" name="req_id" id="exampleFormControlInput1" type="text" value="{{ $req->id }}" readonly />
+                                                            <input class="form-control" name="req_id" id="exampleFormControlInput1" type="text" value="{{ $reqs->id }}" readonly />
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingCCNumber">Price (RM)</label>
-                                                            <input class="form-control" name="price" id="exampleFormControlInput1" type="text" value="{{ $req->price }}" readonly />
+                                                            <input class="form-control" name="price" id="exampleFormControlInput1" type="text" value="{{ $reqs->price }}" readonly />
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Notes</label>
-                                                        <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" value="{{ $req->notes }}" readonly />
+                                                        <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" value="{{ $reqs->notes }}" readonly />
                                                     </div>
                                                     
 
-                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.create', $req->id) }}">Add Remark</a>
-                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.index', $req->id) }}">View Remark</a>
+                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.create', $reqs->id) }}">Add Remark</a>
+                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.index', $reqs->id) }}">View Remark</a>
                                                     
         
                                                     

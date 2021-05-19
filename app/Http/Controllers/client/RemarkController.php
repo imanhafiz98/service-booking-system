@@ -22,12 +22,12 @@ class RemarkController extends Controller
     //     return view('client.remarks.index')->with('remarks', Remark::where('req_id', $service->req->id)->get());
     // }
 
-    public function index(Service $service)
+    public function show(Service $service)
     {
         $status = $request->status ?? null;
 
-        return view('client.remarks.index')->with('reqs', Req::where('service_id', $service->id)
-            ->with('remarks', Remark::where('req_id', $req->id))
+        return view('client.remarks.show')->with('reqs', Req::where('service_id', $service->id)
+            ->where('status', "Accepted")
             ->get());
     }
 
