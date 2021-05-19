@@ -187,6 +187,7 @@ Route::post('/runner/request/create', 'Runner\RequestController@store')->name('r
 Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->name('runner.requests.update');
 
 //RemarkController
+Route::get('/runner/remark/{req}/index', 'Runner\RemarkController@index')->name('runner.remarks.index');
 Route::get('/runner/remark/{req}/create', 'Runner\RemarkController@create')->name('runner.remarks.create');
 Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runner.remarks.store');
 

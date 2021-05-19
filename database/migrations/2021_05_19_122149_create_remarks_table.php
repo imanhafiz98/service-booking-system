@@ -21,6 +21,9 @@ class CreateRemarksTable extends Migration
             $table->unsignedBigInteger('req_id');
             $table->foreign('req_id')->references('id')->on('reqs');
 
+            $table->string('date_generate');
+            $table->string('time_generate');
+
             $table->timestamps();
         });
     }
