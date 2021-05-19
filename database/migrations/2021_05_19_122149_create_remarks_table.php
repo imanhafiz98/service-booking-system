@@ -17,12 +17,14 @@ class CreateRemarksTable extends Migration
             $table->id();
             $table->string('notes');
             $table->text('attachment');
+
+            $table->string('date_generate');
+            $table->string('time_generate');
            
             $table->unsignedBigInteger('req_id');
             $table->foreign('req_id')->references('id')->on('reqs');
 
-            $table->string('date_generate');
-            $table->string('time_generate');
+            $table->string('user_name');
 
             $table->timestamps();
         });

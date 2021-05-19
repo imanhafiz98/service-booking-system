@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Carbon\Carbon;
+use Auth;
 
 use App\Models\User;
 use App\Models\Service;
@@ -41,6 +42,8 @@ class RemarkController extends Controller
 
     public function store(Request $request)
     {
+        //dd(Auth::user()->id);
+
         $todayDate = Carbon::now()->format('Y-m-d');
         $todayTime = Carbon::now()->format('H:i:m');
 
@@ -55,10 +58,11 @@ class RemarkController extends Controller
              'attachment' => $request->attachment,
              'req_id' => $request->req_id, 
              'date_generate' => $todayDate,
-            'time_generate' => $todayTime          
+             'time_generate' => $todayTime,
+             'user_name' => Auth::user()->name,     
              
          ]);
 
-        return redirect(route('client.dashboards.index'));
+        return redirect(route('client.services.index'));
     }
 }

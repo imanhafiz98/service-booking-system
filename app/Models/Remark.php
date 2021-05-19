@@ -17,9 +17,10 @@ class Remark extends Model
     protected $fillable = [
         'notes',
         'attachment',
-        'req_id',
         'date_generate',
-        'time_generate'
+        'time_generate',
+        'req_id',
+        'user_name'
         
     ];
 

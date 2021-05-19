@@ -37,6 +37,7 @@ Dashboard :: Service Booking System
                             <thead>
                                 <tr>
                                     <th>Remark ID</th>
+                                    <th>From</th>
                                     <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
@@ -48,6 +49,7 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Remark ID</th>
+                                    <th>From</th>
                                     <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
@@ -61,7 +63,8 @@ Dashboard :: Service Booking System
                             @foreach($remarks as $remark)
                             @if (auth()->user()->id == $remark->req->client_id)
                             <tr>
-                                <td>{{ $remark->req->id }}</td>
+                                <td>{{ $remark->id }}</td>
+                                <td>{{ $remark->user_name }}</td>
                                 <td>{{ $remark->req->service->name }}</td>
                                 <td>{{ $remark->notes }}</td>
                                 <td>{{ $remark->attachment }}</td>

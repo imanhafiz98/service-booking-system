@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Carbon\Carbon;
+use Auth;
 
 use App\Models\User;
 use App\Models\Service;
@@ -44,7 +45,7 @@ class RemarkController extends Controller
         $request->validate([
             'notes' => 'required',
             'attachment' => 'required',
-             'req_id' => 'required'
+            'req_id' => 'required'
             ]);
 
             $remark = Remark::create([
@@ -52,7 +53,8 @@ class RemarkController extends Controller
              'attachment' => $request->attachment,
              'req_id' => $request->req_id, 
              'date_generate' => $todayDate,
-            'time_generate' => $todayTime          
+             'time_generate' => $todayTime,
+             'user_name' => Auth::user()->name,          
              
          ]);
 
