@@ -6,78 +6,92 @@ Dashboard :: Service Booking System
 
 @section('content')
 
+
 <html lang="en">
 
-    <body class="nav-fixed">
+<body>
 
-        <main>
-
+    <main>
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                        <div class="container">
-                            <div class="page-header-content pt-4">
-                                <div class="row align-items-center justify-content-between">
-                                    <div class="col-auto mt-4">
-                                        <h1 class="page-header-title">
-                                            <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
-                                            Remarks
-                                        </h1>
-                                        <div class="page-header-subtitle">Wizard examples for step-by-step form submission content to use as part of an application</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </header>
-                    <div class="container mt-n10">
-                        <!-- Wizard card example with navigation-->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="tab-content" id="cardTabContent">
-                                    <!-- Wizard tab pane item 1-->
-                                    <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
-                                        <div class="row justify-content-center">
-                                            <div class="col-xxl-6 col-xl-8">
-                                                <h3 class="text-primary">Remarks</h3>
-                                                <h5 class="card-title"></h5>
-                                                <form>
-                                                @csrf
-
-                                                <h5 class="card-title">Request Details</h5>
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingName">Request ID</label>
-                                                            <input class="form-control" name="req_id" id="exampleFormControlInput1" type="text" value="{{ $reqs->id }}" readonly />
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="small mb-1" for="inputBillingCCNumber">Price (RM)</label>
-                                                            <input class="form-control" name="price" id="exampleFormControlInput1" type="text" value="{{ $reqs->price }}" readonly />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputUsername">Notes</label>
-                                                        <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" value="{{ $reqs->notes }}" readonly />
-                                                    </div>
-                                                    
-
-                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.create', $reqs->id) }}">Add Remark</a>
-                                                    <a class="btn btn-primary" href="{{ route('runner.remarks.index', $reqs->id) }}">View Remark</a>
-                                                    
-        
-                                                    
-                                                    <hr class="my-4" />
-                                                    <div class="d-flex justify-content-between">
-                                                        
-                                                        
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="container">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="filter"></i></div>
+                                Remarks
+                            </h1>
+                            <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
                         </div>
                     </div>
-        </main>
-    
-    </body>
+                </div>
+            </div>
+        </header>
+        <!-- Main page content-->
+        <div class="container mt-n10">
+            <div class="card mb-4">
+                <div class="card-header">s</div>
+                <div class="card-body">
+                    <div class="datatable">
+                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Service ID</th>
+                                    <th>Service Name</th>
+                                    <th>Price</th>
+                                    <th>Notes</th>
+                                    <th>Runner ID</th>
+                                    <th>Runner Name</th>
+                                    <th>Action</th>
+     
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    
+                                    <th>Service ID</th>
+                                    <th>Service Name</th>
+                                    <th>Price</th>
+                                    <th>Notes</th>
+                                    <th>Runner ID</th>
+                                    <th>Runner Name</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </tfoot>
+                            <tbody>
+
+                            @foreach($reqs as $req)
+                            
+                            <tr>
+                               
+                                <td>{{ $req->service_id }}</td>
+                                <td>{{ $req->service->name }}</td>
+                                <td>{{ $req->price }}</td>
+                                <td>{{ $req->notes }}</td>
+                                <td>{{ $req->user_id }}</td>
+                                <td>{{ $req->user->name }}</td>
+                                <td>
+                    
+                                <a class="btn btn-primary" href="{{ route('client.remarks.create', $req->id) }}">Add Remark</a>
+                                <a class="btn btn-primary" href="{{ route('client.remarks.index', $req->id) }}">View Remark</a>
+
+                                </td>
+                            </tr>
+                            
+                             @endforeach
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>
+
+
 @endsection

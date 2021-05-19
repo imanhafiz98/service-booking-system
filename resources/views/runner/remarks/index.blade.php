@@ -37,7 +37,7 @@ Dashboard :: Service Booking System
                             <thead>
                                 <tr>
                                     <th>Remark ID</th>
-                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
                                     <th>Date Added</th>
@@ -48,7 +48,7 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Remark ID</th>
-                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
                                     <th>Date Added</th>
@@ -62,7 +62,7 @@ Dashboard :: Service Booking System
                             @if (auth()->user()->id == $remark->req->user_id)
                             <tr>
                                 <td>{{ $remark->id }}</td>
-                                <td>{{ $remark->req->service_id }}</td>
+                                <td>{{ $remark->req->service->name }}</td>
                                 <td>{{ $remark->notes }}</td>
                                 <td>{{ $remark->attachment }}</td>
                                 <td>{{ $remark->date_generate }}</td>
@@ -70,7 +70,7 @@ Dashboard :: Service Booking System
                                 
                             </tr>
                             @endif
-                             @endforeach
+                            @endforeach
                             
                             </tbody>
                             

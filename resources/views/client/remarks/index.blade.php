@@ -37,7 +37,7 @@ Dashboard :: Service Booking System
                             <thead>
                                 <tr>
                                     <th>Remark ID</th>
-                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
                                     <th>Date Added</th>
@@ -48,7 +48,7 @@ Dashboard :: Service Booking System
                             <tfoot>
                                 <tr>
                                     <th>Remark ID</th>
-                                    <th>Service ID</th>
+                                    <th>Service Name</th>
                                     <th>Notes</th>
                                     <th>Attachment</th>
                                     <th>Date Added</th>
@@ -59,10 +59,10 @@ Dashboard :: Service Booking System
                             <tbody>
 
                             @foreach($remarks as $remark)
-                            @if (auth()->user()->id == $remark->req->user_id)
+                            @if (auth()->user()->id == $remark->req->client_id)
                             <tr>
                                 <td>{{ $remark->req->id }}</td>
-                                <td>{{ $remark->req->service_id }}</td>
+                                <td>{{ $remark->req->service->name }}</td>
                                 <td>{{ $remark->notes }}</td>
                                 <td>{{ $remark->attachment }}</td>
                                 <td>{{ $remark->date_generate }}</td>
@@ -75,8 +75,6 @@ Dashboard :: Service Booking System
                             </tbody>
                             
                         </table>
-
-                        <a class="btn btn-primary" href="{{ route('runner.remarks.create', $remarks->reqs->id) }}">Add Remark</a>
 
                     </div>
                 </div>

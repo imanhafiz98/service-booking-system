@@ -39,11 +39,11 @@ Dashboard :: Service Booking System
                                             <div class="col-xxl-6 col-xl-8">
                                                 <h3 class="text-primary">Add Remark</h3>
                                                 <h5 class="card-title">Enter remark details</h5>
-                                                <form>
+                                                <form method="POST" action="{{ route('client.remarks.store') }}">
                                                 @csrf
 
-                                                    <div class="form-group">
-                                                        <input class="form-control" name="req_id" id="inputUsername" type="text" value="" />
+                                                <div class="form-group">
+                                                        <input class="form-control" name="req_id" id="inputUsername" type="text" value="{{ $req->id }}" hidden/>
                                                     </div>
 
                                                     <div class="form-group">
