@@ -188,7 +188,7 @@ Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->
 
 //RemarkController
 Route::get('/runner/remark/{req}/create', 'Runner\RemarkController@create')->name('runner.remarks.create');
-//Route::post('/client/remark/store', 'Client\RemarkController@store')->name('client.remarks.store');
+Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runner.remarks.store');
 
 //ProfileController
 Route::get('/runner/profile/{user}/show', 'Runner\ProfileController@show')->name('runner.profiles.show');

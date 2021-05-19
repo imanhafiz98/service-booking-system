@@ -11,6 +11,7 @@ use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Invoice;
+use App\Models\Remark;
 
 
 class RequestController extends Controller

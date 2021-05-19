@@ -43,7 +43,7 @@ Dashboard :: Service Booking System
                                                 @csrf
 
                                                     <div class="form-group">
-                                                        <input class="form-control" name="req_id" id="inputUsername" type="text" value="{{ $req->id }}" hidden/>
+                                                        <input class="form-control" name="req_id" id="inputUsername" type="text" value="" />
                                                     </div>
 
                                                     <div class="form-group">

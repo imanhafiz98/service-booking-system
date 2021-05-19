@@ -120,7 +120,7 @@ Dashboard :: Service Booking System
 
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
-                                    <button class="btn btn-primary btn-sm" type="submit">Remarks</button>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.remarks.create', $req->id) }}">Remarks</a>
 
                                      @elseif($req->status == 'Cancelled')
 
