@@ -19,16 +19,16 @@ class CreateReqsTable extends Migration
             $table->text('notes');
             $table->enum('status', ['Requested', 'Rejected', 'Accepted', 'Cancelled', 'Completed'])->default('Requested');
 
-            /*
+            
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('service_id');
             $table->foreign('service_id')->references('id')->on('services');
-            */
+            
 
-            $table->string('client_id');
-            $table->string('service_id');
+            // $table->string('client_id');
+            // $table->string('service_id');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

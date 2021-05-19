@@ -73,11 +73,14 @@ Dashboard :: Service Booking System
                                 <td>{{ $req->user_id }}</td>
                                 <td>{{ $req->user->name }}</td>
                                 <td>
-                                    <form method="post" action="{{ route('client.requests.update', $req) }}">
+                                    <form method="post" action="{{ route('client.requests.update', $req->id) }}">
                                     @csrf
                                         <!-- <button class="btn btn-primary btn-sm" type="submit">Accept</button> -->
                                         <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Accept</button>
-
+                                        <input type="text" name="req_id" value="{{ $req->id }}" readonly>
+                                        <input type="text" name="user_id" value="{{ $req->user_id }}" readonly>
+                                        <input type="text" name="service_id" value="{{ $req->service->id }}" readonly>
+                                       
                                             <!-- Modal -->
                                             <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">

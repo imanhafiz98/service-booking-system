@@ -18,10 +18,7 @@ class RequestController extends Controller
     
     public function index(Service $service)
     {
-        //dd($data->all());
-
         $status = $request->status ?? null;
-
 
         return view('client.requests.index')->with('reqs', Req::where('service_id', $service->id)
             ->where('status', "Requested")
@@ -31,19 +28,17 @@ class RequestController extends Controller
 
     public function update(Request $request, Req $req)
     {
-        $data = request()->only(['status']);
+        //dd($req);
+        $data = request()->only(['req_id', 'user_id', 'service_id']);
 
+        dd($data);
 
-        Req::where('user_id', $req->user_id)->update(['status' => "Accepted"]);
+        Req::where('id', $data['req_id'])->update(['status' => "Accepted"]);
 
-        // $req->status = "Accepted";
-   
-        // $req->update($data);
+        Service::where('id',$data['service_id'])->update(['status' => "Ongoing"]);
 
-        Service::where('id',$req->service_id)->update(['status' => "Ongoing"]);
-
-        // Req::where('service_id', $req->service_id)
-        //         ->where('user_id', '=', $req->user_id)->update(['status' => "Rejected"]);
+         //Req::where('service_id', $req->service_id)
+                // ->where('user_id', '!=', $req->user_id)->update(['status' => "Rejected"]);
         
         return redirect(route('client.services.index'));
     }
