@@ -75,13 +75,14 @@ Dashboard :: Service Booking System
                                 <td>
                                     <form method="post" action="{{ route('client.requests.update', $req->id) }}">
                                     @csrf
-                                        <!-- <button class="btn btn-primary btn-sm" type="submit">Accept</button> -->
-                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Accept</button>
-                                        <input type="text" name="req_id" value="{{ $req->id }}" readonly>
-                                        <input type="text" name="user_id" value="{{ $req->user_id }}" readonly>
-                                        <input type="text" name="service_id" value="{{ $req->service->id }}" readonly>
+                                         <button class="btn btn-primary btn-sm" type="submit">Accept</button>
+                                        
+                                        <input type="text" name="req_id" value="{{ $req->id }}" hidden>
+                                        <input type="text" name="user_id" value="{{ $req->user_id }}" hidden>
+                                        <input type="text" name="service_id" value="{{ $req->service->id }}" hidden>
                                        
-                                            <!-- Modal -->
+                                        <!-- <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#staticBackdrop">Accept</button>
+                                             Modal 
                                             <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -93,7 +94,7 @@ Dashboard :: Service Booking System
                                                         <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                     </form>
                                   
                                 </td>
