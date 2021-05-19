@@ -64,7 +64,7 @@ Dashboard :: Service Booking System
                                 <td>{{ $invoice->date_generate }}</td>
                                 <td>{{ $invoice->time_generate }}</td>
                                 <td>
-                                    <a class="btn btn-primary btn-sm" href="" type="submit">View</a> 
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.invoices.show', $invoice->id) }}" type="submit">View</a> 
                                 </td>
                             </tr>
                             @endif

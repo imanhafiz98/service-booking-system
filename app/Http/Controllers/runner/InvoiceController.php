@@ -22,6 +22,11 @@ class InvoiceController extends Controller
         return view('runner.invoices.index')->with('invoices', Invoice::all());
     }
 
+    public function show(Invoice $invoice)
+    {
+        return view('runner.invoices.show')->with('invoice', $invoice);
+    }
+
     public function generate(Request $request)
     {
         $status = $request->status ?? null;
@@ -34,5 +39,22 @@ class InvoiceController extends Controller
         })->get();
         
         return view('runner.invoices.generate')->with('reqs', $reqs);
+    }
+
+    public function store(Req $req)
+    {
+        //dd($request->all());
+
+        $todayDate = Carbon::now()->format('Y-m-d');
+        $todayTime = Carbon::now()->format('H:i:m');
+
+        $invoice = Invoice::create([
+            'date_generate' => $todayDate,
+            'time_generate' => $todayTime,
+            'req_id' => $req->id
+            
+        ]);
+
+        return redirect(route('runner.invoices.index'));
     }
 }

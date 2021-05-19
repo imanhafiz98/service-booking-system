@@ -112,7 +112,7 @@
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                                     <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
                                     <a class="nav-link" href="{{ route('runner.invoices.generate', ['status'=>'Completed']) }}">Generate Invoice</a>
-                                    <a class="nav-link" href="{{ route('client.invoices.index') }}">View Invoice</a>
+                                    <a class="nav-link" href="{{ route('runner.invoices.index') }}">View Invoice</a>
                                 </nav>
                             </div>       
             </div>

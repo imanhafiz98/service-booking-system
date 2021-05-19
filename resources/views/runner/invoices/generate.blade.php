@@ -81,7 +81,7 @@ Dashboard :: Service Booking System
                                 <td>{{ $req->service->time }}</td>
                                 <td>{{ $req->service->city->state->name }}</td>
                                 <td>{{ $req->service->city->name }}</td>
-                                <td>{{ $req->price }}</td>
+                                <td>RM{{ $req->price }}</td>
                                 <td>{{ $req->notes }}</td>
                                 <td>
                                     <div class="badge badge-success badge-pill">Completed</div> 

@@ -191,5 +191,7 @@ Route::get('/runner/password/{user}/show', 'Runner\PasswordController@show')->na
 //InvoiceController
 Route::get('/runner/invoice/index', 'Runner\InvoiceController@index')->name('runner.invoices.index');
 Route::get('/runner/invoice/generate', 'Runner\InvoiceController@generate')->name('runner.invoices.generate');
+Route::get('/runner/invoice/{invoice}/show', 'Runner\InvoiceController@show')->name('runner.invoices.show');
+Route::get('/runner/invoice/{req}/store', 'Runner\InvoiceController@store')->name('runner.invoices.store');
 
 });
