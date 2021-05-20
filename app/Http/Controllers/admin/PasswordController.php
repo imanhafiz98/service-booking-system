@@ -27,7 +27,7 @@ class PasswordController extends Controller
    
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         
-        return redirect(route('admin.dashboards.statistic'));
+        return redirect(route('admin.dashboards.index'));
         
     }
 }

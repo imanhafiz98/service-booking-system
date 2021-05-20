@@ -31,6 +31,6 @@ class ProfileController extends Controller
     
         $user = $user->update($request->all());
 
-        return redirect(route('admin.dashboards.statistic'));
+        return redirect(route('admin.dashboards.index'));
     }
 }

@@ -74,12 +74,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
-
-Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
-
-
 //AdminDashboard
-Route::get('/admin/dashboard/statistic', 'Admin\DashboardController@statistic')->name('admin.dashboards.statistic'); 
+Route::get('/admin/dashboard/index', 'Admin\DashboardController@index')->name('admin.dashboards.index'); 
 
 //ProfileController
 Route::get('/admin/profile/{user}/show', 'Admin\ProfileController@show')->name('admin.profiles.show');
@@ -159,6 +155,7 @@ Route::get('/client/address/index', 'Client\AddressController@index')->name('cli
 Route::post('/client/address/store', 'Client\AddressController@store')->name('client.addresses.store');
 Route::get('/client/address/{address}/edit', 'Client\AddressController@edit')->name('client.addresses.edit');
 Route::post('/client/address/{address}/upddate', 'Client\AddressController@update')->name('client.addresses.update');
+Route::delete('/client/address/{address}/delete', 'Client\AddressController@destroy')->name('client.addresses.destroy');
 
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');

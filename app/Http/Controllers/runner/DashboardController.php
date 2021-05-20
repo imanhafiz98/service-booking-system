@@ -11,6 +11,7 @@ use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
 use Auth;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -21,6 +22,10 @@ class DashboardController extends Controller
 
     public function statistic()
     {
+        $day = Carbon::now()->format( 'l' );
+        $todayDate = Carbon::now()->format('d-m-Y');
+        $todayTime = Carbon::now()->format('H:i:m');
+
         $totalCompletedReqs = \DB::table('Reqs')
                                     ->where('status', '=', 'Completed')
                                     ->where('user_id', '=', Auth::user()->id)->count();
@@ -37,6 +42,9 @@ class DashboardController extends Controller
         //dd($countTotalAllServices);
 
         return view('runner.dashboards.statistic')
+            ->with('day', $day)
+            ->with('todayDate', $todayDate)
+            ->with('todayTime', $todayTime)    
             ->with('services', Service::all())
             ->with('reqs', Req::all())
             ->with('totalCompletedReqs', $totalCompletedReqs)

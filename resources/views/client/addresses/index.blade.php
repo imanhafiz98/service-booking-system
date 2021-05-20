@@ -67,7 +67,15 @@ Dashboard :: Service Booking System
                                 <td>{{ $address->postcode }}</td>                      
                                 <td>
                                     <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.edit', $address->id) }}">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="">Delete</a>    
+
+                                    <form action="{{ route('client.addresses.destroy', $address->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    
+                                        <button class="btn btn-danger btn-sm" type="submit" >Delete</button> 
+
+                                    </form>  
+
                                 </td>
                             </tr>
                             @endforeach

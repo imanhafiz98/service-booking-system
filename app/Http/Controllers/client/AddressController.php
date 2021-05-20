@@ -80,4 +80,12 @@ class AddressController extends Controller
         return redirect(route('client.addresses.index'));
     }
 
+    public function destroy(Address $address)
+    {
+        $address->delete();
+
+        return redirect(route('client.addresses.index'));
+
+    }
+
 }

@@ -11,29 +11,49 @@ use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
 use Auth;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
-    public function statistic()
+    public function index()
     {
+        $day = Carbon::now()->format( 'l' );
+        $todayDate = Carbon::now()->format('d-m-Y');
+        $todayTime = Carbon::now()->format('H:i:m');
+
         //dd(Auth::user()->id);
         $totalAllUsers = \DB::table('Users')->count();
+
+        $totalAdmins = \DB::table('Users')
+                                     ->where('role', '=', 'admin')
+                                     ->count();
 
         $totalClients = \DB::table('Users')
                                      ->where('role', '=', 'client')
                                      ->count();
 
-         $totalRunners = \DB::table('Users')
+        $totalRunners = \DB::table('Users')
                                      ->where('role', '=', 'runner')
                                      ->count();
+
+        $totalServices = \DB::table('Services')->count();  
+
+        $totalReqs = \DB::table('Reqs')->count();                            
 
 
         //dd($countTotalAllServices);
 
-        return view('admin.dashboards.statistic')
+        return view('admin.dashboards.index')
+            ->with('day', $day)
+            ->with('todayDate', $todayDate)
+            ->with('todayTime', $todayTime)
             ->with('totalAllUsers', $totalAllUsers)
+            ->with('totalAdmins', $totalAdmins)
             ->with('totalClients', $totalClients)
-            ->with('totalRunners', $totalRunners);
+            ->with('totalRunners', $totalRunners)
+            ->with('totalServices', $totalServices)
+            ->with('totalReqs', $totalReqs)
+            ->with('users', User::where('role', 'admin')->get());
 
     }
 }

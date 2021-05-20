@@ -29,8 +29,7 @@
                             </a>
                             <div class="collapse" id="collapseDashboards" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Default</a>
-                                    <a class="nav-link" href="{{ route('admin.dashboards.statistic') }}">Statistics</a>
+                                    <a class="nav-link" href="{{ route('admin.dashboards.index') }}">Default</a>
                                 </nav>
                             </div>
 

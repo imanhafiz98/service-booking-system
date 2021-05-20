@@ -9,11 +9,6 @@ use App\Models\State;
 
 class StateController extends Controller
 {
-    public function dashboard()
-    {
-        return view('admin.dashboard');
-    }
-
     public function index()
     {
         return view('admin.states.index')->with('states', State::all());
