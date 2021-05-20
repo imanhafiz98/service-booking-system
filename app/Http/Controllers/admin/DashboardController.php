@@ -19,19 +19,21 @@ class DashboardController extends Controller
         //dd(Auth::user()->id);
         $totalAllUsers = \DB::table('Users')->count();
 
-        // $totalPendingServices = \DB::table('Services')
-        //                             ->where('status', '=', 'Pending')
-        //                             ->where('user_id', '=', Auth::user()->id)->count();
+        $totalClients = \DB::table('Users')
+                                     ->where('role', '=', 'client')
+                                     ->count();
 
-        // $totalOngoingServices = \DB::table('Services')
-        //                             ->where('status', '=', 'Ongoing')
-        //                             ->where('user_id', '=', Auth::user()->id)->count();
+         $totalRunners = \DB::table('Users')
+                                     ->where('role', '=', 'runner')
+                                     ->count();
 
 
         //dd($countTotalAllServices);
 
         return view('admin.dashboards.statistic')
-            ->with('totalAllUsers', $totalAllUsers);
+            ->with('totalAllUsers', $totalAllUsers)
+            ->with('totalClients', $totalClients)
+            ->with('totalRunners', $totalRunners);
 
     }
 }

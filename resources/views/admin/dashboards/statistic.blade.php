@@ -37,7 +37,7 @@ Dashboard :: Service Booking System
                         <div class="card-body">
                             <div class="small text-muted">Total Users</div>
                             <div class="h3">{{ $totalAllUsers }}</div>
-                            <a class="text-arrow-icon small" href="">
+                            <a class="text-arrow-icon small" href="{{ route('admin.users.index') }}">
                                 View all
                                 <i data-feather="arrow-right"></i>
                             </a>
@@ -48,12 +48,12 @@ Dashboard :: Service Booking System
                     <!-- Billing card 2-->
                     <div class="card h-100 border-left-lg border-left-secondary">
                         <div class="card-body">
-                            <div class="small text-muted">Total pending services</div>
-                            <div class="h3"></div>
-                            <a class="text-arrow-icon small text-secondary" href="">
+                            <div class="small text-muted">Total Clients</div>
+                            <div class="h3">{{ $totalClients }}</div>
+                            <!-- <a class="text-arrow-icon small text-secondary" href="">
                                 View all
                                 <i data-feather="arrow-right"></i>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -61,12 +61,12 @@ Dashboard :: Service Booking System
                     <!-- Billing card 3-->
                     <div class="card h-100 border-left-lg border-left-success">
                         <div class="card-body">
-                            <div class="small text-muted">Total ongoing services</div>
-                            <div class="h3 d-flex align-items-center">}</div>
-                            <a class="text-arrow-icon small text-success" href="">
+                            <div class="small text-muted">Total Runners</div>
+                            <div class="h3 d-flex align-items-center">{{ $totalRunners }}</div>
+                            <!-- <a class="text-arrow-icon small text-success" href="">
                                 View all
                                 <i data-feather="arrow-right"></i>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
