@@ -19,7 +19,7 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Services
+                                List of Remarks - Choose Service
                             </h1>
                             <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
                         </div>
@@ -30,7 +30,7 @@ Dashboard :: Service Booking System
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
-                <div class="card-header">All Services</div>
+                <div class="card-header">Please Choose Service to See Remarks</div>
                 <div class="card-body">
                     <div class="datatable">
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
@@ -74,7 +74,7 @@ Dashboard :: Service Booking System
 
                                 </td>
                                 <td>
-                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.remarks.show', $service->id) }}">Remarks</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.remarks.show', $service->id) }}">Choose</a>
                                 </td>
                             </tr>
                             

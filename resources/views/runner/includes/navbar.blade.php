@@ -6,50 +6,10 @@
             <a class="navbar-brand" href="index.html">Welcome {{ Auth::user()->name }}</a>
             <!-- Sidenav Toggle Button-->
             <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle"><i data-feather="menu"></i></button>
-            <!-- Navbar Search Input-->
-            <!-- * * Note: * * Visible only on and above the md breakpoint-->
-            <form class="form-inline mr-auto d-none d-md-block mr-3">
-                <div class="input-group input-group-joined input-group-solid">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                    <div class="input-group-append">
-                        <div class="input-group-text"><i data-feather="search"></i></div>
-                    </div>
-                </div>
-            </form>
+            
             <!-- Navbar Items-->
             <ul class="navbar-nav align-items-center ml-auto">
-                <!-- Documentation Dropdown-->
-                <li class="nav-item dropdown no-caret d-none d-sm-block mr-3">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="font-weight-500">Documentation</div>
-                        <i class="fas fa-chevron-right dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right py-0 mr-sm-n15 mr-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
-                        <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro" target="_blank">
-                            <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="book"></i></div>
-                            <div>
-                                <div class="small text-gray-500">Documentation</div>
-                                Usage instructions and reference
-                            </div>
-                        </a>
-                        <div class="dropdown-divider m-0"></div>
-                        <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/components" target="_blank">
-                            <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="code"></i></div>
-                            <div>
-                                <div class="small text-gray-500">Components</div>
-                                Code snippets and reference
-                            </div>
-                        </a>
-                        <div class="dropdown-divider m-0"></div>
-                        <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/changelog" target="_blank">
-                            <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="file-text"></i></div>
-                            <div>
-                                <div class="small text-gray-500">Changelog</div>
-                                Updates and changes
-                            </div>
-                        </a>
-                    </div>
-                </li>
+                
                 <!-- Navbar Search Dropdown-->
                 <!-- * * Note: * * Visible only below the md breakpoint-->
                 <li class="nav-item dropdown no-caret mr-3 d-md-none">
@@ -165,10 +125,6 @@
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#!">
-                            <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                            Account
-                        </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
