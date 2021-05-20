@@ -143,6 +143,21 @@
                                     
                                 </nav>
                             </div>
+
+                            <div class="sidenav-menu-heading">Remarks Management</div>
+                            <!-- Sidenav Accordion (Layout)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseRemarks" aria-expanded="false" aria-controls="collapseRemarks">
+                                <div class="nav-link-icon"><i data-feather="code"></i></div>
+                                Remarks
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseRemarks" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                                    <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                                    <a class="nav-link" href="{{ route('admin.remarks.index.services', ['status'=>'Ongoing']) }}"> List of Remarks</a>
+                                    
+                                </nav>
+                            </div>
                             
 
                             </div>

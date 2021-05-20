@@ -70,23 +70,11 @@ Dashboard :: Service Booking System
                                 <td>{{ $service->city->state->name }}</td>
                                 <td>{{ $service->city->name }}</td>
                                 <td>
-                                   @if($service->status == 'Pending')
-                                        <div class="badge badge-warning badge-pill">Pending</div>
-
-                                        @elseif($service->status == 'Ongoing')
                                         <div class="badge badge-primary badge-pill">Ongoing</div>
 
-                                        @elseif($service->status == 'Cancelled')
-                                        <div class="badge badge-danger badge-pill">Cancelled</div>
-
-                                        @elseif($service->status == 'Completed')
-                                        <div class="badge badge-success badge-pill">Completed</div>
-
-                                    @endif
                                 </td>
                                 <td>
-                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.services.show', $service->id) }}">View</a>
-
+                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.remarks.show', $service->id) }}">Remarks</a>
                                 </td>
                             </tr>
                             

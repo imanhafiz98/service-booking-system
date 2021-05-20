@@ -13,9 +13,10 @@ use App\Models\City;
 
 class ServiceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view('admin.services.index')->with('services', Service::all());
+
     }
 
     public function create()

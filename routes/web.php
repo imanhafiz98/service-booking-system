@@ -93,7 +93,6 @@ Route::get('/admin/service/{service}/show', 'Admin\ServiceController@show')->nam
 Route::get('/admin/service/{service}/edit', 'Admin\ServiceController@edit')->name('admin.services.edit');
 Route::post('/admin/service/{service}/update', 'Admin\ServiceController@update')->name('admin.services.update');
 
-
 //RequestController
 Route::get('/admin/request/index', 'Admin\RequestController@index')->name('admin.requests.index');
 Route::get('/admin/request/create', 'Admin\RequestController@create')->name('admin.requests.create');
@@ -101,6 +100,11 @@ Route::post('/admin/request/store', 'Admin\RequestController@store')->name('admi
 Route::get('/admin/request/{req}/show', 'Admin\RequestController@show')->name('admin.requests.show');
 Route::get('/admin/request/{req}/edit', 'Admin\RequestController@edit')->name('admin.requests.edit');
 Route::post('/admin/request/{req}/update', 'Admin\RequestController@update')->name('admin.requests.update'); 
+
+//RemarkController
+Route::get('/admin/remarks/index/services', 'Admin\RemarkController@indexServices')->name('admin.remarks.index.services');
+Route::get('/admin/remark/{service}/show', 'Admin\RemarkController@show')->name('admin.remarks.show');
+Route::get('/admin/remark/{req}/index', 'Admin\RemarkController@index')->name('admin.remarks.index');
 
 //StateController
 Route::get('/admin/state/index', 'Admin\StateController@index')->name('admin.states.index');
