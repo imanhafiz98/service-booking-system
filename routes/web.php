@@ -81,6 +81,15 @@ Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.d
 //AdminDashboard
 Route::get('/admin/dashboard/statistic', 'Admin\DashboardController@statistic')->name('admin.dashboards.statistic'); 
 
+//ProfileController
+Route::get('/admin/profile/{user}/show', 'Admin\ProfileController@show')->name('admin.profiles.show');
+Route::get('/admin/profile/{user}/edit', 'Admin\ProfileController@edit')->name('admin.profiles.edit');
+Route::post('/admmin/profile/{user}/update', 'Admin\ProfileController@update')->name('admin.profiles.update');
+
+//PasswordController
+Route::get('/admin/password/{user}/edit', 'Admin\PasswordController@edit')->name('admin.passwords.edit');
+Route::post('/admin/password/{user}/update', 'Admin\PasswordController@update')->name('admin.passwords.update');
+
 //UserController
 Route::get('/admin/user/index', 'Admin\UserController@index')->name('admin.users.index');
 Route::get('/admin/user/create', 'Admin\UserController@create')->name('admin.users.create'); 
@@ -151,7 +160,6 @@ Route::post('/client/address/store', 'Client\AddressController@store')->name('cl
 Route::get('/client/address/{address}/edit', 'Client\AddressController@edit')->name('client.addresses.edit');
 Route::post('/client/address/{address}/upddate', 'Client\AddressController@update')->name('client.addresses.update');
 
-
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
 Route::post('/client/request/{req}/index', 'Client\RequestController@update')->name('client.requests.update');
@@ -170,7 +178,6 @@ Route::post('/client/profile/{user}/update', 'Client\ProfileController@update')-
 //PasswordController
 Route::get('/client/password/{user}/edit', 'Client\PasswordController@edit')->name('client.passwords.edit');
 Route::post('/client/password/{user}/update', 'Client\PasswordController@update')->name('client.passwords.update');
-
 
 //InvoiceController
 Route::get('/client/invoice/generate', 'Client\InvoiceController@generate')->name('client.invoices.generate');
