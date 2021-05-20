@@ -12,6 +12,9 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Invoice;
 use App\Models\Remark;
+use App\Models\Address;
+
+use Auth;
 
 class ServiceController extends Controller
 {
@@ -25,7 +28,8 @@ class ServiceController extends Controller
         return view('client.services.create')
             ->with('categories', Category::all())
             ->with('cities', City::all())
-            ->with('states', State::all());   
+            ->with('states', State::all())
+            ->with('addresses', Address::where('user_id', Auth::user()->id)->get());   
     }
 
     public function index(Request $request)

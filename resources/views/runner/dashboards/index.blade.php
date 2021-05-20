@@ -65,7 +65,7 @@ Dashboard :: Service Booking System
                                                 </li>
                                             </ul>
                                         </div>
-                                        <a class="card-footer d-flex align-items-center justify-content-center" href="{{ route('runner.services.create') }}">
+                                        <a class="card-footer d-flex align-items-center justify-content-center" href="{{ route('runner.services.index') }}">
                                             Create your service now
                                             <i class="ml-2" data-feather="arrow-right"></i>
                                         </a>

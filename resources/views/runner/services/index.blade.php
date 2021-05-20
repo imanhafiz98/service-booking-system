@@ -43,6 +43,7 @@ Dashboard :: Service Booking System
                                     <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th>
+                                    <th>Address Details</th>
                                     <th>Status</th>                 
                                     <th>Action</th>
                                 </tr>
@@ -57,6 +58,7 @@ Dashboard :: Service Booking System
                                     <th>City</th>
                                     <th>Date</th>
                                     <th>Time</th>
+                                    <th>Address Details</th>
                                     <th>Status</th>
                                     <th>Action</th>                                   
                                 </tr>
@@ -75,12 +77,13 @@ Dashboard :: Service Booking System
                                 <td>{{ $service->date }}</td>
                                 <td>{{ $service->time }}</td>
                                 <td>
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.addresses.index', $service->id) }}">View</a>
+                                </td>
+                                <td>
                                     <div class="badge badge-warning badge-pill"> {{ $service->status }}</div>        
                                 </td>
                                 <td>
-
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.services.show', $service->id) }}">Request</a>
-                                    
+                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.services.show', $service->id) }}">Request</a>    
                                 </td>
                             </tr>
                             @endif

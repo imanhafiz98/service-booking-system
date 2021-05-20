@@ -194,6 +194,9 @@ Route::get('/runner/service/{service}/show', 'Runner\ServiceController@show')->n
 Route::get('/runner/show-test-service/{service}', 'Runner\ServiceController@showTest')->name('runner.services.show-test'); //new show form for submit request
 Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dashboard
 
+//AddressController
+Route::get('/runner/address/{service}/index', 'Runner\AddressController@index')->name('runner.addresses.index');
+
 //RequestController
 Route::get('/runner/request/index', 'Runner\RequestController@index')->name('runner.requests.index');
 Route::get('/runner/request/{req}/show', 'Runner\RequestController@show')->name('runner.requests.show');
