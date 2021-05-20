@@ -39,15 +39,15 @@ Dashboard :: Service Booking System
                                             <div class="col-xxl-6 col-xl-8">
                                                 <h3 class="text-primary">Add Address</h3>
                                                 <h5 class="card-title">Enter address details</h5>
-                                                <form>
+                                                <form method="POST" action="{{ route('client.addresses.store', Auth::user()->id) }}">
                                                 @csrf
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 1</label>
-                                                        <input class="form-control" name="name" id="inputUsername" type="text" required/>
+                                                        <input class="form-control" name="line_1" id="inputUsername" type="text" required/>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Address Line 2 (Optional)</label>
-                                                        <input class="form-control" name="name" id="inputUsername" type="text" required/>
+                                                        <input class="form-control" name="line_2" id="inputUsername" type="text" required/>
                                                     </div>
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
@@ -78,13 +78,13 @@ Dashboard :: Service Booking System
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">Postcode</label>
-                                                            <input class="form-control"  name = "date" id="exampleFormControlInput1" type="text" required/>
+                                                            <input class="form-control"  name = "postcode" id="exampleFormControlInput1" type="text" required/>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUsername">Notes</label><button class="btn btn-primary btn-xs btn-icon" ype="button" data-toggle="tooltip" data-placement="right" title="" data-original-title="For example: Pick Up Address, Deliver Address"><i class="fas fa-flag"></i></button>
-                                                        <input class="form-control" name="name" id="inputUsername" type="text" required/>
+                                                        <input class="form-control" name="notes" id="inputUsername" type="text" required/>
                                                     </div>
                                                     
                                                     <hr class="my-4" />

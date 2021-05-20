@@ -70,4 +70,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Req::class);
     }
+
+    public function addresses()
+    {
+        return $this->belongsToMany(Address::class);
+    }
 }
