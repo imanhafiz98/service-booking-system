@@ -77,6 +77,10 @@ Route::middleware(['auth', 'can:admin-views'])->group(function(){
 
 Route::get('/admin/dashboard', 'Admin\StateController@dashboard')->name('admin.dashboard'); //dashboard 
 
+
+//AdminDashboard
+Route::get('/admin/dashboard/statistic', 'Admin\DashboardController@statistic')->name('admin.dashboards.statistic'); 
+
 //UserController
 Route::get('/admin/user/index', 'Admin\UserController@index')->name('admin.users.index');
 Route::get('/admin/user/create', 'Admin\UserController@create')->name('admin.users.create'); 

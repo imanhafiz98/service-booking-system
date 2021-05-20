@@ -50,7 +50,7 @@ class RemarkController extends Controller
 
         $request->validate([
             'notes' => 'required',
-             'req_id' => 'required'
+            'req_id' => 'required'
             ]);
 
             $remark = Remark::create([
