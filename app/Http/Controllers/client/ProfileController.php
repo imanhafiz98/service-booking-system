@@ -21,16 +21,17 @@ class ProfileController extends Controller
 
     public function update(Request $request, User $user)
     {
+        
         // dd($request->all());
         $this->validate(request(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required'],
+            'phone' => ['required', 'string']
         ]);
 
-
+    
         $user = $user->update($request->all());
 
-        return redirect(route('client.profiles.show'));
+        return redirect(route('client.dashboards.index'));
     }
 }

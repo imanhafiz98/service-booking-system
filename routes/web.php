@@ -159,7 +159,9 @@ Route::get('/client/profile/{user}/edit', 'Client\ProfileController@edit')->name
 Route::post('/client/profile/{user}/update', 'Client\ProfileController@update')->name('client.profiles.update');
 
 //PasswordController
-Route::get('/client/password/{user}/show', 'Client\PasswordController@show')->name('client.passwords.show');
+Route::get('/client/password/{user}/edit', 'Client\PasswordController@edit')->name('client.passwords.edit');
+Route::post('/client/password/{user}/update', 'Client\PasswordController@update')->name('client.passwords.update');
+
 
 //InvoiceController
 Route::get('/client/invoice/generate', 'Client\InvoiceController@generate')->name('client.invoices.generate');
@@ -200,9 +202,12 @@ Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runn
 
 //ProfileController
 Route::get('/runner/profile/{user}/show', 'Runner\ProfileController@show')->name('runner.profiles.show');
+Route::get('/runner/profile/{user}/edit', 'Runner\ProfileController@edit')->name('runner.profiles.edit');
+Route::post('/runner/profile/{user}/update', 'Runner\ProfileController@update')->name('runner.profiles.update');
 
 //PasswordController
-Route::get('/runner/password/{user}/show', 'Runner\PasswordController@show')->name('runner.passwords.show');
+Route::get('/runner/password/{user}/edit', 'Runner\PasswordController@edit')->name('runner.passwords.edit');
+Route::post('/runner/password/{user}/update', 'Runner\PasswordController@update')->name('runner.passwords.update');
 
 //InvoiceController
 Route::get('/runner/invoice/index', 'Runner\InvoiceController@index')->name('runner.invoices.index');

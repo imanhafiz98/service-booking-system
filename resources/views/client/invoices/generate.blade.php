@@ -46,7 +46,7 @@ Dashboard :: Service Booking System
                                     <th>City</th>
                                     <th>Status</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tfoot>
@@ -61,32 +61,32 @@ Dashboard :: Service Booking System
                                     <th>City</th>
                                     <th>Status</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($reqs as $req)
-                            @if (auth()->user()->id == $req->client_id)
-                            <tr>
-                                <td>{{ $req->service_id }}</td>
-                                <td>{{ $req->service->name }}</td>
-                                <td>{{ $req->service->category->name }}</td>
-                                <td>{{ $req->service->description }}</td>
-                                <td>{{ $req->service->date }}</td>
-                                <td>{{ $req->service->time }}</td>
-                                <td>{{ $req->service->city->state->name }}</td>
-                                <td>{{ $req->service->city->name }}</td>
-                                <td>
-                                    <div class="badge badge-success badge-pill">Completed</div> 
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="{{ route('client.invoices.store', $req->id) }}" type="submit">Generate Invoice</a>    
-                                </td>
-                            </tr>
-                            @endif
-                            @endforeach
-                            
+                                @foreach($reqs as $req)
+                                @if (auth()->user()->id == $req->client_id)
+                                <tr>
+                                    <td>{{ $req->service_id }}</td>
+                                    <td>{{ $req->service->name }}</td>
+                                    <td>{{ $req->service->category->name }}</td>
+                                    <td>{{ $req->service->description }}</td>
+                                    <td>{{ $req->service->date }}</td>
+                                    <td>{{ $req->service->time }}</td>
+                                    <td>{{ $req->service->city->state->name }}</td>
+                                    <td>{{ $req->service->city->name }}</td>
+                                    <td>
+                                        <div class="badge badge-success badge-pill">Completed</div>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.invoices.store', $req->id) }}" type="submit">Generate Invoice</a>
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

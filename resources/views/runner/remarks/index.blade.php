@@ -43,7 +43,7 @@ Dashboard :: Service Booking System
                                     <th>Attachment</th>
                                     <th>Date Added</th>
                                     <th>Time Added</th>
-     
+
                                 </tr>
                             </thead>
                             <tfoot>
@@ -60,29 +60,29 @@ Dashboard :: Service Booking System
                             </tfoot>
                             <tbody>
 
-                            @foreach($remarks as $remark)
-                            @if (auth()->user()->id == $remark->req->user_id)
-                            <tr>
-                                <td>{{ $remark->id }}</td>
-                                <td>{{ $remark->user_name }}</td>
-                                <td>{{ $remark->req->service->name }}</td>
-                                <td>{{ $remark->notes }}</td>
-                                <td>
-                                    @if ( $remark->attachment != null)
-                                    <a href="{{ env('APP_URL')}}/storage/{{ $remark->attachment }}" target="_blank">Open Attachment</a>
-                                    @else
+                                @foreach($remarks as $remark)
+                                @if (auth()->user()->id == $remark->req->user_id)
+                                <tr>
+                                    <td>{{ $remark->id }}</td>
+                                    <td>{{ $remark->user_name }}</td>
+                                    <td>{{ $remark->req->service->name }}</td>
+                                    <td>{{ $remark->notes }}</td>
+                                    <td>
+                                        @if ( $remark->attachment != null)
+                                        <a href="{{ env('APP_URL')}}/storage/{{ $remark->attachment }}" target="_blank">Open Attachment</a>
+                                        @else
                                         No Attachment
-                                    @endif
-                                </td>
-                                <td>{{ $remark->date_generate }}</td>
-                                <td>{{ $remark->time_generate }}</td>
-                                
-                            </tr>
-                            @endif
-                            @endforeach
-                            
+                                        @endif
+                                    </td>
+                                    <td>{{ $remark->date_generate }}</td>
+                                    <td>{{ $remark->time_generate }}</td>
+
+                                </tr>
+                                @endif
+                                @endforeach
+
                             </tbody>
-                            
+
                         </table>
 
                     </div>

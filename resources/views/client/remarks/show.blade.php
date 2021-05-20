@@ -36,7 +36,7 @@ Dashboard :: Service Booking System
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    
+
                                     <th>Service ID</th>
                                     <th>Service Name</th>
                                     <th>Price</th>
@@ -44,12 +44,12 @@ Dashboard :: Service Booking System
                                     <th>Runner ID</th>
                                     <th>Runner Name</th>
                                     <th>Action</th>
-     
+
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    
+
                                     <th>Service ID</th>
                                     <th>Service Name</th>
                                     <th>Price</th>
@@ -62,26 +62,26 @@ Dashboard :: Service Booking System
                             </tfoot>
                             <tbody>
 
-                            @foreach($reqs as $req)
-                            
-                            <tr>
-                               
-                                <td>{{ $req->service_id }}</td>
-                                <td>{{ $req->service->name }}</td>
-                                <td>{{ $req->price }}</td>
-                                <td>{{ $req->notes }}</td>
-                                <td>{{ $req->user_id }}</td>
-                                <td>{{ $req->user->name }}</td>
-                                <td>
-                    
-                                <a class="btn btn-primary" href="{{ route('client.remarks.create', $req->id) }}">Add Remark</a>
-                                <a class="btn btn-primary" href="{{ route('client.remarks.index', $req->id) }}">View Remark</a>
+                                @foreach($reqs as $req)
 
-                                </td>
-                            </tr>
-                            
-                             @endforeach
-                            
+                                <tr>
+
+                                    <td>{{ $req->service_id }}</td>
+                                    <td>{{ $req->service->name }}</td>
+                                    <td>{{ $req->price }}</td>
+                                    <td>{{ $req->notes }}</td>
+                                    <td>{{ $req->user_id }}</td>
+                                    <td>{{ $req->user->name }}</td>
+                                    <td>
+
+                                        <a class="btn btn-primary" href="{{ route('client.remarks.create', $req->id) }}">Add Remark</a>
+                                        <a class="btn btn-primary" href="{{ route('client.remarks.index', $req->id) }}">View Remark</a>
+
+                                    </td>
+                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
