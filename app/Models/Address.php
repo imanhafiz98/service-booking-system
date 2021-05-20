@@ -19,7 +19,8 @@ class Address extends Model
         'line_2',
         'postcode',
         'notes',
-        'city_id'
+        'city_id',
+        'user_id'
     
     ];
 
@@ -28,8 +29,8 @@ class Address extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

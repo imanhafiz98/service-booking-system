@@ -145,8 +145,8 @@ Route::post('/client/service/store', 'Client\ServiceController@store')->name('cl
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
 
 //AddressController
-Route::get('/client/address/{user}/create', 'Client\AddressController@create')->name('client.addresses.create');
-Route::post('/client/address/{user}/store', 'Client\AddressController@store')->name('client.addresses.store');
+Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
+Route::post('/client/address/store', 'Client\AddressController@store')->name('client.addresses.store');
 
 
 //RequestController

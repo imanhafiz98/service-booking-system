@@ -20,7 +20,7 @@ class AddressController extends Controller
             ->with('states', State::all());   
     }
 
-    public function store(Request $request, User $user)
+    public function store(Request $request)
     {
         //dd($request->all());
 
@@ -37,11 +37,12 @@ class AddressController extends Controller
             'line_2' => $request->line_2,
             'postcode' => $request->postcode,
             'notes' => $request->notes,
-            'city_id' => $request->city_id
+            'city_id' => $request->city_id,
+            'user_id' => Auth::user()->id,
 
         ]);
 
-        $user->addresses()->sync( $address->id );
+        //$user->addresses()->sync( $address->id );
 
         return redirect(route('client.dashboards.index'));
     }
