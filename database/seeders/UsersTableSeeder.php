@@ -26,6 +26,14 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('12345678')
         ]);
 
+        User::create([
+            'name' => 'Admin Adib',
+            'email' => 'adib_admin@medkad.com',
+            'phone' => '0121234567',
+            'role' => 'admin',
+            'password' => Hash::make('12345678')
+        ]);
+
         //client
         User::create([
             'name' => 'Client Iman',

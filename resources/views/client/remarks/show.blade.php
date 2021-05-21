@@ -74,8 +74,8 @@ Dashboard :: Service Booking System
                                     <td>{{ $req->user->name }}</td>
                                     <td>
 
-                                        <a class="btn btn-primary" href="{{ route('client.remarks.create', $req->id) }}">Add Remark</a>
-                                        <a class="btn btn-primary" href="{{ route('client.remarks.index', $req->id) }}">View Remark</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.remarks.create', $req->id) }}">Add Remark</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.remarks.index', $req->id) }}">View Remark</a>
 
                                     </td>
                                 </tr>

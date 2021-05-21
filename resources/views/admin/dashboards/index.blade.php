@@ -119,7 +119,7 @@ Dashboard :: Service Booking System
                                     <div class="avatar avatar-xl mr-3 bg-gray-200"><img class="avatar-img img-fluid" src="assets/img/illustrations/profiles/profile-1.png" alt="" /></div>
                                     <div class="d-flex flex-column font-weight-bold">
                                         <a class="text-dark line-height-normal mb-1" href="#!">{{ $user->name }}</a>
-                                        <div class="small text-muted line-height-normal">Position</div>
+                                        <div class="small text-muted line-height-normal">{{ $user->role }}</div>
                                     </div>
                                 </div>
                                 <div class="dropdown no-caret">
@@ -179,7 +179,7 @@ Dashboard :: Service Booking System
                                             <div class="mr-3">
                                                 <i class="feather-xl text-green mb-3" data-feather="layout"></i>
                                                 <h5>Total Remarks</h5>
-                                                <div class="text-muted small">To help get you started when building your new UI</div>
+                                                <div class="text-muted small">There are {{ $totalRemarks }} total remarks.</div>
                                             </div>
                                             
                                         </div>

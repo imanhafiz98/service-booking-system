@@ -62,19 +62,22 @@ Dashboard :: Service Booking System
                                 <td>{{ $req->price }}</td>
                                 <td>{{ $req->notes }}</td>
                                 <td>
-                                     @if($req->status == 'Requested')
+                                    @if($req->status == 'Requested')
                                         <div class="badge badge-warning badge-pill">Requested</div>
 
-                                      @elseif($req->status == 'Accepted')
+                                    @elseif($req->status == 'Accepted')
                                         <div class="badge badge-primary badge-pill">Accepted</div>
 
-                                      @elseif($req->status == 'Cancelled')
+                                    @elseif($req->status == 'Rejected')
+                                        <div class="badge badge-danger badge-pill">Rejected</div>
+
+                                    @elseif($req->status == 'Cancelled')
                                         <div class="badge badge-danger badge-pill">Cancelled</div>
 
-                                      @elseif($req->status == 'Completed')
+                                    @elseif($req->status == 'Completed')
                                         <div class="badge badge-success badge-pill">Completed</div>
 
-                                      @endif
+                                    @endif
 
                                 </td>
                                 <td>

@@ -22,9 +22,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '50',
             'notes' => 'Okay',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '5'
+            'user_id' => '6'
             
         ]);
 
@@ -32,9 +32,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '100',
             'notes' => 'Baiklah',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '6'
+            'user_id' => '7'
             
         ]);
 
@@ -42,9 +42,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '200',
             'notes' => 'Okie',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '7'
+            'user_id' => '8'
             
         ]);
 
@@ -54,9 +54,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '50',
             'notes' => 'Okay',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '5'
+            'user_id' => '6'
             
         ]);
 
@@ -64,9 +64,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '100',
             'notes' => 'Baiklah',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '6'
+            'user_id' => '7'
             
         ]);
 
@@ -74,9 +74,9 @@ class ReqsTableSeeder extends Seeder
             'price' => '200',
             'notes' => 'Okie',
             'status' => 'Requested',
-            'client_id' => '2',
+            'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '7'
+            'user_id' => '8'
             
         ]);
 

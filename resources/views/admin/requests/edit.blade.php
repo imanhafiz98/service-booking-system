@@ -49,6 +49,11 @@ Dashboard :: Service Booking System
                                                 </div>
 
                                                 <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Runner Name</label>
+                                                    <input class="form-control"  name = "user_id" id="exampleFormControlInput1" type="text" value="{{ $req->user->name }}" readonly/>
+                                                </div>
+
+                                                <div class="form-group">
                                                     <label for="exampleFormControlInput1">Price</label>
                                                     <input class="form-control"  name = "price" id="exampleFormControlInput1" type="text" value="{{ $req->price }}" required/>
                                                 </div>
@@ -69,7 +74,7 @@ Dashboard :: Service Booking System
                                                         </select>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label for="exampleFormControlInput1">Client ID</label>
                                                     <input class="form-control"  name = "client_id" id="exampleFormControlInput1" type="text" value="{{ $req->client_id }}" readonly/>
                                                 </div>
@@ -82,7 +87,7 @@ Dashboard :: Service Booking System
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Runner ID</label>
                                                     <input class="form-control"  name = "user_id" id="exampleFormControlInput1" type="text" value="{{ $req->user_id }}" readonly/>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="form-group">
                                                     <button class="btn btn-primary" type="submit">Update</button>

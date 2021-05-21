@@ -26,7 +26,7 @@ class ServicesTableSeeder extends Seeder
             'date' => '2021-05-21',
             'time' => '04:14',
             'status' => 'Pending',
-            'user_id' => '2',
+            'user_id' => '3',
             'category_id' => '2',
             'city_id' => '1'
         ]);
@@ -37,7 +37,7 @@ class ServicesTableSeeder extends Seeder
             'date' => '2021-05-22',
             'time' => '11:00',
             'status' => 'Pending',
-            'user_id' => '2',
+            'user_id' => '3',
             'category_id' => '1',
             'city_id' => '2'
         ]);
@@ -48,7 +48,7 @@ class ServicesTableSeeder extends Seeder
             'date' => '2021-05-25',
             'time' => '09:00',
             'status' => 'Pending',
-            'user_id' => '2',
+            'user_id' => '3',
             'category_id' => '3',
             'city_id' => '1'
         ]);
@@ -60,7 +60,7 @@ class ServicesTableSeeder extends Seeder
             'date' => '2021-05-23',
             'time' => '11:00',
             'status' => 'Pending',
-            'user_id' => '3',
+            'user_id' => '4',
             'category_id' => '3',
             'city_id' => '4'
         ]);

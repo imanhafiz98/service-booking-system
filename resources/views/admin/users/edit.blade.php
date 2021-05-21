@@ -42,10 +42,10 @@ Dashboard :: Service Booking System
                                         <form action="{{ route('admin.users.update', $user) }}" method="post">
                                         @csrf
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label for="exampleFormControlInput1">ID</label>
-                                                    <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $user->id }}" readonly/>
-                                                </div>
+                                                    <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $user->id }}" hidden/>
+                                                </div> -->
 
                                                 <div class="form-group">
                                                     <label for="exampleFormControlInput1">Name</label>

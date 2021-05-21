@@ -36,7 +36,6 @@ Dashboard :: Service Booking System
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Remark ID</th>
                                     <th>From</th>
                                     <th>Service Name</th>
                                     <th>Notes</th>
@@ -48,7 +47,6 @@ Dashboard :: Service Booking System
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Remark ID</th>
                                     <th>From</th>
                                     <th>Service Name</th>
                                     <th>Notes</th>
@@ -63,7 +61,6 @@ Dashboard :: Service Booking System
                             @foreach($remarks as $remark)
                             @if ( $remark->req_id == $remark->req->id)
                             <tr>
-                                <td>{{ $remark->id }}</td>
                                 <td>{{ $remark->user_name }}</td>
                                 <td>{{ $remark->req->service->name }}</td>
                                 <td>{{ $remark->notes }}</td>

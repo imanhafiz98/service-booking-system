@@ -10,6 +10,8 @@ use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
+use App\Models\Address;
+use App\Models\Remark;
 use Auth;
 use Carbon\Carbon;
 
@@ -38,7 +40,9 @@ class DashboardController extends Controller
 
         $totalServices = \DB::table('Services')->count();  
 
-        $totalReqs = \DB::table('Reqs')->count();                            
+        $totalReqs = \DB::table('Reqs')->count();  
+        
+        $totalRemarks = \DB::table('Remarks')->count();  
 
 
         //dd($countTotalAllServices);
@@ -53,6 +57,7 @@ class DashboardController extends Controller
             ->with('totalRunners', $totalRunners)
             ->with('totalServices', $totalServices)
             ->with('totalReqs', $totalReqs)
+            ->with('totalRemarks', $totalRemarks)
             ->with('users', User::where('role', 'admin')->get());
 
     }
