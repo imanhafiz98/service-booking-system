@@ -182,6 +182,9 @@ Route::get('/client/invoice/index', 'Client\InvoiceController@index')->name('cli
 Route::get('/client/invoice/{invoice}/show', 'Client\InvoiceController@show')->name('client.invoices.show');
 Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->name('client.invoices.store');
 
+//PaymentController
+Route::get('/client/payment/create', 'Client\PaymentController@create')->name('client.payments.create');
+
 });
 
 

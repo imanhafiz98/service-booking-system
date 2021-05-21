@@ -23,8 +23,8 @@ class ServicesTableSeeder extends Seeder
         Service::create([
             'name' => 'Buy Lunch at Soru Static',
             'description' => '1 set of Lamb Chop',
-            'date' => '2021-05-21',
-            'time' => '04:14',
+            'date' => '2021-05-22',
+            'time' => '11:30',
             'status' => 'Pending',
             'user_id' => '3',
             'category_id' => '2',
@@ -34,7 +34,7 @@ class ServicesTableSeeder extends Seeder
         Service::create([
             'name' => 'Post Monitor',
             'description' => 'Perlukan perkhidmatan courier untuk post monitor ke alamat yang dinyatakan.',
-            'date' => '2021-05-22',
+            'date' => '2021-05-23',
             'time' => '11:00',
             'status' => 'Pending',
             'user_id' => '3',
@@ -45,7 +45,7 @@ class ServicesTableSeeder extends Seeder
         Service::create([
             'name' => 'Transport to KLIA from Shah Alam',
             'description' => 'Perlukan kereta dan perkhidmatan penghantaran ke KLIA untuk 3 orang dewasa dan 1 kanak-kanak.',
-            'date' => '2021-05-25',
+            'date' => '2021-05-24',
             'time' => '09:00',
             'status' => 'Pending',
             'user_id' => '3',
@@ -57,7 +57,7 @@ class ServicesTableSeeder extends Seeder
         Service::create([
             'name' => 'Transport to Dataran Pahlawan',
             'description' => 'Perlukan perkhidmatan penghantaran untuk 3 orang dewasa.',
-            'date' => '2021-05-23',
+            'date' => '2021-05-22',
             'time' => '11:00',
             'status' => 'Pending',
             'user_id' => '4',

@@ -110,7 +110,7 @@ Dashboard :: Service Booking System
                 <div class="col-xl-6 col-xxl-12">
                     <!-- Team members / people dashboard card example-->
                     <div class="card mb-4">
-                        <div class="card-header">List of Admin</div>
+                        <div class="card-header">List of Admins</div>
                         <div class="card-body">
                             <!-- Item 1-->
                             @foreach($users as $user)
@@ -136,59 +136,169 @@ Dashboard :: Service Booking System
 
                     </div>
 
+                </div>
+
             </div>
 
             <div class="row">
 
-            <div class="col-xl-4 mb-4">
-                                <!-- Dashboard example card 1-->
-                                <a class="card lift h-100" href="#!">
-                                    <div class="card-body d-flex justify-content-center flex-column">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="mr-3">
-                                                <i class="feather-xl text-primary mb-3" data-feather="package"></i>
-                                                <h5>Total Created Services</h5>
-                                                <div class="text-muted small">There are {{ $totalServices }} total created services.</div>
-                                              
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </a>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 1-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <h5>Total All Created Services</h5>
+                                    <div class="text-muted small">There are {{ $totalServices }} total created services.</div>
+
+                                </div>
+
                             </div>
-                            <div class="col-xl-4 mb-4">
-                                <!-- Dashboard example card 2-->
-                                <a class="card lift h-100" href="#!">
-                                    <div class="card-body d-flex justify-content-center flex-column">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="mr-3">
-                                                <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
-                                                <h5>Total All Submit Requests</h5>
-                                                <div class="text-muted small">There are {{ $totalReqs }} total submit requests.</div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 1-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <h5>Total Today Created Services</h5>
+                                    <div class="text-muted small">There are {{ $todayCreatedServices }} total created services.</div>
+
+                                </div>
+
                             </div>
-                            <div class="col-xl-4 mb-4">
-                                <!-- Dashboard example card 3-->
-                                <a class="card lift h-100" href="#!">
-                                    <div class="card-body d-flex justify-content-center flex-column">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="mr-3">
-                                                <i class="feather-xl text-green mb-3" data-feather="layout"></i>
-                                                <h5>Total Remarks</h5>
-                                                <div class="text-muted small">There are {{ $totalRemarks }} total remarks.</div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 1-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                                    <h5>Total Created Services</h5>
+                                    <div class="text-muted small"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
             </div>
 
-        </div>
+            <div class="row">
+
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 2-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                                    <h5>Total All Submit Requests</h5>
+                                    <div class="text-muted small">There are {{ $totalReqs }} total submit requests.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 2-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                                    <h5>Total Today Submit Requests</h5>
+                                    <div class="text-muted small">There are {{ $todaySubmitReqs }} total of today submit requests.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 2-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                                    <h5>Total All Submit Requests</h5>
+                                    <div class="text-muted small"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 3-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-green mb-3" data-feather="layout"></i>
+                                    <h5>Total All Remarks</h5>
+                                    <div class="text-muted small">There are {{ $totalRemarks }} total remarks.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 3-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-green mb-3" data-feather="layout"></i>
+                                    <h5>Total Today Remarks</h5>
+                                    <div class="text-muted small">There are {{ $todayRemarks }} total of today remarks.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 3-->
+                    <a class="card lift h-100" >
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="mr-3">
+                                    <i class="feather-xl text-green mb-3" data-feather="layout"></i>
+                                    <h5>Total Remarks</h5>
+                                    <div class="text-muted small"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+            
+            
 
     </main>
 

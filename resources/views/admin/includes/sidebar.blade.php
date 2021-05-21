@@ -34,7 +34,7 @@
                             </div>
 
                             <!-- Sidenav Heading (App Views)-->
-                            <div class="sidenav-menu-heading">User Management</div>
+                            <div class="sidenav-menu-heading">User</div>
                             <!-- Sidenav Accordion (Pages)-->
                             
                             <!-- Sidenav Accordion (Flows)-->
@@ -51,7 +51,7 @@
                             </div>
 
                             <!-- Sidenav Heading (UI Toolkit)-->
-                            <div class="sidenav-menu-heading">Service Management</div>
+                            <div class="sidenav-menu-heading">Service</div>
                             <!-- Sidenav Accordion (Layout)-->
             
                             <!-- Sidenav Accordion (Utilities)-->
@@ -67,7 +67,7 @@
                                 </nav>
                             </div>
 
-                            <div class="sidenav-menu-heading">Request Management</div>
+                            <div class="sidenav-menu-heading">Request</div>
                             <!-- Sidenav Accordion (Layout)-->
             
                             <!-- Sidenav Accordion (Utilities)-->
@@ -85,7 +85,7 @@
 
 
                             <!-- Sidenav Heading (App Views)-->
-                            <div class="sidenav-menu-heading">Location Management</div>
+                            <div class="sidenav-menu-heading">Location</div>
                             <!-- Sidenav Accordion (Pages)-->
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="nav-link-icon"><i data-feather="grid"></i></div>
@@ -124,7 +124,7 @@
                                     
                                 </nav>
                             </div>
-                            <div class="sidenav-menu-heading">Category Management</div>
+                            <div class="sidenav-menu-heading">Category</div>
                             <!-- Sidenav Accordion (Layout)-->
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="nav-link-icon"><i data-feather="layout"></i></div>
@@ -142,7 +142,7 @@
                                 </nav>
                             </div>
 
-                            <div class="sidenav-menu-heading">Remarks Management</div>
+                            <div class="sidenav-menu-heading">Remarks</div>
                             <!-- Sidenav Accordion (Layout)-->
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseRemarks" aria-expanded="false" aria-controls="collapseRemarks">
                                 <div class="nav-link-icon"><i data-feather="code"></i></div>

@@ -44,6 +44,12 @@ class DashboardController extends Controller
         
         $totalRemarks = \DB::table('Remarks')->count();  
 
+        $todayCreatedServices = Service::whereDate('created_at', Carbon::today())->count();
+
+        $todaySubmitReqs = Req::whereDate('created_at', Carbon::today())->count();
+
+        $todayRemarks = Remark::whereDate('created_at', Carbon::today())->count();
+
 
         //dd($countTotalAllServices);
 
@@ -58,6 +64,9 @@ class DashboardController extends Controller
             ->with('totalServices', $totalServices)
             ->with('totalReqs', $totalReqs)
             ->with('totalRemarks', $totalRemarks)
+            ->with('todayCreatedServices', $todayCreatedServices)
+            ->with('todaySubmitReqs', $todaySubmitReqs)
+            ->with('todayRemarks', $todayRemarks)
             ->with('users', User::where('role', 'admin')->get());
 
     }
