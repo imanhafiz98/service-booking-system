@@ -39,7 +39,7 @@ class RequestController extends Controller
         Service::where('id',$data['service_id'])->update(['status' => "Ongoing"]);
 
          Req::where('service_id', $data['service_id'])
-                 ->where('user_id', '!=', $data['user_id'])
+                 ->where('id', '!=', $data['req_id'])
                  ->where('status', '!=', 'Cancelled')
                  ->update(['status' => "Rejected"]);
         
