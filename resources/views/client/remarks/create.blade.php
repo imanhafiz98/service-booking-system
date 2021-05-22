@@ -19,9 +19,9 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
-                                Add Remark
+                                Add Remarks
                             </h1>
-                            <div class="page-header-subtitle">Wizard examples for step-by-step form submission content to use as part of an application</div>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </div>
@@ -39,11 +39,11 @@ Dashboard :: Service Booking System
                                 <div class="col-xxl-6 col-xl-8">
                                     <h3 class="text-primary">Add Remark</h3>
                                     <h5 class="card-title">Enter remark details</h5>
-                                    <form action="{{ route('client.remarks.store') }}" method="POST" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ route('client.remarks.store', $service->id) }}">
                                         @csrf
 
                                         <div class="form-group">
-                                            <input class="form-control" name="req_id" id="inputUsername" type="text" value="{{ $req->id }}" hidden />
+                                            <input class="form-control" name="service_id" id="inputUsername" type="text" value="{{ $service->id }}" hidden />
                                         </div>
 
                                         <div class="form-group">

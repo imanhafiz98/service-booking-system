@@ -165,8 +165,8 @@ Route::post('/client/request/{req}/index', 'Client\RequestController@update')->n
 
 //RemarkController
 Route::get('/client/remark/{req}/show', 'Client\RemarkController@show')->name('client.remarks.show');
-Route::get('/client/remark/{req}/create', 'Client\RemarkController@create')->name('client.remarks.create');
-Route::get('/client/remark/{req}/index', 'Client\RemarkController@index')->name('client.remarks.index');
+Route::get('/client/remark/{service}/index', 'Client\RemarkController@index')->name('client.remarks.index');
+Route::get('/client/remark/{service}/create', 'Client\RemarkController@create')->name('client.remarks.create');
 Route::post('/client/remark/store', 'Client\RemarkController@store')->name('client.remarks.store');
 
 //ProfileController
@@ -214,7 +214,6 @@ Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->
 
 //RemarkController
 Route::get('/runner/remark/{service}/index', 'Runner\RemarkController@index')->name('runner.remarks.index');
-Route::get('/runner/remark/{req}/show', 'Runner\RemarkController@show')->name('runner.remarks.show');
 Route::get('/runner/remark/{service}/create', 'Runner\RemarkController@create')->name('runner.remarks.create');
 Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runner.remarks.store');
 

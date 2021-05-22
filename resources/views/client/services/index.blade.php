@@ -109,7 +109,7 @@ Dashboard :: Service Booking System
                                         </div>
                                         @elseif($service->status == 'Ongoing')
 
-                                        <a class="btn btn-primary btn-xs" href="{{ route('client.remarks.show', $service->id) }}" type="submit">Remarks</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.remarks.index', $service->id) }}" type="submit">Remarks</a>
                                         
                                         @elseif($service->status == 'Cancelled')
                                         

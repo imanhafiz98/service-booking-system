@@ -20,11 +20,13 @@ use App\Models\Remark;
 
 class RemarkController extends Controller
 {
-    public function index(Req $req)
+    public function index(Service $service)
     {
-        //return view('runner.remarks.index')->with('remarks', Remark::all());
+        //dd($service->id);
 
-        return view('client.remarks.index')->with('remarks', Remark::where('req_id', $req->id)->get());
+        return view('client.remarks.index')
+            ->with('service', $service->id)
+            ->with('remarks', Remark::where('service_id', $service->id)->get());
     }
 
     public function show(Service $service)
@@ -36,26 +38,26 @@ class RemarkController extends Controller
             ->get());
     }
 
-    public function create(Req $req)
+    public function create(Service $service)
     {
-        return view('client.remarks.create')->with('req', $req);   
+        return view('client.remarks.create')->with('service', $service);   
     }
 
     public function store(Request $request)
     {
         //dd(Auth::user()->id);
 
-        $todayDate = Carbon::now()->format('Y-m-d');
+        $todayDate = Carbon::now()->format('d-m-Y');
         $todayTime = Carbon::now()->format('H:i:m');
 
         $request->validate([
             'notes' => 'required',
-            'req_id' => 'required'
+            'service_id' => 'required'
             ]);
 
             $remark = Remark::create([
              'notes' => $request->notes,
-             'req_id' => $request->req_id, 
+             'service_id' => $request->service_id, 
              'date_generate' => $todayDate,
              'time_generate' => $todayTime,
              'user_name' => Auth::user()->name,     
@@ -69,6 +71,6 @@ class RemarkController extends Controller
              $remark->update(['attachment' => $filename]);
          }
 
-        return redirect(route('client.services.index'));
+        return redirect(route('client.remarks.index', $request->service_id));
     }
 }

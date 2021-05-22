@@ -30,11 +30,6 @@ class RemarkController extends Controller
             ->with('remarks', Remark::where('service_id', $service->id)->get());
     }
 
-    public function show(Req $req)
-    {
-        return view('runner.remarks.show')->with('req', $req);   
-    }
-
     public function create(Service $service)
     {
         //dd($req->service_id);
