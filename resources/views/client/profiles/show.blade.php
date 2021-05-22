@@ -42,12 +42,15 @@ Dashboard :: Service Booking System
                     <div class="card">
                         <div class="card-header">Profile Picture</div>
                         <div class="card-body text-center">
+                        
                             <!-- Profile picture image-->
-                            <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="" />
+                            <img class="img-account-profile rounded-circle mb-2"
+                                src="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" alt="" />
                             <!-- Profile picture help block-->
-                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                
                             <!-- Profile picture upload button-->
-                            <button class="btn btn-primary" type="button">Upload new image</button>
+                            
+                        
                         </div>
                     </div>
                 </div>

@@ -221,6 +221,7 @@ Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runn
 //ProfileController
 Route::get('/runner/profile/{user}/show', 'Runner\ProfileController@show')->name('runner.profiles.show');
 Route::get('/runner/profile/{user}/edit', 'Runner\ProfileController@edit')->name('runner.profiles.edit');
+Route::post('/runner/profile/upload', 'Runner\ProfileController@upload')->name('runner.profiles.upload');
 Route::post('/runner/profile/{user}/update', 'Runner\ProfileController@update')->name('runner.profiles.update');
 
 //PasswordController

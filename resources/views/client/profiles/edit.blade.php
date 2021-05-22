@@ -53,7 +53,7 @@ Dashboard :: Service Booking System
                                 <div class="form-group">
                                     <input type="file" name="picture" class="form-control">
                                 </div> 
-                                <button class="btn btn-primary btn-sm" type="submit">Update Profile Picture</button>
+                                <button class="btn btn-primary" type="submit">Update Profile Picture</button>
                             </form>
                         </div>
                     </div>

@@ -4,7 +4,10 @@ namespace App\Http\Controllers\runner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -16,6 +19,20 @@ class ProfileController extends Controller
     public function edit(User $user)
     {
         return view('runner.profiles.edit')->with('user', $user);
+    }
+
+    public function upload(Request $request)
+    {
+        $data = request()->only(['picture']);
+
+        if($request->hasFile('picture'))
+        {
+            $filename = auth()->user()->name.'-'.date("d-m-Y").'.'.$request->picture->getClientOriginalExtension();
+            Storage::disk('public')->put($filename, File::get($request->picture));
+            auth()->user()->update(['picture' => $filename]);
+        }
+
+        return redirect(route('runner.dashboards.index'));
     }
 
     public function update(Request $request, User $user)
