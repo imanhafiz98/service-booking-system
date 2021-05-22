@@ -23,7 +23,10 @@ class AddressController extends Controller
     public function indexTest(Service $service)
     {
         //dd($service->user_id);
-        return view('client.addresses.index-test')->with('addresses', Address::where('user_id', Auth::user()->id)->get());
+        return view('client.addresses.index-test')
+        ->with('addresses', Address::where('user_id', Auth::user()->id)->get())
+        ->with('cities', City::all())
+        ->with('states', State::all()); 
     }
 
     public function create()

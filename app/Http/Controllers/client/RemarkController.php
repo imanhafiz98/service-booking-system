@@ -24,7 +24,7 @@ class RemarkController extends Controller
     {
         //dd($service->id);
 
-        return view('client.remarks.index')
+        return view('client.remarks.index-create')
             ->with('service', $service->id)
             ->with('remarks', Remark::where('service_id', $service->id)->get());
     }

@@ -115,7 +115,11 @@ Dashboard :: Service Booking System
                                                 <label class="small mb-1" for="inputBillingName">City</label>
                                                 <select class="form-control" name="city_id" id="exampleFormControlSelect1" required>
                                                     <option value="">--Select City--</option>
+                                                    @foreach($cities as $city)
 
+                                                        <option value="{{ $city->id }}">{{ $city->name }}</option>
+
+                                                    @endforeach                 
                                                 </select>
                                             </div>
                                         </div>
@@ -124,7 +128,11 @@ Dashboard :: Service Booking System
                                                 <label class="small mb-1" for="inputBillingCCNumber">State</label>
                                                 <select class="form-control" id="exampleFormControlSelect1">
                                                     <option value="">--Select State--</option>
+                                                    @foreach($states as $state)
 
+                                                        <option value="{{ $city->state->id }}">{{ $state->name }}</option>
+
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
