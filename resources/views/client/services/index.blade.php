@@ -21,7 +21,7 @@ Dashboard :: Service Booking System
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
                                 List of Services
                             </h1>
-                            <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </div>
@@ -94,28 +94,30 @@ Dashboard :: Service Booking System
                                     </td>
                                     <td>
 
+                                        
                                         @if($service->status == 'Pending')
-
-                                        <a class="btn btn-primary btn-sm" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
+                                        
+                                        <div class="row">
+                                        <a class="btn btn-primary btn-xs" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
 
                                         <form method="post" action="{{ route('client.services.update', $service->id) }}">
                                             @csrf
-                                            <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
+                                            <button class="btn btn-danger btn-xs" type="submit">Cancel</button>
                                             
                                         </form>
-
-
+                                        
+                                        </div>
                                         @elseif($service->status == 'Ongoing')
-
-                                        <a class="btn btn-warning btn-sm" href="{{ route('client.remarks.show', $service->id) }}" type="submit">Remarks</a>
-
+                                        
                                         @elseif($service->status == 'Cancelled')
-
+                                        
 
                                         @elseif($service->status == 'Completed')
-
+                                        
 
                                         @endif
+                                        
+                                        
 
                                     </td>
 
@@ -129,6 +131,7 @@ Dashboard :: Service Booking System
                 </div>
             </div>
         </div>
+        
     </main>
 </body>
 

@@ -157,6 +157,8 @@ Route::get('/client/address/{address}/edit', 'Client\AddressController@edit')->n
 Route::post('/client/address/{address}/upddate', 'Client\AddressController@update')->name('client.addresses.update');
 Route::delete('/client/address/{address}/delete', 'Client\AddressController@destroy')->name('client.addresses.destroy');
 
+Route::get('/client/address/index-test', 'Client\AddressController@indexTest')->name('client.addresses.index.test');
+
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
 Route::post('/client/request/{req}/index', 'Client\RequestController@update')->name('client.requests.update');
@@ -202,7 +204,6 @@ Route::get('/runner/dashboard/statistic', 'Runner\DashboardController@statistic'
 Route::get('/runner/service/index', 'Runner\ServiceController@index')->name('runner.services.index');
 Route::get('/runner/service/{service}/show', 'Runner\ServiceController@show')->name('runner.services.show');
 Route::get('/runner/show-test-service/{service}', 'Runner\ServiceController@showTest')->name('runner.services.show-test'); //new show form for submit request
-Route::get('/runner/dashboard', 'Runner\ServiceController@dashboard')->name('runner.dashboard');  //dashboard
 
 //AddressController
 Route::get('/runner/address/{service}/index', 'Runner\AddressController@index')->name('runner.addresses.index');

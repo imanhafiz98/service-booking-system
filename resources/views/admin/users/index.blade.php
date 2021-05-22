@@ -21,7 +21,7 @@ Dashboard :: Service Booking System
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
                                 List of Users
                             </h1>
-                            <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </div>

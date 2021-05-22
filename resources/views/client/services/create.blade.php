@@ -21,7 +21,7 @@ Dashboard :: Service Booking System
                                 <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
                                 Create Service
                             </h1>
-                            <div class="page-header-subtitle">Wizard examples for step-by-step form submission content to use as part of an application</div>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </div>

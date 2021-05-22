@@ -21,7 +21,7 @@ Dashboard :: Service Booking System
                                     <div class="page-header-icon"><i data-feather="edit-3"></i></div>
                                     Add State
                                 </h1>
-                                <div class="page-header-subtitle">Dynamic form components to give your users informative and intuitive inputs</div>
+                                <div class="page-header-subtitle"></div>
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ Dashboard :: Service Booking System
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
                                 Generate Invoice
                             </h1>
-                            <div class="page-header-subtitle">An extended version of the DataTables library, customized for SB Admin Pro</div>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ Dashboard :: Service Booking System
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
-                <div class="card-header">All Services</div>
+                <div class="card-header">All Invoices</div>
                 <div class="card-body">
                     <div class="datatable">
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">

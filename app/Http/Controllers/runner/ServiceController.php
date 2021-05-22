@@ -31,6 +31,21 @@ class ServiceController extends Controller
             ->with('services', $services);
     }
 
+    public function indexTest(Request $request)
+    {
+        $status = $request->status ?? null;
+
+        $services = Service::where(function ($query) use ($status){
+            if($status){
+                $query->where('status', $status);
+                return $query;
+            }
+        })->get();
+        
+        return view('runner.services.index-test')
+            ->with('services', $services);
+    }
+
     public function show(Service $service)
     {
         //dd($service->all());

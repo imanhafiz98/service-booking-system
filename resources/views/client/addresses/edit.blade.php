@@ -19,9 +19,9 @@ Dashboard :: Service Booking System
                                     <div class="col-auto mt-4">
                                         <h1 class="page-header-title">
                                             <div class="page-header-icon"><i data-feather="arrow-right-circle"></i></div>
-                                            Add Address
+                                            Update Address
                                         </h1>
-                                        <div class="page-header-subtitle">Wizard examples for step-by-step form submission content to use as part of an application</div>
+                                        <div class="page-header-subtitle"></div>
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@ Dashboard :: Service Booking System
                                     <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
                                         <div class="row justify-content-center">
                                             <div class="col-xxl-6 col-xl-8">
-                                                <h3 class="text-primary">Add Address</h3>
+                                                <h3 class="text-primary">Update Address</h3>
                                                 <h5 class="card-title">Enter address details</h5>
                                                 <form method="POST" action="{{ route('client.addresses.update', $address->id) }}">
                                                 @csrf

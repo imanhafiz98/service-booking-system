@@ -20,6 +20,12 @@ class AddressController extends Controller
         return view('client.addresses.index')->with('addresses', Address::where('user_id', Auth::user()->id)->get());
     }
 
+    public function indexTest(Service $service)
+    {
+        //dd($service->user_id);
+        return view('client.addresses.index-test')->with('addresses', Address::where('user_id', Auth::user()->id)->get());
+    }
+
     public function create()
     {
         return view('client.addresses.create')
@@ -51,7 +57,7 @@ class AddressController extends Controller
 
         //$user->addresses()->sync( $address->id );
 
-        return redirect(route('client.addresses.index'));
+        return redirect(route('client.addresses.index.test'));
     }
 
     public function edit(Address $address)
@@ -77,14 +83,14 @@ class AddressController extends Controller
     
         $address = $address->update($request->all());
 
-        return redirect(route('client.addresses.index'));
+        return redirect(route('client.addresses.index.test'));
     }
 
     public function destroy(Address $address)
     {
         $address->delete();
 
-        return redirect(route('client.addresses.index'));
+        return redirect(route('client.addresses.index.test'));
 
     }
 
