@@ -78,6 +78,7 @@ Dashboard :: Service Booking System
                                 <td>{{ $service->time }}</td>
                                 <td>
                                     <a class="btn btn-primary btn-sm" href="{{ route('runner.addresses.index', $service->id) }}">View</a>
+                                    
                                 </td>
                                 <td>
                                     <div class="badge badge-warning badge-pill"> {{ $service->status }}</div>        

@@ -86,14 +86,15 @@ Dashboard :: Service Booking System
                                 <td>
 
                                     @if($req->status == 'Requested')
+
+                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+                                    
                                     <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
                                          @csrf
 
                                          <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
 
                                     </form>
-
-                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
 
                                     @elseif($req->status == 'Accepted')
@@ -120,7 +121,7 @@ Dashboard :: Service Booking System
 
                                     <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
                                     
-                                    <a class="btn btn-warning btn-sm" href="{{ route('runner.remarks.show', $req->id) }}">Remarks</a>
+                                    <a class="btn btn-warning btn-sm" href="{{ route('runner.remarks.index', $req->service_id) }}">Remarks</a>
 
                                      @elseif($req->status == 'Cancelled')
 

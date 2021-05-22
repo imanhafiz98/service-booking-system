@@ -79,7 +79,7 @@ Dashboard :: Service Booking System
                                                 <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingName">Service ID</label>
-                                                            <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text"  value="{{ $req->id }}"readonly />
+                                                            <input class="form-control" name="service_id" id="exampleFormControlInput1" type="text"  value="{{ $req->service_id }}"readonly />
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="small mb-1" for="inputBillingCCNumber">Service Name</label>

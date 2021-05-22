@@ -19,13 +19,13 @@ class Remark extends Model
         'attachment',
         'date_generate',
         'time_generate',
-        'req_id',
+        'service_id',
         'user_name'
         
     ];
 
-    public function req()
+    public function service()
     {
-        return $this->belongsTo(Req::class);
+        return $this->belongsTo(Service::class);
     }
 }

@@ -20,11 +20,14 @@ use App\Models\Remark;
 
 class RemarkController extends Controller
 {
-    public function index(Req $req)
+    public function index(Service $service)
     {
+        //dd($service->id);
         //return view('runner.remarks.index')->with('remarks', Remark::all());
 
-        return view('runner.remarks.index')->with('remarks', Remark::where('req_id', $req->id)->get());
+        return view('runner.remarks.index')
+            ->with('service', $service->id)
+            ->with('remarks', Remark::where('service_id', $service->id)->get());
     }
 
     public function show(Req $req)
@@ -32,26 +35,27 @@ class RemarkController extends Controller
         return view('runner.remarks.show')->with('req', $req);   
     }
 
-    public function create(Req $req)
+    public function create(Service $service)
     {
-        return view('runner.remarks.create')->with('req', $req);   
+        //dd($req->service_id);
+        return view('runner.remarks.create')->with('service', $service);   
     }
 
     public function store(Request $request)
     {
         //dd($request->all());
 
-        $todayDate = Carbon::now()->format('Y-m-d');
+        $todayDate = Carbon::now()->format('d-m-Y');
         $todayTime = Carbon::now()->format('H:i:m');
 
         $request->validate([
             'notes' => 'required',
-            'req_id' => 'required'
+            'service_id' => 'required'
             ]);
 
             $remark = Remark::create([
              'notes' => $request->notes,
-             'req_id' => $request->req_id, 
+             'service_id' => $request->service_id, 
              'date_generate' => $todayDate,
              'time_generate' => $todayTime,
              'user_name' => Auth::user()->name,          
@@ -65,7 +69,7 @@ class RemarkController extends Controller
              $remark->update(['attachment' => $filename]);
          }
 
-        return redirect(route('runner.requests.index'));
+        return redirect(route('runner.remarks.index', $request->service_id));
 
     }
 }

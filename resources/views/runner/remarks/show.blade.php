@@ -58,8 +58,8 @@ Dashboard :: Service Booking System
                                         </div>
 
 
-                                        <a class="btn btn-primary" href="{{ route('runner.remarks.create', $req->id) }}">Add Remark</a>
-                                        <a class="btn btn-primary" href="{{ route('runner.remarks.index', $req->id) }}">View Remark</a>
+                                        <a class="btn btn-primary" href="{{ route('runner.remarks.create', $req->service_id) }}">Add Remark</a>
+                                        <a class="btn btn-primary" href="{{ route('runner.remarks.index', $req->service_id) }}">View Remark</a>
 
 
 

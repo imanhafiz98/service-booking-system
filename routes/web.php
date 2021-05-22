@@ -164,9 +164,9 @@ Route::get('/client/request/{service}/index', 'Client\RequestController@index')-
 Route::post('/client/request/{req}/index', 'Client\RequestController@update')->name('client.requests.update');
 
 //RemarkController
-Route::get('/client/remark/{service}/show', 'Client\RemarkController@show')->name('client.remarks.show');
-Route::get('/client/remark/{req}/index', 'Client\RemarkController@index')->name('client.remarks.index');
+Route::get('/client/remark/{req}/show', 'Client\RemarkController@show')->name('client.remarks.show');
 Route::get('/client/remark/{req}/create', 'Client\RemarkController@create')->name('client.remarks.create');
+Route::get('/client/remark/{req}/index', 'Client\RemarkController@index')->name('client.remarks.index');
 Route::post('/client/remark/store', 'Client\RemarkController@store')->name('client.remarks.store');
 
 //ProfileController
@@ -188,8 +188,6 @@ Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->nam
 Route::get('/client/payment/create', 'Client\PaymentController@create')->name('client.payments.create');
 
 });
-
-
 
 
 //_________________________________________________________RUNNER_________________________________________________________//
@@ -215,9 +213,9 @@ Route::post('/runner/request/create', 'Runner\RequestController@store')->name('r
 Route::post('/runner/request/{req}/update', 'Runner\RequestController@update')->name('runner.requests.update');
 
 //RemarkController
-Route::get('/runner/remark/{req}/index', 'Runner\RemarkController@index')->name('runner.remarks.index');
+Route::get('/runner/remark/{service}/index', 'Runner\RemarkController@index')->name('runner.remarks.index');
 Route::get('/runner/remark/{req}/show', 'Runner\RemarkController@show')->name('runner.remarks.show');
-Route::get('/runner/remark/{req}/create', 'Runner\RemarkController@create')->name('runner.remarks.create');
+Route::get('/runner/remark/{service}/create', 'Runner\RemarkController@create')->name('runner.remarks.create');
 Route::post('/runner/remark/store', 'Runner\RemarkController@store')->name('runner.remarks.store');
 
 //ProfileController

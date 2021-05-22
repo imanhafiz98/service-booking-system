@@ -45,5 +45,10 @@ class Service extends Model
         return $this->hasMany(Req::class);
     }
 
+    public function remarks()
+    {
+        return $this->hasMany(Remark::class);
+    }
+
 
 }

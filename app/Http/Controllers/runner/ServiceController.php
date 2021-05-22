@@ -28,7 +28,7 @@ class ServiceController extends Controller
         })->get();
         
         return view('runner.services.index')
-            ->with('services', $services);
+            ->with('services', $services)->with('addresses', Address::all());
     }
 
     public function indexTest(Request $request)
