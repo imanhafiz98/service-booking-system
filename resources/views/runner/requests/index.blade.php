@@ -12,18 +12,22 @@ Dashboard :: Service Booking System
 <body>
 
     <main>
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
                                 List of Requests
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('runner.requests.index') }}">Requests</a></li>
+                       
+                    </ol>
                 </div>
             </div>
         </header>
@@ -42,7 +46,7 @@ Dashboard :: Service Booking System
                                     <th>Notes</th>
                                     <th>Status</th>
                                     <th>Action</th>
-     
+
                                 </tr>
                             </thead>
                             <tfoot>
@@ -58,88 +62,77 @@ Dashboard :: Service Booking System
                             </tfoot>
                             <tbody>
 
-                            @foreach($reqs as $req)
-                            @if (auth()->user()->id == $req->user_id)
-                            <tr>
-                                <td>{{ $req->id }}</td>
-                                <td>{{ $req->service->name }}</td>
-                                <td>{{ $req->price }}</td>
-                                <td>{{ $req->notes }}</td>
-                                <td>
-                                     @if($req->status == 'Requested')
+                                @foreach($reqs as $req)
+                                @if (auth()->user()->id == $req->user_id)
+                                <tr>
+                                    <td>{{ $req->id }}</td>
+                                    <td>{{ $req->service->name }}</td>
+                                    <td>{{ $req->price }}</td>
+                                    <td>{{ $req->notes }}</td>
+                                    <td>
+                                        @if($req->status == 'Requested')
                                         <div class="badge badge-warning badge-pill">Requested</div>
 
-                                      @elseif($req->status == 'Accepted')
+                                        @elseif($req->status == 'Accepted')
                                         <div class="badge badge-primary badge-pill">Accepted</div>
 
                                         @elseif($req->status == 'Rejected')
                                         <div class="badge badge-danger badge-pill">Rejected</div>
 
-                                      @elseif($req->status == 'Cancelled')
+                                        @elseif($req->status == 'Cancelled')
                                         <div class="badge badge-danger badge-pill">Cancelled</div>
 
-                                      @elseif($req->status == 'Completed')
+                                        @elseif($req->status == 'Completed')
                                         <div class="badge badge-success badge-pill">Completed</div>
 
-                                  @endif
-                                </td>
-                                <td>
+                                        @endif
+                                    </td>
+                                    <td>
 
-                                    @if($req->status == 'Requested')
+                                        <div class="row">
+                                            @if($req->status == 'Requested')
 
-                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
-                                    
-                                    <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
-                                         @csrf
+                                            <a class="btn btn-info btn-sm ml-2 mr-2" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
 
-                                         <button class="btn btn-danger btn-sm" type="submit">Cancel</button>
+                                            <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
+                                                @csrf
 
-                                    </form>
-                                    
+                                                <button class="btn btn-danger btn-sm ml-2 mr-2" type="submit">Cancel</button>
 
-                                    @elseif($req->status == 'Accepted')
-                                    <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
-                                         @csrf
+                                            </form>
 
-                                         <button class="btn btn-primary btn-sm" type="submit">Done</button>
-                                         <!-- <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#staticBackdrop">Done</button>
 
-                                            <!-- Modal 
-                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Done Service</h5>
-                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                        </div>
-                                                        <div class="modal-body">Your service has been done.</div>
-                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                    </form>
+                                            @elseif($req->status == 'Accepted')
+                                            <form method="post" action="{{ route('runner.requests.update', $req->id) }}">
+                                                @csrf
 
-                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
-                                    
-                                    <a class="btn btn-warning btn-sm" href="{{ route('runner.remarks.index', $req->service_id) }}">Remarks</a>
+                                                <button class="btn btn-primary btn-sm ml-2 mr-2" type="submit">Done</button>
 
-                                     @elseif($req->status == 'Cancelled')
+                                            </form>
 
-                                     <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
-                                       
+                                            <a class="btn btn-info btn-sm ml-2 mr-2" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
 
-                                    @elseif($req->status == 'Completed')
+                                            <a class="btn btn-warning btn-sm ml-2 mr-2" href="{{ route('runner.remarks.index', $req->service_id) }}">Remarks</a>
 
-                                    <a class="btn btn-info btn-sm" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
-                                        
+                                            @elseif($req->status == 'Cancelled')
 
-                                    @endif
-                                </td>
-                                
-                            </tr>
-                            @endif
-                             @endforeach
-                            
+                                            <a class="btn btn-info btn-sm ml-2 mr-2" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+
+
+                                            @elseif($req->status == 'Completed')
+
+                                            <a class="btn btn-info btn-sm ml-2 mr-2" href="{{ route('runner.requests.show', $req->id) }}">More Details</a>
+
+
+                                            @endif
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                @endif
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

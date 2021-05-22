@@ -45,7 +45,7 @@ class RemarkController extends Controller
 
     public function store(Request $request)
     {
-        //dd(Auth::user()->id);
+        //dd($request->all());
 
         $todayDate = Carbon::now()->format('d-m-Y');
         $todayTime = Carbon::now()->format('H:i:m');

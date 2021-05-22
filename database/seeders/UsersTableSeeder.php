@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'iman_admin@medkad.com',
             'phone' => '0111234567',
             'role' => 'admin',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -31,6 +32,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'adib_admin@medkad.com',
             'phone' => '0121234567',
             'role' => 'admin',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -40,6 +42,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'iman_client@medkad.com',
             'phone' => '0121234567',
             'role' => 'client',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -48,6 +51,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'adib_client@medkad.com',
             'phone' => '0121234567',
             'role' => 'client',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -56,6 +60,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'zuhaily_client@medkad.com',
             'phone' => '0121234567',
             'role' => 'client',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -65,6 +70,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'iman_runner@medkad.com',
             'phone' => '0131234567',
             'role' => 'runner',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -73,6 +79,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'adib_runner@medkad.com',
             'phone' => '0131234567',
             'role' => 'runner',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 
@@ -81,6 +88,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'zuhaily_runner@medkad.com',
             'phone' => '0131234567',
             'role' => 'runner',
+            'picture' => '',
             'password' => Hash::make('12345678')
         ]);
 

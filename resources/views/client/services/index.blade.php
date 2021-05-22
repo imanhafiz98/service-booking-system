@@ -13,20 +13,23 @@ Dashboard :: Service Booking System
 
     <main>
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-            <div class="container">
-                <div class="page-header-content pt-4">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto mt-4">
-                            <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Services
-                            </h1>
-                            <div class="page-header-subtitle"></div>
+                        <div class="container">
+                            <div class="page-header-content pt-4">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="col-auto mt-4">
+                                        <h1 class="page-header-title">
+                                            <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                            List of Services
+                                        </h1>
+                                        <div class="page-header-subtitle"></div>
+                                    </div>
+                                </div>
+                                <ol class="breadcrumb mb-0 mt-4">
+                                    <li class="breadcrumb-item active"><a href="{{ route('client.services.index') }}">Services</a></li>
+                                </ol>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+                    </header>
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
@@ -94,22 +97,21 @@ Dashboard :: Service Booking System
                                     </td>
                                     <td>
 
-                                        
+                                        <div class="row">
+
                                         @if($service->status == 'Pending')
                                         
-                                        <div class="row">
-                                        <a class="btn btn-primary btn-xs" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
+                                        <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
 
                                         <form method="post" action="{{ route('client.services.update', $service->id) }}">
                                             @csrf
-                                            <button class="btn btn-danger btn-xs" type="submit">Cancel</button>
+                                            <button class="btn btn-danger btn-sm ml-2 mr-2" type="submit">Cancel</button>
                                             
-                                        </form>
+                                        </form> 
                                         
-                                        </div>
                                         @elseif($service->status == 'Ongoing')
 
-                                        <a class="btn btn-primary btn-sm" href="{{ route('client.remarks.index', $service->id) }}" type="submit">Remarks</a>
+                                        <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.remarks.index', $service->id) }}" type="submit">Remarks</a>
                                         
                                         @elseif($service->status == 'Cancelled')
                                         
@@ -118,9 +120,9 @@ Dashboard :: Service Booking System
                                         
 
                                         @endif
-                                        
-                                        
 
+                                        </div>
+                                        
                                     </td>
 
                                 </tr>

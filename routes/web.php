@@ -172,6 +172,7 @@ Route::post('/client/remark/store', 'Client\RemarkController@store')->name('clie
 //ProfileController
 Route::get('/client/profile/{user}/show', 'Client\ProfileController@show')->name('client.profiles.show');
 Route::get('/client/profile/{user}/edit', 'Client\ProfileController@edit')->name('client.profiles.edit');
+Route::post('/client/profile/upload', 'Client\ProfileController@upload')->name('client.profiles.upload');
 Route::post('/client/profile/{user}/update', 'Client\ProfileController@update')->name('client.profiles.update');
 
 //PasswordController

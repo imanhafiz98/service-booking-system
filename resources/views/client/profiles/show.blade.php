@@ -74,7 +74,7 @@ Dashboard :: Service Booking System
                                 </div>
 
                                 <!-- Navigate to edit page-->
-                                <a class="nav-link" href="{{ route('client.profiles.edit', $user->id) }}">Edit</a>
+                                <a class="btn btn-primary" href="{{ route('client.profiles.edit', $user->id) }}">Edit</a>
                             </form>
                         </div>
                     </div>
