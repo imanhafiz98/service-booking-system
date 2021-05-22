@@ -1,4 +1,4 @@
-@extends('client.main')
+@extends('runner.main')
 
 @section('title')
 Dashboard :: Service Booking System
@@ -26,7 +26,7 @@ Dashboard :: Service Booking System
                         </div>
                     </div>
                     <ol class="breadcrumb mb-0 mt-4">
-                        <li class="breadcrumb-item"><a href="{{ route('client.services.index') }}">Services</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('runner.requests.index') }}">Requests</a></li>
                         <li class="breadcrumb-item active">Remarks</li>
                     </ol>
                 </div>
@@ -102,7 +102,7 @@ Dashboard :: Service Booking System
 
                             <!-- Dashboard Tab Pane 1-->
                             <div class="tab-pane fade show" id="overview" role="tabpanel" aria-labelledby="overview-pill">
-                                <form method="POST" action="{{ route('client.remarks.store') }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('runner.remarks.store') }}" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group">

@@ -25,7 +25,7 @@ class RemarkController extends Controller
         //dd($service->id);
         //return view('runner.remarks.index')->with('remarks', Remark::all());
 
-        return view('runner.remarks.index')
+        return view('runner.remarks.index-create')
             ->with('service', $service->id)
             ->with('remarks', Remark::where('service_id', $service->id)->get());
     }
