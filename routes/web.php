@@ -151,13 +151,13 @@ Route::post('/client/service/{service}/update', 'Client\ServiceController@update
 
 //AddressController
 Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
-Route::get('/client/address/index', 'Client\AddressController@index')->name('client.addresses.index');
+//Route::get('/client/address/index', 'Client\AddressController@index')->name('client.addresses.index');
 Route::post('/client/address/store', 'Client\AddressController@store')->name('client.addresses.store');
 Route::get('/client/address/{address}/edit', 'Client\AddressController@edit')->name('client.addresses.edit');
 Route::post('/client/address/{address}/upddate', 'Client\AddressController@update')->name('client.addresses.update');
 Route::delete('/client/address/{address}/delete', 'Client\AddressController@destroy')->name('client.addresses.destroy');
 
-Route::get('/client/address/index-test', 'Client\AddressController@indexTest')->name('client.addresses.index.test');
+Route::get('/client/address/index', 'Client\AddressController@indexTest')->name('client.addresses.index.test');
 
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
@@ -186,6 +186,7 @@ Route::get('/client/invoice/{invoice}/show', 'Client\InvoiceController@show')->n
 Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->name('client.invoices.store');
 
 //PaymentController
+Route::get('/client/payment/choose', 'Client\PaymentController@choose')->name('client.payments.choose');
 Route::get('/client/payment/create', 'Client\PaymentController@create')->name('client.payments.create');
 
 });

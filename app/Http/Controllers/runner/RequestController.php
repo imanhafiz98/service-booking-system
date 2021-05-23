@@ -11,6 +11,7 @@ use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
 use App\Models\Remark;
+use App\Models\Payment;
 
 class RequestController extends Controller
 {
@@ -42,6 +43,7 @@ class RequestController extends Controller
             'notes' => 'required',
              'client_id' => 'required',
              'service_id' => 'required',
+             'payment_id' => 'required'
             ]);
 
             auth()->user()->reqs()->create([
@@ -50,6 +52,7 @@ class RequestController extends Controller
              'status' => $request->status,
              'client_id' => $request->client_id,
              'service_id' => $request->service_id,
+             'payment_id' => $request->payment_id
              
          ]);
 

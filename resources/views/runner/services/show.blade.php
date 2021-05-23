@@ -123,6 +123,16 @@ Dashboard :: Service Booking System
                                             <input class="form-control" name="notes" id="exampleFormControlInput1" type="text" required />
                                         </div>
 
+                                        <div class="form-group mb-0">
+                                        <label class="small mb-1">Choose Payment Methods</label>
+                                        @foreach($payments as $payment)
+                                            <div class="form-group mb-0">
+                                                <input type="radio" id="type" name="payment_id" value="{{ $payment->id }}">
+                                                <label for="type">{{ $payment->type }}</label><br>
+                                            </div>
+                                        @endforeach
+                                        </div>
+
 
                                         <hr class="my-4" />
                                         <div class="d-flex justify-content-between">

@@ -12,7 +12,7 @@ Dashboard :: Service Booking System
 <body>
 
     <main>
-    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
@@ -26,7 +26,7 @@ Dashboard :: Service Booking System
                     </div>
                     <ol class="breadcrumb mb-0 mt-4">
                         <li class="breadcrumb-item"><a href="{{ route('runner.requests.index') }}">Requests</a></li>
-                       
+
                     </ol>
                 </div>
             </div>
@@ -44,6 +44,7 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Price (RM)</th>
                                     <th>Notes</th>
+                                    <th>Payment Type</th>
                                     <th>Status</th>
                                     <th>Action</th>
 
@@ -55,6 +56,7 @@ Dashboard :: Service Booking System
                                     <th>Name of Service</th>
                                     <th>Price (RM)</th>
                                     <th>Notes</th>
+                                    <th>Payment Type</th>
                                     <th>Status</th>
                                     <th>Action</th>
 
@@ -69,6 +71,7 @@ Dashboard :: Service Booking System
                                     <td>{{ $req->service->name }}</td>
                                     <td>{{ $req->price }}</td>
                                     <td>{{ $req->notes }}</td>
+                                    <td>{{ $req->payment->type }}</td>
                                     <td>
                                         @if($req->status == 'Requested')
                                         <div class="badge badge-warning badge-pill">Requested</div>

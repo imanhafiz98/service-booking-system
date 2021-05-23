@@ -12,28 +12,39 @@ Dashboard :: Service Booking System
 
     <main>
 
-        <!-- Main page content-->
-        <div class="container mt-5">
-            <!-- Custom page header alternative example-->
-            <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-4">
-                <div class="mr-4 mb-3 mb-sm-0">
-                    <h1 class="mb-0">Payment</h1>
-                    <div class="small">
-                        <span class="font-weight-500 text-primary">{{ $day }}</span>
-                        &middot; {{ $todayDate }} &middot; {{ $todayTime }}
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                Payment Method
+                            </h1>
+                            <div class="page-header-subtitle"></div>
+                        </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('client.services.index') }}">Services</a></li>
+                        <li class="breadcrumb-item active">Payment Method</li>
+                        <li class="breadcrumb-item active">Complete Payment</li>
+                    </ol>
                 </div>
-
             </div>
+        </header>
+        
 
 
-            <div class="row">
+            
                 <!-- Main page content-->
                 <div class="container mt-n10">
                     <!-- Wizard card example with navigation-->
-
-                    <!-- Wizard tab pane item 1-->
-                    <div class="tab-pane py-5 py-xl-10 fade show active" id="wizard1" role="tabpanel" aria-labelledby="wizard1-tab">
+                    <div class="card mb-4">
+                    <div class="card-header">
+                    Complete Payment
+                    </div>
+                    <div class="card-body">
+                    
                         <div class="row justify-content-center">
                             <div class="col-xxl-6 col-xl-8">
                                 <h3 class="text-primary">Payment Information</h3>
@@ -73,10 +84,11 @@ Dashboard :: Service Booking System
                         </div>
                     </div>
                 </div>
+                </div>
                 
             </div>
 
-        </div>
+            </div>
 
     </main>
 

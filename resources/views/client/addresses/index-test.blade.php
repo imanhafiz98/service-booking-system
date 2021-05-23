@@ -34,7 +34,7 @@ Dashboard :: Service Booking System
             <nav class="nav nav-borders">
                 <a class="nav-link" href="{{ route('client.profiles.show', auth()->user()->id) }}">Profile</a>
                 <a class="nav-link" href="{{ route('client.passwords.edit', auth()->user()->id) }}">Password</a>
-                <a class="nav-link active ml-0" href="{{ route('client.addresses.index') }}">Address</a>
+                <a class="nav-link active ml-0" href="{{ route('client.addresses.index.test') }}">Address</a>
 
             </nav>
             <hr class="mt-0 mb-4" />

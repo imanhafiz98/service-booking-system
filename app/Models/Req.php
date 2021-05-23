@@ -19,7 +19,8 @@ class Req extends Model
         'notes',
         'client_id',
         'service_id',
-        'user_id'
+        'user_id',
+        'payment_id'
     ];
 
     public function user()
@@ -39,6 +40,11 @@ class Req extends Model
 
     public function invoice(){
         return $this->hasOne(Invoice::class);
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
     }
 
 

@@ -40,26 +40,28 @@ Dashboard :: Service Booking System
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Request ID</th>
-                                    <th>Service ID</th>
+                                    <!-- <th>Request ID</th> -->
+                                    <!-- <th>Service ID</th> -->
                                     <th>Service Name</th>
+                                    <th>Runner Name</th>
                                     <th>Price</th>
                                     <th>Notes</th>
-                                    <th>Runner ID</th>
-                                    <th>Runner Name</th>
+                                    <th>Payment Method</th>
+                                    <!-- <th>Runner ID</th> -->
                                     <th>Action</th>
 
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Request ID</th>
-                                    <th>Service ID</th>
+                                    <!-- <th>Request ID</th> -->
+                                    <!-- <th>Service ID</th> -->
                                     <th>Service Name</th>
+                                    <th>Runner Name</th>
                                     <th>Price</th>
                                     <th>Notes</th>
-                                    <th>Runner ID</th>
-                                    <th>Runner Name</th>
+                                    <th>Payment Method</th>
+                                    <!-- <th>Runner ID</th> -->
                                     <th>Action</th>
 
                                 </tr>
@@ -69,13 +71,14 @@ Dashboard :: Service Booking System
                                 @foreach($reqs as $req)
 
                                 <tr>
-                                    <td>{{ $req->id }}</td>
-                                    <td>{{ $req->service_id }}</td>
+                                    <!-- <td>{{ $req->id }}</td> -->
+                                    <!-- <td>{{ $req->service_id }}</td> -->
                                     <td>{{ $req->service->name }}</td>
+                                    <td>{{ $req->user->name }}</td>
                                     <td>{{ $req->price }}</td>
                                     <td>{{ $req->notes }}</td>
-                                    <td>{{ $req->user_id }}</td>
-                                    <td>{{ $req->user->name }}</td>
+                                    <td>{{ $req->payment->type }}</td>
+                                    <!-- <td>{{ $req->user_id }}</td> -->
                                     <td>
                                         <form method="post" action="{{ route('client.requests.update', $req->id) }}">
                                             @csrf

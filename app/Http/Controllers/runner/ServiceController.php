@@ -12,6 +12,7 @@ use App\Models\State;
 use App\Models\City;
 use App\Models\Remark;
 use App\Models\Address;
+use App\Models\Payment;
 
 class ServiceController extends Controller
 {
@@ -49,15 +50,17 @@ class ServiceController extends Controller
     public function show(Service $service)
     {
         //dd($service->all());
-        return view('runner.services.show')->with('service', $service);
-        //dd($service->all());
+        return view('runner.services.show')
+            ->with('service', $service)
+            ->with('payments', Payment::all());
+        
     }
 
     public function showTest(Service $service)
     {
         //dd($service->all());
         return view('runner.services.show-test')->with('service', $service);
-        //dd($service->all());
+        
     }
     
     

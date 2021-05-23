@@ -30,4 +30,17 @@ class PaymentController extends Controller
             ->with('todayTime', $todayTime);
 
     }
+
+    public function choose()
+    {
+        $day = Carbon::now()->format( 'l' );
+        $todayDate = Carbon::now()->format('d-m-Y');
+        $todayTime = Carbon::now()->format('H:i:m');
+
+        return view('client.payments.choose')
+            ->with('day', $day)
+            ->with('todayDate', $todayDate)
+            ->with('todayTime', $todayTime);
+
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Service;
 use App\Models\Req;
+use App\Models\Payment;
 
 class ReqsTableSeeder extends Seeder
 {
@@ -24,7 +25,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '6'
+            'user_id' => '6',
+            'payment_id' => '2'
             
         ]);
 
@@ -34,7 +36,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '7'
+            'user_id' => '7',
+            'payment_id' => '1'
             
         ]);
 
@@ -44,7 +47,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '1',
-            'user_id' => '8'
+            'user_id' => '8',
+            'payment_id' => '1'
             
         ]);
 
@@ -56,7 +60,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '6'
+            'user_id' => '6',
+            'payment_id' => '1'
             
         ]);
 
@@ -66,7 +71,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '7'
+            'user_id' => '7',
+            'payment_id' => '1'
             
         ]);
 
@@ -76,7 +82,8 @@ class ReqsTableSeeder extends Seeder
             'status' => 'Requested',
             'client_id' => '3',
             'service_id' => '2',
-            'user_id' => '8'
+            'user_id' => '8',
+            'payment_id' => '1'
             
         ]);
 
