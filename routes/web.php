@@ -161,6 +161,7 @@ Route::get('/client/address/index', 'Client\AddressController@indexTest')->name(
 
 //RequestController
 Route::get('/client/request/{service}/index', 'Client\RequestController@index')->name('client.requests.index');
+Route::get('/client/request/{req}/show', 'Client\RequestController@show')->name('client.requests.show');
 Route::post('/client/request/{req}/index', 'Client\RequestController@update')->name('client.requests.update');
 
 //RemarkController
@@ -187,7 +188,7 @@ Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->nam
 
 //PaymentController
 Route::get('/client/payment/choose', 'Client\PaymentController@choose')->name('client.payments.choose');
-Route::get('/client/payment/create', 'Client\PaymentController@create')->name('client.payments.create');
+Route::get('/client/payment/{req}/create', 'Client\PaymentController@create')->name('client.payments.create');
 
 });
 

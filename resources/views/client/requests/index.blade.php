@@ -19,14 +19,14 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="layout"></i></div>
-                                List of Runners
+                                Services
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                     <ol class="breadcrumb mb-0 mt-4">
                         <li class="breadcrumb-item"><a href="{{ route('client.services.index') }}">Services</a></li>
-                        <li class="breadcrumb-item active">Runners</li>
+                        <li class="breadcrumb-item active">List of Runners</li>
                     </ol>
                 </div>
             </div>
@@ -80,29 +80,17 @@ Dashboard :: Service Booking System
                                     <td>{{ $req->payment->type }}</td>
                                     <!-- <td>{{ $req->user_id }}</td> -->
                                     <td>
-                                        <form method="post" action="{{ route('client.requests.update', $req->id) }}">
+                                        <!-- <form method="post" action="{{ route('client.requests.update', $req->id) }}">
                                             @csrf
-                                            <button class="btn btn-primary btn-sm" type="submit">Accept</button>
+                                            <button class="btn btn-primary btn-sm" type="submit">Accept 1</button>
 
                                             <input type="text" name="req_id" value="{{ $req->id }}" hidden>
                                             <input type="text" name="user_id" value="{{ $req->user_id }}" hidden>
-                                            <input type="text" name="service_id" value="{{ $req->service->id }}" hidden>
+                                            <input type="text" name="service_id" value="{{ $req->service_id }}" hidden>
+                                           
+                                        </form> -->
 
-                                            <!-- <button class="btn btn-primary btn-sm" type="submit" data-toggle="modal" data-target="#staticBackdrop">Accept</button>
-                                             Modal 
-                                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="staticBackdropLabel">Confirm Accept Runner</h5>
-                                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                        </div>
-                                                        <div class="modal-body">Once you accept the runner, you cannot cancel service or change runner.</div>
-                                                        <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="submit">Confirm</button></div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                        </form>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.requests.show', $req->id) }}" type="submit">Accept</a>
 
                                     </td>
                                 </tr>

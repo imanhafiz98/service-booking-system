@@ -27,6 +27,11 @@ class RequestController extends Controller
             ->get());
     }
 
+    public function show(Req $req)
+    {
+        return view('client.requests.show')->with('req', $req);
+    }
+
 
     public function update(Request $request, Req $req)
     {
