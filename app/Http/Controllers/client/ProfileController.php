@@ -34,7 +34,7 @@ class ProfileController extends Controller
             auth()->user()->update(['picture' => $filename]);
         }
 
-        return redirect(route('client.dashboards.index'));
+        return redirect(route('client.profiles.show', auth()->user()->id));
     }
 
     public function update(Request $request, User $user)
@@ -50,6 +50,6 @@ class ProfileController extends Controller
     
         $user = $user->update($request->all());
 
-        return redirect(route('client.dashboards.index'));
+        return redirect(route('client.profiles.show', auth()->user()->id));
     }
 }

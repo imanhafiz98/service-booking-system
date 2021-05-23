@@ -11,21 +11,26 @@ Dashboard :: Service Booking System
 <body>
 
     <main>
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Address
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                List of Addresses
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('runner.services.index') }}">Services</a></li>
+                        <li class="breadcrumb-item active">List of Addresses</li>
+                    </ol>
                 </div>
             </div>
         </header>
+
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">

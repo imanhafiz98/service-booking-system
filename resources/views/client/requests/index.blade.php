@@ -90,7 +90,7 @@ Dashboard :: Service Booking System
                                            
                                         </form> -->
 
-                                        <a class="btn btn-primary btn-sm" href="{{ route('client.requests.show', $req->id) }}" type="submit">Accept</a>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.requests.show', $req->id) }}" type="submit">Choose</a>
 
                                     </td>
                                 </tr>

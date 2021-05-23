@@ -57,11 +57,9 @@ Dashboard :: Service Booking System
                              <input type="text" name="req_id" value="{{ $req->id }}" hidden>
                              <input type="text" name="user_id" value="{{ $req->user_id }}" hidden>
                              <input type="text" name="service_id" value="{{ $req->service_id }}" hidden>
-                             <button class="btn btn-primary" type="submit">Accept</button>                                           
+                             <button class="btn btn-primary" type="submit">Confirm</button>                                           
                                            
                             </form>
-
-
 
                             @elseif($req->payment->id == 2)
                             <h3 class="text-primary">Payment Information</h3>
@@ -96,7 +94,7 @@ Dashboard :: Service Booking System
                                 <hr class="my-4" />
                                 <div class="d-flex justify-content-between">
 
-                                    <button class="btn btn-primary" type="submit">Pay</button>
+                                    <button class="btn btn-primary" type="submit">Confirm & Pay</button>
                                 </div>
                             </form>
                             @endif

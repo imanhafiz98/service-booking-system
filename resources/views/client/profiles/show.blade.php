@@ -44,11 +44,23 @@ Dashboard :: Service Booking System
                         <div class="card-body text-center">
                         
                             <!-- Profile picture image-->
+                            @if(Auth::user()->picture == null)
+                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                            <!-- Profile picture upload button-->
+                            <form action="{{ route('client.profiles.upload') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="file" name="picture" class="form-control">
+                                </div> 
+                                <button class="btn btn-primary" type="submit">Upload Profile Picture</button>
+                            </form>
+
+                            @else
                             <img class="img-account-profile rounded-circle mb-2"
                                 src="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" alt="" />
-                            <!-- Profile picture help block-->
-                
-                            <!-- Profile picture upload button-->
+
+                            @endif
+                            
                             
                         
                         </div>

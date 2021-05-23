@@ -187,8 +187,9 @@ Route::get('/client/invoice/{invoice}/show', 'Client\InvoiceController@show')->n
 Route::get('/client/invoice/{req}/store', 'Client\InvoiceController@store')->name('client.invoices.store');
 
 //PaymentController
-Route::get('/client/payment/choose', 'Client\PaymentController@choose')->name('client.payments.choose');
 Route::get('/client/payment/{req}/create', 'Client\PaymentController@create')->name('client.payments.create');
+Route::get('/client/payment/{req}/show', 'Client\PaymentController@show')->name('client.payments.show');
+
 
 });
 

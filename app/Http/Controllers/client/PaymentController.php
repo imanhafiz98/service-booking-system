@@ -36,4 +36,9 @@ class PaymentController extends Controller
             ->with('todayTime', $todayTime);
 
     }
+
+    public function show(req $req)
+    {
+        return view('client.payments.show')->with('req', $req);
+    }
 }

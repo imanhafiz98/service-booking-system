@@ -19,46 +19,49 @@ Dashboard :: Service Booking System
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="layout"></i></div>
-                                Payment Method
+                                Services
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
                     <ol class="breadcrumb mb-0 mt-4">
                         <li class="breadcrumb-item"><a href="{{ route('client.services.index') }}">Services</a></li>
-                        <li class="breadcrumb-item active">Payment Method</li>
+                        <li class="breadcrumb-item active">Payment Successful</li>
                     </ol>
                 </div>
             </div>
         </header>
 
+        <!-- Main page content-->
         <div class="container mt-n10">
+            <!-- Wizard card example with navigation-->
             <div class="card mb-4">
-
                 <div class="card-header">
-                    Payment Method
+                    Payment Successfully
                 </div>
                 <div class="card-body">
-                    <form>
-                        <!-- Form Group (default email)-->
-                        <div class="form-group">
-                            <label class="small mb-1" for="inputNotificationEmail">Default notification email</label>
-                            <input class="form-control" id="inputNotificationEmail" type="email" value="name@example.com" disabled />
-                        </div>
-                        <!-- Form Group (email updates checkboxes)-->
-                        <div class="form-group mb-0">
-                            <input type="radio" id="male" name="gender" value="male">
-                            <label for="male">Cash on Delivery</label><br>
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Credit/Debit Card</label><br>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-6 col-xl-8">
+                                
+                            <h3 class="text-primary">Payment Successfully</h3>
+                            <h5 class="card-title">Your service is ongoing.</h5>
+
+                            <a class="btn btn-primary" href="{{ route('client.services.index', ['status'=>'Ongoing']) }}" type="submit">View Services</a>
+                                                     
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Proceed</button>
-                    </form>
+                    </div>
                 </div>
-
             </div>
         </div>
+
+        </div>
+
+        </div>
+
+
+
 
     </main>
 

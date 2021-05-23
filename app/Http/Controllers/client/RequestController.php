@@ -49,6 +49,7 @@ class RequestController extends Controller
                  ->where('status', '!=', 'Cancelled')
                  ->update(['status' => "Rejected"]);
         
-        return redirect(route('client.services.index'));
+        // return redirect(route('client.services.index'));
+        return redirect(route('client.payments.show', $data['req_id']));
     }
 }

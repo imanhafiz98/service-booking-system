@@ -91,6 +91,7 @@ Dashboard :: Service Booking System
                                                     <div class="d-flex justify-content-between">
                                                         
                                                         <button class="btn btn-primary" type="submit" >Update</button>
+                                                        <a class="btn btn-primary" href="{{ route('client.addresses.index.test') }}">Back</a>
                                                     </div>
                                                 </form>
                                             </div>
