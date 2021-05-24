@@ -144,7 +144,7 @@ Dashboard :: Service Booking System
 
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 1-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -160,7 +160,7 @@ Dashboard :: Service Booking System
                 </div>
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 1-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -176,7 +176,7 @@ Dashboard :: Service Booking System
                 </div>
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 1-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -197,7 +197,7 @@ Dashboard :: Service Booking System
 
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 2-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -212,7 +212,7 @@ Dashboard :: Service Booking System
                 </div>
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 2-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -227,7 +227,7 @@ Dashboard :: Service Booking System
                 </div>
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 2-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -247,7 +247,7 @@ Dashboard :: Service Booking System
 
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 3-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -264,7 +264,7 @@ Dashboard :: Service Booking System
 
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 3-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -281,7 +281,7 @@ Dashboard :: Service Booking System
 
                 <div class="col-xl-4 mb-4">
                     <!-- Dashboard example card 3-->
-                    <a class="card lift h-100" >
+                    <a class="card lift h-100">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="mr-3">
@@ -297,8 +297,6 @@ Dashboard :: Service Booking System
                 </div>
 
             </div>
-            
-            
 
     </main>
 

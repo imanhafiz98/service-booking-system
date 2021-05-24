@@ -8,9 +8,9 @@ Dashboard :: Service Booking System
 
 <html lang="en">
 
-    <body class="nav-fixed">
+<body class="nav-fixed">
 
-        <main>
+    <main>
 
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
@@ -45,21 +45,21 @@ Dashboard :: Service Booking System
                                 <tr>
                                     <th>Category ID</th>
                                     <th>Category Name</th>
-                                    <th>Actions</th>     
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($categories as $category)
-                            
-                            <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->name }}</td>
-                                <td></td>
-                            </tr>
-                            
-                             @endforeach
-                            
+                                @foreach($categories as $category)
+
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td></td>
+                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -67,9 +67,9 @@ Dashboard :: Service Booking System
             </div>
         </div>
 
-        </main>
-    
-    </body>
+    </main>
+
+</body>
 
 </html>
 @endsection

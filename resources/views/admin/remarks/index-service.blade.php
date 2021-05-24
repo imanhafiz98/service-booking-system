@@ -8,9 +8,9 @@ Dashboard :: Service Booking System
 
 <html lang="en">
 
-    <body class="nav-fixed">
+<body class="nav-fixed">
 
-        <main>
+    <main>
 
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
@@ -60,26 +60,26 @@ Dashboard :: Service Booking System
                             </tfoot>
                             <tbody>
 
-                            @foreach($services as $service)
-                            
-                            <tr>
-                                <td>{{ $service->id }}</td>
-                                <td>{{ $service->name }}</td>
-                                <td>{{ $service->category->name }}</td>
-                                <td>{{ $service->description }}</td>
-                                <td>{{ $service->city->state->name }}</td>
-                                <td>{{ $service->city->name }}</td>
-                                <td>
+                                @foreach($services as $service)
+
+                                <tr>
+                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $service->name }}</td>
+                                    <td>{{ $service->category->name }}</td>
+                                    <td>{{ $service->description }}</td>
+                                    <td>{{ $service->city->state->name }}</td>
+                                    <td>{{ $service->city->name }}</td>
+                                    <td>
                                         <div class="badge badge-primary badge-pill">Ongoing</div>
 
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
                                         <a class="btn btn-primary btn-sm" href="{{ route('admin.remarks.show', $service->id) }}">Choose</a>
-                                </td>
-                            </tr>
-                            
-                             @endforeach
-                            
+                                    </td>
+                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -87,9 +87,9 @@ Dashboard :: Service Booking System
             </div>
         </div>
 
-        </main>
-    
-    </body>
+    </main>
+
+</body>
 
 </html>
 @endsection

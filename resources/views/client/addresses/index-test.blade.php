@@ -78,7 +78,7 @@ Dashboard :: Service Booking System
                                                         <div class="row">
 
                                                             <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.addresses.edit', $address->id) }}">Edit</a>
-                                                            
+
                                                             <form action="{{ route('client.addresses.destroy', $address->id) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
@@ -117,9 +117,9 @@ Dashboard :: Service Booking System
                                                     <option value="">--Select City--</option>
                                                     @foreach($cities as $city)
 
-                                                        <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
 
-                                                    @endforeach                 
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -130,7 +130,7 @@ Dashboard :: Service Booking System
                                                     <option value="">--Select State--</option>
                                                     @foreach($states as $state)
 
-                                                        <option value="{{ $city->state->id }}">{{ $state->name }}</option>
+                                                    <option value="{{ $city->state->id }}">{{ $state->name }}</option>
 
                                                     @endforeach
                                                 </select>

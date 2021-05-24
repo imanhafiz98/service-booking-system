@@ -12,7 +12,7 @@ Dashboard :: Service Booking System
 
     <main>
 
-    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
@@ -83,7 +83,7 @@ Dashboard :: Service Booking System
 
                                                     @foreach($cities as $city)
 
-                                                        <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
 
                                                     @endforeach
                                                 </select>
@@ -119,8 +119,6 @@ Dashboard :: Service Booking System
                                                 <button class="btn btn-primary" type="submit">Update</button>
                                                 <a href="{{ route('admin.services.show', $service->id) }}" class="btn btn-primary">Back</a>
                                             </div>
-
-
 
                                         </form>
                                     </div>

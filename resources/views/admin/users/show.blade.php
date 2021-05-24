@@ -8,9 +8,9 @@ Dashboard :: Service Booking System
 
 <html lang="en">
 
-    <body class="nav-fixed">
+<body class="nav-fixed">
 
-        <main>
+    <main>
 
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
@@ -32,62 +32,62 @@ Dashboard :: Service Booking System
             </div>
         </header>
 
-            <div class="container mt-n10">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <!-- Default Bootstrap Form Controls-->
-                        <div id="default">
-                            <div class="card mb-4">
-                                <div class="card-header">Please Enter All The Details Below</div>
-                                <div class="card-body">
-                                    <!-- Component Preview-->
-                                    <div class="sbp-preview">
-                                        <div class="sbp-preview-content">
-                                            <form>
+        <div class="container mt-n10">
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- Default Bootstrap Form Controls-->
+                    <div id="default">
+                        <div class="card mb-4">
+                            <div class="card-header">Please Enter All The Details Below</div>
+                            <div class="card-body">
+                                <!-- Component Preview-->
+                                <div class="sbp-preview">
+                                    <div class="sbp-preview-content">
+                                        <form>
 
-                                                <!-- <div class="form-group">
+                                            <!-- <div class="form-group">
                                                     <label for="exampleFormControlInput1">ID</label>
                                                     <input class="form-control"  name = "id" id="exampleFormControlInput1" type="text" value="{{ $user->id }}" readonly/>
                                                 </div> -->
 
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Name</label>
-                                                    <input class="form-control"  name = "name" id="exampleFormControlInput1" type="text" value="{{ $user->name }}" readonly/>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Name</label>
+                                                <input class="form-control" name="name" id="exampleFormControlInput1" type="text" value="{{ $user->name }}" readonly />
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Email</label>
-                                                    <input class="form-control"  name = "email" id="exampleFormControlInput1" type="email" value="{{ $user->email }}" readonly/>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Email</label>
+                                                <input class="form-control" name="email" id="exampleFormControlInput1" type="email" value="{{ $user->email }}" readonly />
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Phone</label>
-                                                    <input class="form-control"  name = "phone" id="exampleFormControlInput1" type="text" value="{{ $user->phone }}" readonly/>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Phone</label>
+                                                <input class="form-control" name="phone" id="exampleFormControlInput1" type="text" value="{{ $user->phone }}" readonly />
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Role</label>
-                                                    <input class="form-control"  name = "role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}" readonly/>
-                                                </div>
-                                            
-                                                <div class="form-group">
-                                                     <a href="{{ route('admin.users.edit', $user->id) }}" type="submit" class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary">Back</a>
-                                                </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Role</label>
+                                                <input class="form-control" name="role" id="exampleFormControlInput1" type="text" value="{{ $user->role }}" readonly />
+                                            </div>
 
-                                             </form>
-                                        </div>
+                                            <div class="form-group">
+                                                <a href="{{ route('admin.users.edit', $user->id) }}" type="submit" class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('admin.users.index') }}" class="btn btn-primary">Back</a>
+                                            </div>
 
+                                        </form>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-    
-    </body>
+        </div>
+    </main>
+
+</body>
 
 </html>
 @endsection

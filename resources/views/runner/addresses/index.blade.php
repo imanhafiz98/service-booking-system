@@ -11,7 +11,7 @@ Dashboard :: Service Booking System
 <body>
 
     <main>
-    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
@@ -55,24 +55,24 @@ Dashboard :: Service Booking System
                                     <th>Address Line 2</th>
                                     <th>State</th>
                                     <th>City</th>
-                                    <th>Postcode</th>                                   
+                                    <th>Postcode</th>
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($addresses as $address)
-                            
-                            <tr>
-                                <td>{{ $address->notes }}</td>
-                                <td>{{ $address->line_1 }}</td>
-                                <td>{{ $address->line_2 }}</td>
-                                <td>{{ $address->city->state->name }}</td>
-                                <td>{{ $address->city->name }}</td>
-                                <td>{{ $address->postcode }}</td>
-                            </tr>
-                           
-                            @endforeach
-                            
+                                @foreach($addresses as $address)
+
+                                <tr>
+                                    <td>{{ $address->notes }}</td>
+                                    <td>{{ $address->line_1 }}</td>
+                                    <td>{{ $address->line_2 }}</td>
+                                    <td>{{ $address->city->state->name }}</td>
+                                    <td>{{ $address->city->name }}</td>
+                                    <td>{{ $address->postcode }}</td>
+                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -83,7 +83,5 @@ Dashboard :: Service Booking System
 </body>
 
 </html>
-
-
 
 @endsection

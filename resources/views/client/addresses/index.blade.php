@@ -29,7 +29,7 @@ Dashboard :: Service Booking System
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
-                <div class="card-header">All Addresses  <a class="btn btn-primary " href="{{ route('client.addresses.create') }}">Add Address</a></div>
+                <div class="card-header">All Addresses <a class="btn btn-primary " href="{{ route('client.addresses.create') }}">Add Address</a></div>
                 <div class="card-body">
                     <div class="datatable">
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
@@ -40,7 +40,7 @@ Dashboard :: Service Booking System
                                     <th>Address Line 2</th>
                                     <th>State</th>
                                     <th>City</th>
-                                    <th>Postcode</th>           
+                                    <th>Postcode</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -51,35 +51,35 @@ Dashboard :: Service Booking System
                                     <th>Address Line 2</th>
                                     <th>State</th>
                                     <th>City</th>
-                                    <th>Postcode</th>           
-                                    <th>Action</th>                                  
+                                    <th>Postcode</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($addresses as $address)
-                            <tr>
-                                <td>{{ $address->notes }}</td>
-                                <td>{{ $address->line_1 }}</td>
-                                <td>{{ $address->line_2 }}</td>
-                                <td>{{ $address->city->state->name }}</td>
-                                <td>{{ $address->city->name }}</td>
-                                <td>{{ $address->postcode }}</td>                      
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.edit', $address->id) }}">Edit</a>
+                                @foreach($addresses as $address)
+                                <tr>
+                                    <td>{{ $address->notes }}</td>
+                                    <td>{{ $address->line_1 }}</td>
+                                    <td>{{ $address->line_2 }}</td>
+                                    <td>{{ $address->city->state->name }}</td>
+                                    <td>{{ $address->city->name }}</td>
+                                    <td>{{ $address->postcode }}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.edit', $address->id) }}">Edit</a>
 
-                                    <form action="{{ route('client.addresses.destroy', $address->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    
-                                        <button class="btn btn-danger btn-sm" type="submit" >Delete</button> 
+                                        <form action="{{ route('client.addresses.destroy', $address->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
 
-                                    </form>  
+                                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
 
-                                </td>
-                            </tr>
-                            @endforeach
-                            
+                                        </form>
+
+                                    </td>
+                                </tr>
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

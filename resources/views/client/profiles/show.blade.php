@@ -42,7 +42,7 @@ Dashboard :: Service Booking System
                     <div class="card">
                         <div class="card-header">Profile Picture</div>
                         <div class="card-body text-center">
-                        
+
                             <!-- Profile picture image-->
                             @if(Auth::user()->picture == null)
                             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
@@ -51,18 +51,17 @@ Dashboard :: Service Booking System
                                 @csrf
                                 <div class="form-group">
                                     <input type="file" name="picture" class="form-control">
-                                </div> 
+                                </div>
                                 <button class="btn btn-primary" type="submit">Upload Profile Picture</button>
                             </form>
 
                             @else
-                            <img class="img-account-profile rounded-circle mb-2"
-                                src="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" alt="" />
+                            <img class="img-account-profile rounded-circle mb-2" src="{{ env('APP_URL') }}/storage/{{ Auth::user()->picture }}" alt="" />
 
                             @endif
-                            
-                            
-                        
+
+
+
                         </div>
                     </div>
                 </div>

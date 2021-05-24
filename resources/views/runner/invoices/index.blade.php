@@ -41,7 +41,7 @@ Dashboard :: Service Booking System
                                     <th>Date Generate</th>
                                     <th>Time Generate</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tfoot>
@@ -51,25 +51,25 @@ Dashboard :: Service Booking System
                                     <th>Date Generate</th>
                                     <th>Time Generate</th>
                                     <th>Action</th>
-                                    
+
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                            @foreach($invoices as $invoice)
-                            @if (auth()->user()->id == $invoice->req->user_id)
-                            <tr>
-                                <td>{{ $invoice->id }}</td>
-                                <td>{{ $invoice->req->service->name }}</td>
-                                <td>{{ $invoice->date_generate }}</td>
-                                <td>{{ $invoice->time_generate }}</td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="{{ route('runner.invoices.show', $invoice->id) }}" type="submit">View</a> 
-                                </td>
-                            </tr>
-                            @endif
-                            @endforeach
-                            
+                                @foreach($invoices as $invoice)
+                                @if (auth()->user()->id == $invoice->req->user_id)
+                                <tr>
+                                    <td>{{ $invoice->id }}</td>
+                                    <td>{{ $invoice->req->service->name }}</td>
+                                    <td>{{ $invoice->date_generate }}</td>
+                                    <td>{{ $invoice->time_generate }}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('runner.invoices.show', $invoice->id) }}" type="submit">View</a>
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>

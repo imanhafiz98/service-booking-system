@@ -13,23 +13,23 @@ Dashboard :: Service Booking System
 
     <main>
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                        <div class="container">
-                            <div class="page-header-content pt-4">
-                                <div class="row align-items-center justify-content-between">
-                                    <div class="col-auto mt-4">
-                                        <h1 class="page-header-title">
-                                            <div class="page-header-icon"><i data-feather="layout"></i></div>
-                                            List of Services
-                                        </h1>
-                                        <div class="page-header-subtitle"></div>
-                                    </div>
-                                </div>
-                                <ol class="breadcrumb mb-0 mt-4">
-                                    <li class="breadcrumb-item active"><a href="{{ route('client.services.index') }}">Services</a></li>
-                                </ol>
-                            </div>
+            <div class="container">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                List of Services
+                            </h1>
+                            <div class="page-header-subtitle"></div>
                         </div>
-                    </header>
+                    </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item active"><a href="{{ route('client.services.index') }}">Services</a></li>
+                    </ol>
+                </div>
+            </div>
+        </header>
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
@@ -46,7 +46,7 @@ Dashboard :: Service Booking System
                                     <th>State</th>
                                     <th>City</th>
                                     <th>Date</th>
-                                    <th>Time</th> 
+                                    <th>Time</th>
                                     <th>Status</th>
                                     <th>Action</th>
 
@@ -99,30 +99,30 @@ Dashboard :: Service Booking System
 
                                         <div class="row">
 
-                                        @if($service->status == 'Pending')
-                                        
-                                        <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
+                                            @if($service->status == 'Pending')
 
-                                        <form method="post" action="{{ route('client.services.update', $service->id) }}">
-                                            @csrf
-                                            <button class="btn btn-danger btn-sm ml-2 mr-2" type="submit">Cancel</button>
-                                            
-                                        </form> 
-                                        
-                                        @elseif($service->status == 'Ongoing')
+                                            <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.requests.index', $service->id) }}" type="submit">View Runners</a>
 
-                                        <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.remarks.index', $service->id) }}" type="submit">Remarks</a>
-                                        
-                                        @elseif($service->status == 'Cancelled')
-                                        
+                                            <form method="post" action="{{ route('client.services.update', $service->id) }}">
+                                                @csrf
+                                                <button class="btn btn-danger btn-sm ml-2 mr-2" type="submit">Cancel</button>
 
-                                        @elseif($service->status == 'Completed')
-                                        
+                                            </form>
 
-                                        @endif
+                                            @elseif($service->status == 'Ongoing')
+
+                                            <a class="btn btn-primary btn-sm ml-2 mr-2" href="{{ route('client.remarks.index', $service->id) }}" type="submit">Remarks</a>
+
+                                            @elseif($service->status == 'Cancelled')
+
+
+                                            @elseif($service->status == 'Completed')
+
+
+                                            @endif
 
                                         </div>
-                                        
+
                                     </td>
 
                                 </tr>
@@ -135,7 +135,7 @@ Dashboard :: Service Booking System
                 </div>
             </div>
         </div>
-        
+
     </main>
 </body>
 

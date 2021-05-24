@@ -33,53 +33,53 @@ Dashboard :: Service Booking System
             </div>
         </header>
         <!-- Main page content-->
-                <div class="container mt-n10">
-                    <!-- Wizard card example with navigation-->
-                    <div class="card mb-4">
-                    <div class="card-header">
+        <div class="container mt-n10">
+            <!-- Wizard card example with navigation-->
+            <div class="card mb-4">
+                <div class="card-header">
                     Confirmation Choose Runners
-                    </div>
-                    <div class="card-body">
-                    
-                        <div class="row justify-content-center">
-                            <div class="col-xxl-6 col-xl-8">
-                                <h3 class="text-primary">Runner Details</h3>
-                                <h5 class="card-title">Please Check The Details</h5>
-                                <form>
-                                    @csrf
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputUsername">Runner Name</label>
-                                        <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->user->name}}" readonly />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputUsername">Price (RM)</label>
-                                        <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->price}}" readonly />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputUsername">Notes</label>
-                                        <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->notes}}" readonly />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputUsername">Payment Methods</label>
-                                        <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->payment->type}}" readonly />
-                                    </div>
-                                    
-                                    <hr class="my-4" />
-                                    <div class="d-flex justify-content-between">
+                </div>
+                <div class="card-body">
+
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-6 col-xl-8">
+                            <h3 class="text-primary">Runner Details</h3>
+                            <h5 class="card-title">Please Check The Details</h5>
+                            <form>
+                                @csrf
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputUsername">Runner Name</label>
+                                    <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->user->name}}" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputUsername">Price (RM)</label>
+                                    <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->price}}" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputUsername">Notes</label>
+                                    <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->notes}}" readonly />
+                                </div>
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputUsername">Payment Methods</label>
+                                    <input class="form-control" name="name" id="inputUsername" type="text" value="{{$req->payment->type}}" readonly />
+                                </div>
+
+                                <hr class="my-4" />
+                                <div class="d-flex justify-content-between">
 
                                     <a class="btn btn-primary" href="{{ route('client.payments.create', $req->id) }}">Proceed to Payment</a>
-                                    </div>
-                                </form>
-                            </div>
-
+                                </div>
+                            </form>
                         </div>
+
                     </div>
                 </div>
-                </div>
-                
             </div>
+        </div>
 
-            </div>
+        </div>
+
+        </div>
     </main>
 
 </body>

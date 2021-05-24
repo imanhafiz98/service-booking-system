@@ -43,25 +43,18 @@ Dashboard :: Service Booking System
 
                     <div class="row justify-content-center">
                         <div class="col-xxl-6 col-xl-8">
-                                
+
                             <h3 class="text-primary">Payment Successfully</h3>
                             <h5 class="card-title">Your service is ongoing.</h5>
 
                             <a class="btn btn-primary" href="{{ route('client.services.index', ['status'=>'Ongoing']) }}" type="submit">View Services</a>
-                                                     
+
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-
-        </div>
-
-        </div>
-
-
-
 
     </main>
 

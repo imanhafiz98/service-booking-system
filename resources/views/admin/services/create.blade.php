@@ -61,7 +61,7 @@ Dashboard :: Service Booking System
 
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1">Description</label>
-                                                <input class="form-control" name="description" id="exampleFormControlInput1" type="text" value="" required/>
+                                                <input class="form-control" name="description" id="exampleFormControlInput1" type="text" value="" required />
                                             </div>
 
                                             <div class="form-group">
@@ -87,13 +87,13 @@ Dashboard :: Service Booking System
                                             </div>
 
                                             <div class="form-group">
-                                            <label class="small mb-1" for="inputBillingName">City</label>
+                                                <label class="small mb-1" for="inputBillingName">City</label>
                                                 <select class="form-control" name="user_id" id="exampleFormControlSelect1" required>
                                                     <option value="">--Select Client--</option>
                                                     @foreach($users as $user)
 
                                                     @if($user->role == "client")
-                                                        <option value="{{ $user->id }}">ID.{{ $user->id }} | Name.{{ $user->name }}</option>
+                                                    <option value="{{ $user->id }}">ID.{{ $user->id }} | Name.{{ $user->name }}</option>
                                                     @endif
 
                                                     @endforeach

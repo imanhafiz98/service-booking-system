@@ -100,38 +100,36 @@ Dashboard :: Service Booking System
                             </div>
                         </div>
 
-                            <!-- Dashboard Tab Pane 1-->
-                            <div class="tab-pane fade show" id="overview" role="tabpanel" aria-labelledby="overview-pill">
-                                <form method="POST" action="{{ route('client.remarks.store') }}" enctype="multipart/form-data">
-                                    @csrf
+                        <!-- Dashboard Tab Pane 1-->
+                        <div class="tab-pane fade show" id="overview" role="tabpanel" aria-labelledby="overview-pill">
+                            <form method="POST" action="{{ route('client.remarks.store') }}" enctype="multipart/form-data">
+                                @csrf
 
-                                    <div class="form-group">
-                                        <input class="form-control" name="service_id" id="inputUsername" type="text" value="{{ $service }}" hidden />
-                                    </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="service_id" id="inputUsername" type="text" value="{{ $service }}" hidden />
+                                </div>
 
-                                    <div class="form-group">
-                                        <label class="small mb-1">Notes</label>
-                                        <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="10" required></textarea>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="small mb-1">Notes</label>
+                                    <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="10" required></textarea>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label class="small mb-1">Attachment</label>
-                                        <input type="file" class="form-control" name="attachment" />
-                                    </div>
+                                <div class="form-group">
+                                    <label class="small mb-1">Attachment</label>
+                                    <input type="file" class="form-control" name="attachment" />
+                                </div>
 
-                                    <hr class="my-4" />
-                                    <div class="d-flex justify-content-between">
+                                <hr class="my-4" />
+                                <div class="d-flex justify-content-between">
 
-                                        <button class="btn btn-primary" type="submit">Add</button>
-                                    </div>
-                                </form>
-                            </div>
+                                    <button class="btn btn-primary" type="submit">Add</button>
+                                </div>
+                            </form>
+                        </div>
 
-                        
                     </div>
                 </div>
             </div>
-
 
     </main>
 </body>

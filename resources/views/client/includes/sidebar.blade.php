@@ -102,8 +102,8 @@
                 <div class="collapse" id="collapseInvoice" data-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                         <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
-                        <a class="nav-link" href="{{ route('client.invoices.generate', ['status'=>'Completed']) }}">Generate Invoice</a>
-                        <a class="nav-link" href="{{ route('client.invoices.index') }}">View Invoice</a>
+                        <!-- <a class="nav-link" href="{{ route('client.invoices.generate', ['status'=>'Completed']) }}">Generate Invoice</a> -->
+                        <a class="nav-link" href="{{ route('client.invoices.index') }}">List of Invoices</a>
                     </nav>
                 </div>
 

@@ -124,13 +124,13 @@ Dashboard :: Service Booking System
                                         </div>
 
                                         <div class="form-group mb-0">
-                                        <label class="small mb-1">Choose Payment Methods</label>
-                                        @foreach($payments as $payment)
+                                            <label class="small mb-1">Choose Payment Methods</label>
+                                            @foreach($payments as $payment)
                                             <div class="form-group mb-0">
                                                 <input type="radio" id="type" name="payment_id" value="{{ $payment->id }}">
                                                 <label for="type">{{ $payment->type }}</label><br>
                                             </div>
-                                        @endforeach
+                                            @endforeach
                                         </div>
 
 

@@ -8,9 +8,9 @@ Dashboard :: Service Booking System
 
 <html lang="en">
 
-    <body class="nav-fixed">
+<body class="nav-fixed">
 
-        <main>
+    <main>
 
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
@@ -26,7 +26,7 @@ Dashboard :: Service Booking System
                     </div>
                     <ol class="breadcrumb mb-0 mt-4">
                         <li class="breadcrumb-item active"><a href="{{ route('admin.services.index') }}">List of Services</a></li>
-                       
+
                     </ol>
                 </div>
             </div>
@@ -64,17 +64,17 @@ Dashboard :: Service Booking System
                             </tfoot>
                             <tbody>
 
-                            @foreach($services as $service)
-                            
-                            <tr>
-                                <td>{{ $service->id }}</td>
-                                <td>{{ $service->name }}</td>
-                                <td>{{ $service->category->name }}</td>
-                                <td>{{ $service->description }}</td>
-                                <td>{{ $service->city->state->name }}</td>
-                                <td>{{ $service->city->name }}</td>
-                                <td>
-                                   @if($service->status == 'Pending')
+                                @foreach($services as $service)
+
+                                <tr>
+                                    <td>{{ $service->id }}</td>
+                                    <td>{{ $service->name }}</td>
+                                    <td>{{ $service->category->name }}</td>
+                                    <td>{{ $service->description }}</td>
+                                    <td>{{ $service->city->state->name }}</td>
+                                    <td>{{ $service->city->name }}</td>
+                                    <td>
+                                        @if($service->status == 'Pending')
                                         <div class="badge badge-warning badge-pill">Pending</div>
 
                                         @elseif($service->status == 'Ongoing')
@@ -86,16 +86,16 @@ Dashboard :: Service Booking System
                                         @elseif($service->status == 'Completed')
                                         <div class="badge badge-success badge-pill">Completed</div>
 
-                                    @endif
-                                </td>
-                                <td>
+                                        @endif
+                                    </td>
+                                    <td>
                                         <a class="btn btn-primary btn-sm" href="{{ route('admin.services.show', $service->id) }}">View</a>
 
-                                </td>
-                            </tr>
-                            
-                             @endforeach
-                            
+                                    </td>
+                                </tr>
+
+                                @endforeach
+
                             </tbody>
                         </table>
                     </div>
@@ -103,9 +103,9 @@ Dashboard :: Service Booking System
             </div>
         </div>
 
-        </main>
-    
-    </body>
+    </main>
+
+</body>
 
 </html>
 @endsection
