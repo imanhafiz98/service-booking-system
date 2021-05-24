@@ -18,9 +18,13 @@ class AddressController extends Controller
 {
     public function index(Service $service)
     {
-        //dd($service->user_id);
-        return view('runner.addresses.index')
-            ->with('service', $service)
-            ->with('addresses', Address::where('user_id', $service->user_id)->get());
+        // //dd($service->user_id);
+        // return view('runner.addresses.index')
+        //     ->with('service', $service)
+        //     ->with('addresses', Address::where('user_id', $service->user_id)->get());
+
+
+        return view('runner.addresses.index-new')
+            ->with('services', $service);
     }
 }
