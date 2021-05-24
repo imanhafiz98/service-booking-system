@@ -24,7 +24,7 @@
                             <div class="text-center mt-4">
                                 <img class="img-fluid p-4" src="{{ asset('admin/assets/img/illustrations/404-error-with-a-cute-animal.svg') }}" alt="" />
                                 <p class="lead">This requested URL was not found on this server.</p>
-                                <a class="text-arrow-icon" href="">
+                                <a class="text-arrow-icon" href="{{ route('home')}}">
                                     <i class="ml-0 mr-1" data-feather="arrow-left"></i>
                                     Return to Dashboard
                                 </a>

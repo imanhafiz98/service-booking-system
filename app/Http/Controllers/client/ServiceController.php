@@ -27,6 +27,7 @@ class ServiceController extends Controller
     public function create()
     {
         return view('client.services.create')
+            ->with('addresses', Address::all())
             ->with('categories', Category::all())
             ->with('cities', City::all())
             ->with('states', State::all())
@@ -56,7 +57,7 @@ class ServiceController extends Controller
             'description' => 'required',
             ]);
 
-        auth()->user()->services()->create([
+        $service = auth()->user()->services()->create([
             'name' => $request->name,
             'description' => $request->description,
             'date' => $request->date,
@@ -66,6 +67,8 @@ class ServiceController extends Controller
             'city_id' => $request->city_id
 
         ]);
+
+        $service->addresses()->sync( $request->addresses );  //add data into address_service table
 
         return redirect(route('client.services.index'));
     }

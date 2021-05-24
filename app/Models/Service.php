@@ -50,5 +50,10 @@ class Service extends Model
         return $this->hasMany(Remark::class);
     }
 
+    public function addresses()
+    {
+        return $this->belongsToMany(Address::class);
+    }
+
 
 }

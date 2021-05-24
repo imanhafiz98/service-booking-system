@@ -95,6 +95,17 @@ Dashboard :: Service Booking System
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1">Address</label>
+                                                
+                                                @foreach($addresses as $address)
+                                                <div class="custom-control custom-checkbox">
+                                                    <input class="custom-control-input" id="{{ $address->id }}" value="{{$address->id}}" name="addresses[]" type="checkbox"  />
+                                                    <label class=" small custom-control-label" for="{{ $address->id }}">{{ $address->notes }} | {{ $address->line_1 }}, {{ $address->line_2 }},
+                                                        {{ $address->city->name }}, {{ $address->city->state->name }}, {{ $address->postcode }}</label>
+                                                </div>
+                                                @endforeach
+                                        </div>
 
                                         <hr class="my-4" />
                                         <div class="d-flex justify-content-between">
