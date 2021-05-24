@@ -17,7 +17,9 @@ class AddressController extends Controller
     public function index(Service $service)
     {
         //dd($service->user_id);
-        return view('client.addresses.index')->with('addresses', Address::where('user_id', Auth::user()->id)->get());
+        // return view('client.addresses.index')->with('addresses', Address::where('user_id', Auth::user()->id)->get());
+        return view('client.addresses.index')
+            ->with('services', $service);
     }
 
     public function indexTest(Service $service)

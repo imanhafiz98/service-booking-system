@@ -1,4 +1,4 @@
-@extends('client.main')
+@extends('runner.main')
 
 @section('title')
 Dashboard :: Service Booking System
@@ -17,19 +17,24 @@ Dashboard :: Service Booking System
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
                                 List of Addresses
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('client.services.index') }}">Services</a></li>
+                        <li class="breadcrumb-item active">List of Addresses</li>
+                    </ol>
                 </div>
             </div>
         </header>
+
         <!-- Main page content-->
         <div class="container mt-n10">
             <div class="card mb-4">
-                <div class="card-header">All Addresses <a class="btn btn-primary " href="{{ route('client.addresses.create') }}">Add Address</a></div>
+                <div class="card-header">All Address</div>
                 <div class="card-body">
                     <div class="datatable">
                         <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
@@ -41,7 +46,6 @@ Dashboard :: Service Booking System
                                     <th>State</th>
                                     <th>City</th>
                                     <th>Postcode</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -52,12 +56,12 @@ Dashboard :: Service Booking System
                                     <th>State</th>
                                     <th>City</th>
                                     <th>Postcode</th>
-                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
 
-                                @foreach($addresses as $address)
+                                @foreach($services->addresses as $address)
+
                                 <tr>
                                     <td>{{ $address->notes }}</td>
                                     <td>{{ $address->line_1 }}</td>
@@ -65,19 +69,8 @@ Dashboard :: Service Booking System
                                     <td>{{ $address->city->state->name }}</td>
                                     <td>{{ $address->city->name }}</td>
                                     <td>{{ $address->postcode }}</td>
-                                    <td>
-                                        <a class="btn btn-primary btn-sm" href="{{ route('client.addresses.edit', $address->id) }}">Edit</a>
-
-                                        <form action="{{ route('client.addresses.destroy', $address->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-
-                                        </form>
-
-                                    </td>
                                 </tr>
+
                                 @endforeach
 
                             </tbody>
@@ -90,7 +83,5 @@ Dashboard :: Service Booking System
 </body>
 
 </html>
-
-
 
 @endsection

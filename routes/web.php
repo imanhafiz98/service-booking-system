@@ -152,7 +152,7 @@ Route::post('/client/service/{service}/update', 'Client\ServiceController@update
 
 //AddressController
 Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
-//Route::get('/client/address/index', 'Client\AddressController@index')->name('client.addresses.index');
+Route::get('/client/service/address/{service}/index', 'Client\AddressController@index')->name('client.services.addresses.index');
 Route::post('/client/address/store', 'Client\AddressController@store')->name('client.addresses.store');
 Route::get('/client/address/{address}/edit', 'Client\AddressController@edit')->name('client.addresses.edit');
 Route::post('/client/address/{address}/upddate', 'Client\AddressController@update')->name('client.addresses.update');
