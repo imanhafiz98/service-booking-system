@@ -12,18 +12,22 @@ Dashboard :: Service Booking System
 <body>
 
     <main>
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
             <div class="container">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Requests
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                Requests
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item active"><a href="{{ route('admin.requests.index') }}">List of Requests</a></li>
+                    
+                    </ol>
                 </div>
             </div>
         </header>

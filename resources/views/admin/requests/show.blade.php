@@ -14,20 +14,25 @@ Dashboard :: Service Booking System
     <main>
 
     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                <div class="container">
-                    <div class="page-header-content pt-4">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-auto mt-4">
-                                <h1 class="page-header-title">
-                                    <div class="page-header-icon"><i data-feather="edit-3"></i></div>
-                                    Show Request
-                                </h1>
-                                <div class="page-header-subtitle"></div>
-                            </div>
+            <div class="container">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                Requests
+                            </h1>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('admin.requests.index') }}">List of Requests</a></li>
+                        <li class="breadcrumb-item active"><a href="{{ route('admin.requests.show', $req->id) }}">View Request</a></li>
+                    
+                    </ol>
                 </div>
-            </header>
+            </div>
+        </header>
 
             <div class="container mt-n10">
                 <div class="row">
@@ -84,7 +89,7 @@ Dashboard :: Service Booking System
 
                                                 <div class="form-group">
                                                      <a href="{{ route('admin.requests.edit', $req->id) }}" type="submit" class="btn btn-primary">Edit</a>
-                                                    <a href="{{ route('admin.requests.index') }}" class="btn btn-primary">Back</a>
+                                                     <a href="{{ route('admin.requests.index') }}" class="btn btn-primary">Back</a>
                                                 </div>
 
                                              </form>

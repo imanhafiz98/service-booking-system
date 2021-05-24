@@ -23,7 +23,7 @@ class AddressesTableSeeder extends Seeder
             'line_2' => ' Jalan TTDI Adina',
             'postcode' => '40100',
             'city_id' => '1',
-            'user_id' => '2'
+            'user_id' => '3'
             
         ]);
 
@@ -34,7 +34,7 @@ class AddressesTableSeeder extends Seeder
             'line_2' => ' Jalan Presint 1',
             'postcode' => '60100',
             'city_id' => '1',
-            'user_id' => '2'
+            'user_id' => '3'
             
         ]);
 
@@ -46,7 +46,7 @@ class AddressesTableSeeder extends Seeder
             'line_2' => ' Jalan Ayer Keroh 13/2',
             'postcode' => '21030',
             'city_id' => '4',
-            'user_id' => '3'
+            'user_id' => '4'
             
         ]);
     }

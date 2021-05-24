@@ -75,6 +75,14 @@ Dashboard :: Service Booking System
                                         <div class="h5 mb-0 font-weight-700 text-green">RM{{ $invoice->req->price }}</div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="text-right pb-0" colspan="6">
+                                        <div class="text-uppercase small font-weight-700 text-muted">Payment Method:</div>
+                                    </td>
+                                    <td class="text-right pb-0">
+                                        <div class="h5 mb-0 font-weight-700 text-green">{{ $invoice->req->payment->type }}</div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

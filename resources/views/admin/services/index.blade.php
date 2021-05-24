@@ -18,12 +18,16 @@ Dashboard :: Service Booking System
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                List of Services
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                Services
                             </h1>
                             <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item active"><a href="{{ route('admin.services.index') }}">List of Services</a></li>
+                       
+                    </ol>
                 </div>
             </div>
         </header>

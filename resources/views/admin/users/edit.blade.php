@@ -13,20 +13,25 @@ Dashboard :: Service Booking System
         <main>
 
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                <div class="container">
-                    <div class="page-header-content pt-4">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-auto mt-4">
-                                <h1 class="page-header-title">
-                                    <div class="page-header-icon"><i data-feather="edit-3"></i></div>
-                                    Edit User
-                                </h1>
-                                <div class="page-header-subtitle"></div>
-                            </div>
+            <div class="container">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                Users
+                            </h1>
+                            <div class="page-header-subtitle"></div>
                         </div>
                     </div>
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a href="{{ route('admin.users.index') }}">List of Users</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.users.show', $user->id) }}">View Users</a></li>
+                        <li class="breadcrumb-item active"><a href="{{ route('admin.users.edit', $user->id) }}">Edit Users</a></li>
+                    </ol>
                 </div>
-            </header>
+            </div>
+        </header>
 
             <div class="container mt-n10">
                 <div class="row">
