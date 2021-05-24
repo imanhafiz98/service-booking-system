@@ -79,6 +79,7 @@ Route::get('/admin/dashboard/index', 'Admin\DashboardController@index')->name('a
 
 //ProfileController
 Route::get('/admin/profile/{user}/show', 'Admin\ProfileController@show')->name('admin.profiles.show');
+Route::post('/admin/profile/upload', 'Admin\ProfileController@upload')->name('admin.profiles.upload');
 Route::get('/admin/profile/{user}/edit', 'Admin\ProfileController@edit')->name('admin.profiles.edit');
 Route::post('/admmin/profile/{user}/update', 'Admin\ProfileController@update')->name('admin.profiles.update');
 
