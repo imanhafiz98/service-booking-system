@@ -21,7 +21,7 @@ class ServicesTableSeeder extends Seeder
         
         //Iman Client
         Service::create([
-            'name' => 'Buy Lunch at Soru Static',
+            'name' => 'Buy Lunch at Soru Station',
             'description' => '1 set of Lamb Chop',
             'date' => '2021-05-22',
             'time' => '11:30',
