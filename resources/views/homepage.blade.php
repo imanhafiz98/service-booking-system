@@ -16,8 +16,6 @@
 
 <body class="nav-fixed">
 
-
-
     <main>
         <!-- Main page content-->
         <div class="container mt-10">
@@ -26,6 +24,9 @@
                 <div class="card-body px-5 pt-5 pb-0">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-lg-6">
+                        @auth
+                        <h1 small class="text-primary">Hi {{ Auth::user()->name }},</h1>
+                        @endauth
                             <h1 class="text-primary">How can we help?</h1>
                             <p class="lead mb-4">Search our knowledge base to find answers, or contact us directly if you're having issues!</p>
                             <div class="shadow rounded">
@@ -46,12 +47,14 @@
 
                         @if(Auth::user()->isAdmin())
                         <a class="btn btn-primary btn-sm lift" href="{{ route('admin.dashboards.index') }}">Dashboard</a>
-
+                        
                         @elseif(Auth::user()->isClient())
                         <a class="btn btn-primary btn-sm lift" href="{{ route('client.dashboards.index') }}">Dashboard</a>
+                        
 
                         @elseif(Auth::user()->isRunner())
                         <a class="btn btn-primary btn-sm lift" href="{{ route('runner.dashboards.index') }}">Dashboard</a>
+                        
 
                         @endif
 
