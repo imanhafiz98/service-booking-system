@@ -6,7 +6,18 @@ Dashboard :: Service Booking System
 
 @section('content')
 
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+
+<head>
+    <!-- CSRF Token -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="content">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
+</head>
 
 <body class="nav-fixed">
 
@@ -71,7 +82,53 @@ Dashboard :: Service Booking System
                                                 <input class="form-control" name="time" id="exampleFormControlInput1" type="time" required />
                                             </div>
                                         </div>
-                                        <div class="form-row">
+
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="state">State :</label>
+                                            <select name="state" id="state" class="form-control">
+                                                <option value="">--Select State--</option>
+                                                @foreach ($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="city">City :</label>
+                                            <select name="city_id" id="city" class="form-control">
+
+                                            </select>
+                                        </div>
+
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('#state').on('change', function() {
+                                                    var state_id = this.value;
+                                                    $("#city").html('');
+                                                    $.ajax({
+                                                        url: "{{ route('get.cities') }}",
+                                                        type: "POST",
+                                                        data: {
+                                                            state_id: state_id,
+                                                            _token: '{{ csrf_token() }}'
+                                                        },
+                                                        dataType: 'json',
+                                                        success: function(result) {
+                                                            $('#city').html('<option value="">Select City</option>');
+                                                            $.each(result.cities, function(key, value) {
+                                                                $("#city").append('<option value="' + value.id +
+                                                                    '">' + value.name + '</option>');
+                                                            });
+
+                                                        }
+                                                    });
+                                                });
+
+                                            });
+                                        </script>
+
+                                        <!-- <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="inputBillingName">City</label>
                                                 <select class="form-control" name="city_id" id="exampleFormControlSelect1" required>
@@ -94,17 +151,17 @@ Dashboard :: Service Booking System
                                                     @endforeach
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label class="small mb-1">Address</label>
-                                                
-                                                @foreach($addresses as $address)
-                                                <div class="custom-control custom-checkbox">
-                                                    <input class="custom-control-input" id="{{ $address->id }}" value="{{$address->id}}" name="addresses[]" type="checkbox"  />
-                                                    <label class=" small custom-control-label" for="{{ $address->id }}">{{ $address->notes }} | {{ $address->line_1 }}, {{ $address->line_2 }},
-                                                        {{ $address->city->name }}, {{ $address->city->state->name }}, {{ $address->postcode }}</label>
-                                                </div>
-                                                @endforeach
+
+                                            @foreach($addresses as $address)
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" id="{{ $address->id }}" value="{{$address->id}}" name="addresses[]" type="checkbox" />
+                                                <label class=" small custom-control-label" for="{{ $address->id }}">{{ $address->notes }} | {{ $address->line_1 }}, {{ $address->line_2 }},
+                                                    {{ $address->city->name }}, {{ $address->city->state->name }}, {{ $address->postcode }}</label>
+                                            </div>
+                                            @endforeach
                                         </div>
 
                                         <hr class="my-4" />
@@ -125,4 +182,5 @@ Dashboard :: Service Booking System
 </body>
 
 </html>
+
 @endsection

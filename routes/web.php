@@ -150,6 +150,8 @@ Route::get('/client/service/create', 'Client\ServiceController@create')->name('c
 Route::post('/client/service/store', 'Client\ServiceController@store')->name('client.services.store');
 Route::post('/client/service/{service}/update', 'Client\ServiceController@update')->name('client.services.update');
 
+Route::post('get-cities-by-state', 'AjaxController@getCity')->name('get.cities');
+
 //AddressController
 Route::get('/client/address/create', 'Client\AddressController@create')->name('client.addresses.create');
 Route::get('/client/service/address/{service}/index', 'Client\AddressController@index')->name('client.services.addresses.index');
