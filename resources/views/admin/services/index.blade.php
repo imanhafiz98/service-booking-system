@@ -46,6 +46,7 @@ Dashboard :: Service Booking System
                                     <th>Description</th>
                                     <th>State</th>
                                     <th>City</th>
+                                    <th>Address Details</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -58,6 +59,7 @@ Dashboard :: Service Booking System
                                     <th>Description</th>
                                     <th>State</th>
                                     <th>City</th>
+                                    <th>Address Details</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -73,6 +75,9 @@ Dashboard :: Service Booking System
                                     <td>{{ $service->description }}</td>
                                     <td>{{ $service->city->state->name }}</td>
                                     <td>{{ $service->city->name }}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="{{ route('admin.services.index.addresses', $service->id) }}">View</a>
+                                   </td>
                                     <td>
                                         @if($service->status == 'Pending')
                                         <div class="badge badge-warning badge-pill">Pending</div>

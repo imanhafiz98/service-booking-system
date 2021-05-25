@@ -142,7 +142,7 @@
                     </nav>
                 </div>
 
-                <div class="sidenav-menu-heading">Remarks</div>
+                <div class="sidenav-menu-heading">Remark</div>
                 <!-- Sidenav Accordion (Layout)-->
                 <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseRemarks" aria-expanded="false" aria-controls="collapseRemarks">
                     <div class="nav-link-icon"><i data-feather="code"></i></div>
@@ -153,6 +153,21 @@
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
                         <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
                         <a class="nav-link" href="{{ route('admin.remarks.index.services', ['status'=>'Ongoing']) }}"> List of Remarks</a>
+
+                    </nav>
+                </div>
+
+                <div class="sidenav-menu-heading">Invoice</div>
+                <!-- Sidenav Accordion (Layout)-->
+                <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseInvoice" aria-expanded="false" aria-controls="collapseRemarks">
+                    <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
+                    Invoices
+                    <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseInvoice" data-parent="#accordionSidenav">
+                    <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavLayout">
+                        <!-- Nested Sidenav Accordion (Layout -> Navigation)-->
+                        <a class="nav-link" href="{{ route('admin.invoices.index') }}"> List of Invoices</a>
 
                     </nav>
                 </div>

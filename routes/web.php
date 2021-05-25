@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
+Route::get('/homepage', 'Admin\UserController@index')->name('users.index');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/homepage', [App\Http\Controllers\HomeController::class, 'homepage'])->name('homepage');
 
 
 
@@ -97,6 +101,7 @@ Route::post('/admin/user/{user}/update', 'Admin\UserController@update')->name('a
 
 //ServiceController
 Route::get('/admin/service/index', 'Admin\ServiceController@index')->name('admin.services.index');
+Route::get('/admin/service/index/{service}/address', 'Admin\ServiceController@indexAddress')->name('admin.services.index.addresses');
 Route::get('/admin/service/create', 'Admin\ServiceController@create')->name('admin.services.create');
 Route::post('/admin/service/store', 'Admin\ServiceController@store')->name('admin.services.store');
 Route::get('/admin/service/{service}/show', 'Admin\ServiceController@show')->name('admin.services.show');
@@ -130,6 +135,12 @@ Route::post('/admin/city/store', 'Admin\CityController@store')->name('admin.citi
 Route::get('/admin/category/index', 'Admin\CategoryController@index')->name('admin.categories.index');
 Route::get('/admin/category/create', 'Admin\CategoryController@create')->name('admin.categories.create');
 Route::post('/admin/category/store', 'Admin\CategoryController@store')->name('admin.categories.store');
+
+
+//InvoiceController
+Route::get('/admin/invoice/index', 'Admin\InvoiceController@index')->name('admin.invoices.index');
+Route::get('/admin/invoice/{invoice}/show', 'Admin\InvoiceController@show')->name('admin.invoices.show');
+
 
 });
 

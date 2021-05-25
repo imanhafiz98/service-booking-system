@@ -6,7 +6,15 @@ Dashboard :: Service Booking System
 
 @section('content')
 
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <!-- CSRF Token -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="content">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+</head>
 
 <body class="nav-fixed">
 
@@ -49,32 +57,51 @@ Dashboard :: Service Booking System
                                             <label class="small mb-1" for="inputUsername">Address Line 2 (Optional)</label>
                                             <input class="form-control" name="line_2" id="inputUsername" type="text" value="{{ $address->line_2 }}" required />
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label class="small mb-1" for="inputBillingName">City</label>
-                                                <select class="form-control" name="city_id" id="exampleFormControlSelect1" required>
-                                                    <option value="{{ $address->city->id }}">{{ $address->city->name }}</option>
-                                                    @foreach($cities as $city)
-
-                                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
-
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="state">State :</label>
+                                            <select name="state" id="state" class="form-control" required>
+                                                <option value="{{ $address->city->state->id }}">{{ $address->city->state->name }}</option>
+                                                @foreach ($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label class="small mb-1" for="inputBillingCCNumber">State</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option value="">--Select State--</option>
-                                                    @foreach($states as $state)
+                                        <div class="form-group">
+                                            <label class="small mb-1" for="city">City :</label>
+                                            <select name="city_id" id="city" class="form-control" required>
+                                                <option value="{{ $address->city->id }}">{{ $address->city->name }}</option>
 
-                                                    <option value="{{ $city->state->id }}">{{ $state->name }}</option>
-
-                                                    @endforeach
-                                                </select>
-                                            </div>
+                                            </select>
                                         </div>
+
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('#state').on('change', function() {
+                                                    var state_id = this.value;
+                                                    $("#city").html('');
+                                                    $.ajax({
+                                                        url: "{{ route('get.cities') }}",
+                                                        type: "POST",
+                                                        data: {
+                                                            state_id: state_id,
+                                                            _token: '{{ csrf_token() }}'
+                                                        },
+                                                        dataType: 'json',
+                                                        success: function(result) {
+                                                            $('#city').html('<option value="">Select City</option>');
+                                                            $.each(result.cities, function(key, value) {
+                                                                $("#city").append('<option value="' + value.id +
+                                                                    '">' + value.name + '</option>');
+                                                            });
+
+                                                        }
+                                                    });
+                                                });
+
+                                            });
+                                        </script>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label class="small mb-1" for="inputBillingName">Postcode</label>

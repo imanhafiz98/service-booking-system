@@ -10,12 +10,20 @@ use App\Models\Category;
 use App\Models\Req;
 use App\Models\State;
 use App\Models\City;
+use App\Models\Address;
 
 class ServiceController extends Controller
 {
     public function index(Request $request)
     {
         return view('admin.services.index')->with('services', Service::all());
+    }
+
+    public function indexAddress(Request $request, Service $service)
+    {
+        return view('admin.services.index-address')
+            ->with('services', $service)
+            ->with('addresses', Address::all());
 
     }
 

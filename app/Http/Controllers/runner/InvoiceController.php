@@ -38,14 +38,14 @@ class InvoiceController extends Controller
             }
         })->get();
         
-        return view('runner.invoices.generate')->with('reqs', $reqs);
+        return view('runner.invoices.generate')->with('reqs', $reqs)->with('invoices', Invoice::all());
     }
 
     public function store(Req $req)
     {
         //dd($request->all());
 
-        $todayDate = Carbon::now()->format('Y-m-d');
+        $todayDate = Carbon::now()->format('d-m-Y');
         $todayTime = Carbon::now()->format('H:i:m');
 
         $invoice = Invoice::create([

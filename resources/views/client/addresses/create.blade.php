@@ -6,7 +6,15 @@ Dashboard :: Service Booking System
 
 @section('content')
 
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <!-- CSRF Token -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="content">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+</head>
 
 <body class="nav-fixed">
 
